@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  customer-db:
+    image: mysql:8
+    container_name: customer_db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CUSTOMER_DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${CUSTOMER_DB_NAME}
+      MYSQL_USER: ${CUSTOMER_DB_USER}
+      MYSQL_PASSWORD: ${CUSTOMER_DB_PASSWORD}
+    ports:
+      - "${CUSTOMER_DB_PORT}:3306"
+    volumes:
+      - customer_db_data:/var/lib/mysql
+
+  customer-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: customer_service
+    restart: unless-stopped
+    depends_on:
+      - customer-db
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${CUSTOMER_DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${CUSTOMER_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: ${JWT_EXPIRATION}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
+    ports:
+      - "8081:8080"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: customer_rabbitmq
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    restart: unless-stopped
+
+volumes:
+  customer_db_data:
