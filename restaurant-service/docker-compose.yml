@@ -1,0 +1,433 @@
+services:
+  # ==========================
+  # RabbitMQ Message Broker
+  # ==========================
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: mtogo_rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-admin}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-secret123}
+    networks:
+      - mtogo_network
+    healthcheck:
+      test: rabbitmq-diagnostics ping
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ==========================
+  # Databases
+  # ==========================
+  customer-db:
+    image: mysql:8
+    container_name: mtogo_customer_db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: customerdb
+      MYSQL_USER: customer_user
+      MYSQL_PASSWORD: customer_pwd
+    volumes:
+      - customer_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  ordering-db:
+    image: mysql:8
+    container_name: mtogo_ordering_db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: orderingdb
+      MYSQL_USER: ordering_user
+      MYSQL_PASSWORD: ordering_pwd
+    volumes:
+      - ordering_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  fulfillment-db:
+    image: mysql:8
+    container_name: mtogo_fulfillment_db
+    restart: always
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: fulfillmentdb
+      MYSQL_USER: fulfillment_user
+      MYSQL_PASSWORD: fulfillment_pwd
+    volumes:
+      - fulfillment_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  delivery-db:
+    image: mysql:8
+    container_name: mtogo_delivery_db
+    restart: always
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: deliverydb
+      MYSQL_USER: delivery_user
+      MYSQL_PASSWORD: delivery_pwd
+    volumes:
+      - delivery_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  feedback-db:
+    image: mysql:8
+    container_name: mtogo_feedback_db
+    restart: always
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: feedbackdb
+      MYSQL_USER: feedback_user
+      MYSQL_PASSWORD: feedback_pwd
+    volumes:
+      - feedback_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  financial-db:
+    image: mysql:8
+    container_name: mtogo_financial_db
+    restart: always
+    ports:
+      - "3311:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: financialdb
+      MYSQL_USER: financial_user
+      MYSQL_PASSWORD: financial_pwd
+    volumes:
+      - financial_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  support-db:
+    image: mysql:8
+    container_name: mtogo_support_db
+    restart: always
+    ports:
+      - "3312:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: supportdb
+      MYSQL_USER: support_user
+      MYSQL_PASSWORD: support_pwd
+    volumes:
+      - support_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  restaurant-db:
+    image: mysql:8
+    container_name: mtogo_restaurant_db
+    restart: always
+    ports:
+      - "3313:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: restaurantdb
+      MYSQL_USER: restaurant_user
+      MYSQL_PASSWORD: restaurant_pwd
+    volumes:
+      - restaurant_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  notification-db:
+    image: mysql:8
+    container_name: mtogo_notification_db
+    restart: always
+    ports:
+      - "3314:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: notificationdb
+      MYSQL_USER: notification_user
+      MYSQL_PASSWORD: notification_pwd
+    volumes:
+      - notification_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  dashboard-db:
+    image: mysql:8
+    container_name: mtogo_dashboard_db
+    restart: always
+    ports:
+      - "3315:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: dashboarddb
+      MYSQL_USER: dashboard_user
+      MYSQL_PASSWORD: dashboard_pwd
+    volumes:
+      - dashboard_data:/var/lib/mysql
+    networks:
+      - mtogo_network
+
+  # ==========================
+  # Microservices
+  # ==========================
+  customer-service:
+    build:
+      context: ./customer-service
+      dockerfile: Dockerfile
+    container_name: mtogo_customer_service
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      customer-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://customer-db:3306/customerdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: customer_user
+      SPRING_DATASOURCE_PASSWORD: customer_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  ordering-service:
+    build:
+      context: ./ordering-service
+      dockerfile: Dockerfile
+    container_name: mtogo_ordering_service
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      ordering-db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://ordering-db:3306/orderingdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ordering_user
+      SPRING_DATASOURCE_PASSWORD: ordering_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  fulfillment-service:
+    build:
+      context: ./fulfillment-service
+      dockerfile: Dockerfile
+    container_name: mtogo_fulfillment_service
+    restart: always
+    ports:
+      - "8082:8082"
+    depends_on:
+      fulfillment-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://fulfillment-db:3306/fulfillmentdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: fulfillment_user
+      SPRING_DATASOURCE_PASSWORD: fulfillment_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  delivery-service:
+    build:
+      context: ./delivery-service
+      dockerfile: Dockerfile
+    container_name: mtogo_delivery_service
+    restart: always
+    ports:
+      - "8083:8083"
+    depends_on:
+      delivery-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://delivery-db:3306/deliverydb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: delivery_user
+      SPRING_DATASOURCE_PASSWORD: delivery_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  feedback-service:
+    build:
+      context: ./feedback-service
+      dockerfile: Dockerfile
+    container_name: mtogo_feedback_service
+    restart: always
+    ports:
+      - "8084:8084"
+    depends_on:
+      feedback-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://feedback-db:3306/feedbackdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: feedback_user
+      SPRING_DATASOURCE_PASSWORD: feedback_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  financial-service:
+    build:
+      context: ./financial-service
+      dockerfile: Dockerfile
+    container_name: mtogo_financial_service
+    restart: always
+    ports:
+      - "8085:8085"
+    depends_on:
+      financial-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://financial-db:3306/financialdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: financial_user
+      SPRING_DATASOURCE_PASSWORD: financial_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  support-service:
+    build:
+      context: ./support-service
+      dockerfile: Dockerfile
+    container_name: mtogo_support_service
+    restart: always
+    ports:
+      - "8086:8086"
+    depends_on:
+      support-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://support-db:3306/supportdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: support_user
+      SPRING_DATASOURCE_PASSWORD: support_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  restaurant-service:
+    build:
+      context: ./restaurant-service
+      dockerfile: Dockerfile
+    container_name: mtogo_restaurant_service
+    restart: always
+    ports:
+      - "8087:8087"
+    depends_on:
+      restaurant-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/restaurantdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: restaurant_user
+      SPRING_DATASOURCE_PASSWORD: restaurant_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  notification-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    container_name: mtogo_notification_service
+    restart: always
+    ports:
+      - "8088:8088"
+    depends_on:
+      notification-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://notification-db:3306/notificationdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: notification_user
+      SPRING_DATASOURCE_PASSWORD: notification_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+  dashboard-service:
+    build:
+      context: ./dashboard-service
+      dockerfile: Dockerfile
+    container_name: mtogo_dashboard_service
+    restart: always
+    ports:
+      - "8089:8089"
+    depends_on:
+      dashboard-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://dashboard-db:3306/dashboarddb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: dashboard_user
+      SPRING_DATASOURCE_PASSWORD: dashboard_pwd
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    networks:
+      - mtogo_network
+
+networks:
+  mtogo_network:
+    driver: bridge
+
+volumes:
+  customer_data:
+  ordering_data:
+  fulfillment_data:
+  delivery_data:
+  feedback_data:
+  financial_data:
+  support_data:
+  restaurant_data:
+  notification_data:
+  dashboard_data:
