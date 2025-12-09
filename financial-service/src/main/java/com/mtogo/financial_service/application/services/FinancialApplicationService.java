@@ -13,11 +13,11 @@ import com.mtogo.financial_service.application.services.helpers.PaymentProviderC
 import com.mtogo.financial_service.domain.model.Commission;
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
+import com.mtogo.financial_service.domain.port.in.ConfirmPaymentProvider;
 import com.mtogo.financial_service.domain.port.in.CreatePaymentCommand;
 import com.mtogo.financial_service.domain.port.in.CreatePaymentUseCase;
 import com.mtogo.financial_service.domain.port.in.GetCommissionsUseCase;
 import com.mtogo.financial_service.domain.port.in.GetPaymentUseCase;
-import com.mtogo.financial_service.domain.port.in.PaymentProvider;
 import com.mtogo.financial_service.domain.port.in.PaymentStatusUseCase;
 import com.mtogo.financial_service.domain.port.out.CommissionEventPublisherPort;
 import com.mtogo.financial_service.domain.port.out.CommissionRepositoryPort;
@@ -60,7 +60,8 @@ public class FinancialApplicationService implements
                 "" 
         );
 
-        PaymentProvider provider = new PaymentProviderCalculator();
+        ConfirmPaymentProvider provider = new PaymentProviderCalculator();
+
         provider.processPayment(payment); 
 
         Payment savedPayment = paymentRepositoryPort.save(payment);
@@ -74,7 +75,9 @@ public class FinancialApplicationService implements
             throw new PaymentNotCreatedException(command.orderId);
         }
 
-        eventPublisherPayment.publish(PaymentEvent.created(savedPayment));
+        if (savedPayment.getStatus() == PaymentStatus.COMPLETED) {
+            eventPublisherPayment.publish(PaymentEvent.created(savedPayment));
+        }
 
         return savedPayment;
     }

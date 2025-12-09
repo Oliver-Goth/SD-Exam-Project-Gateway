@@ -1,12 +1,12 @@
 package com.mtogo.financial_service.application.services.helpers;
 
-import com.mtogo.financial_service.domain.model.Payment;
-import com.mtogo.financial_service.domain.model.PaymentStatus;
-import com.mtogo.financial_service.domain.port.in.PaymentProvider;
-
 import java.util.Random;
 
-public class PaymentProviderCalculator implements PaymentProvider {
+import com.mtogo.financial_service.domain.model.Payment;
+import com.mtogo.financial_service.domain.model.PaymentStatus;
+import com.mtogo.financial_service.domain.port.in.ConfirmPaymentProvider;
+
+public class PaymentProviderCalculator implements ConfirmPaymentProvider {
 
     private final Random random = new Random();
 

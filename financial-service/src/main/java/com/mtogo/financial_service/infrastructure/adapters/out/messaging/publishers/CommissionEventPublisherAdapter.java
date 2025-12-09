@@ -1,3 +1,4 @@
+
 package com.mtogo.financial_service.infrastructure.adapters.out.messaging.publishers;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -26,4 +27,4 @@ public class CommissionEventPublisherAdapter implements CommissionEventPublisher
 
         System.out.println("Commission event published: " + event);
     }
-}
+} 

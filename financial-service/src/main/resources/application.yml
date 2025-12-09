@@ -17,5 +17,5 @@ spring:
   rabbitmq:
     host: localhost       
     port: 5672
-    username: admin       # default
-    password: secret123       # default
+    username: admin       
+    password: secret123      

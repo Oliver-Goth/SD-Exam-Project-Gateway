@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 import com.mtogo.financial_service.domain.model.Payment;
 
-public class PaymentEvent implements Serializable {
+public class PaymentEvent implements Serializable { // THIS SHOULD MAYBE NOT BE SERIALIZABLE (NOT GOOD FOR SECURITY)?
 
     final private Long paymentId;
     final private Long orderId;
