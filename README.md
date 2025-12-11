@@ -1,0 +1,1 @@
+Docs: [Architecture overview](Instructors.md) · [How to run](#4-build-and-run-everything-with-docker-compose)

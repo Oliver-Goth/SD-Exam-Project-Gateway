@@ -1,0 +1,286 @@
+version: "3.9"
+
+networks:
+  mtogo_net:
+    driver: bridge
+
+services:
+
+  # ---------------- RabbitMQ ----------------
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: mtogo_rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-admin}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-secret123}
+    networks:
+      - mtogo_net
+
+  # ---------------- Databases ----------------
+  customer-db:
+    image: mysql:8
+    container_name: mtogo_customer_db
+    restart: always
+    env_file:
+      - ./customer-service/.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CUSTOMER_DB_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${CUSTOMER_DB_NAME:-customerdb}
+      MYSQL_USER: ${CUSTOMER_DB_USER:-customer_user}
+      MYSQL_PASSWORD: ${CUSTOMER_DB_PASSWORD:-customer_pwd}
+    volumes:
+      - customer_data:/var/lib/mysql
+    networks:
+      - mtogo_net
+
+  ordering-db:
+    image: mysql:8
+    container_name: mtogo_ordering_db
+    restart: always
+    env_file:
+      - ./ordering-service/.env.ordering
+    environment:
+      MYSQL_ROOT_PASSWORD: ${ORDERING_DB_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${ORDERING_DB_NAME:-orderingdb}
+      MYSQL_USER: ${ORDERING_DB_USER:-ordering_user}
+      MYSQL_PASSWORD: ${ORDERING_DB_PASSWORD:-ordering_pwd}
+    volumes:
+      - ordering_data:/var/lib/mysql
+    networks:
+      - mtogo_net
+
+  fulfillment-db:
+    image: mysql:8.0
+    container_name: mtogo_fulfillment_db
+    restart: always
+    env_file:
+      - ./fulfillment-service/.env.fulfillment
+    environment:
+      MYSQL_ROOT_PASSWORD: ${FULFILLMENT_DB_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${FULFILLMENT_DB_NAME:-fulfillmentdb}
+      MYSQL_USER: ${FULFILLMENT_DB_USER:-fulfillment_user}
+      MYSQL_PASSWORD: ${FULFILLMENT_DB_PASSWORD:-fulfillment_pwd}
+    volumes:
+      - fulfillment_data:/var/lib/mysql
+    networks:
+      - mtogo_net
+
+  delivery-db:
+    image: mysql:8
+    container_name: mtogo_delivery_db
+    restart: always
+    env_file:
+      - ./delivery-service/.env.delivery
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DELIVERY_DB_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${DELIVERY_DB_NAME:-deliverydb}
+      MYSQL_USER: ${DELIVERY_DB_USER:-delivery_user}
+      MYSQL_PASSWORD: ${DELIVERY_DB_PASSWORD:-delivery_pwd}
+    volumes:
+      - delivery_data:/var/lib/mysql
+    networks:
+      - mtogo_net
+
+  financial-db:
+    image: postgres:15
+    container_name: mtogo_financial_db
+    restart: always
+    env_file:
+      - ./financial-service/.env
+    environment:
+      POSTGRES_DB: ${FINANCIAL_DB_NAME:-financialdb}
+      POSTGRES_USER: ${FINANCIAL_DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${FINANCIAL_DB_PASSWORD:-secret}
+    volumes:
+      - financial_data:/var/lib/postgresql/data
+    networks:
+      - mtogo_net
+
+  restaurant-db:
+    image: mysql:8
+    container_name: mtogo_restaurant_db
+    restart: always
+    env_file:
+      - ./restaurant-service/.env.restaurant
+    environment:
+      MYSQL_ROOT_PASSWORD: ${RESTAURANT_DB_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${RESTAURANT_DB_NAME:-restaurantdb}
+      MYSQL_USER: ${RESTAURANT_DB_USER:-restaurant_user}
+      MYSQL_PASSWORD: ${RESTAURANT_DB_PASSWORD:-restaurant_pwd}
+    volumes:
+      - restaurant_data:/var/lib/mysql
+    networks:
+      - mtogo_net
+
+  # ---------------- Microservices ----------------
+  customer-service:
+    build:
+      context: ./customer-service
+      dockerfile: Dockerfile
+    container_name: mtogo_customer_service
+    restart: always
+    depends_on:
+      - customer-db
+      - rabbitmq
+    env_file:
+      - ./customer-service/.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://customer-db:3306/${CUSTOMER_DB_NAME:-customerdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${CUSTOMER_DB_USER:-customer_user}
+      SPRING_DATASOURCE_PASSWORD: ${CUSTOMER_DB_PASSWORD:-customer_pwd}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8081:8080"
+    networks:
+      - mtogo_net
+
+  ordering-service:
+    build:
+      context: ./ordering-service
+      dockerfile: Dockerfile
+    container_name: mtogo_ordering_service
+    restart: always
+    depends_on:
+      - ordering-db
+      - rabbitmq
+    env_file:
+      - ./ordering-service/.env.ordering
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://ordering-db:3306/${ORDERING_DB_NAME:-orderingdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${ORDERING_DB_USER:-ordering_user}
+      SPRING_DATASOURCE_PASSWORD: ${ORDERING_DB_PASSWORD:-ordering_pwd}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8082:8080"
+    networks:
+      - mtogo_net
+
+  fulfillment-service:
+    build:
+      context: ./fulfillment-service
+      dockerfile: Dockerfile
+    container_name: mtogo_fulfillment_service
+    restart: always
+    depends_on:
+      - fulfillment-db
+      - rabbitmq
+    env_file:
+      - ./fulfillment-service/.env.fulfillment
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://fulfillment-db:3306/${FULFILLMENT_DB_NAME:-fulfillmentdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${FULFILLMENT_DB_USER:-fulfillment_user}
+      SPRING_DATASOURCE_PASSWORD: ${FULFILLMENT_DB_PASSWORD:-fulfillment_pwd}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8083:8083"
+    networks:
+      - mtogo_net
+
+  delivery-service:
+    build:
+      context: ./delivery-service
+      dockerfile: Dockerfile
+    container_name: mtogo_delivery_service
+    restart: always
+    depends_on:
+      - delivery-db
+      - rabbitmq
+    env_file:
+      - ./delivery-service/.env.delivery
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://delivery-db:3306/${DELIVERY_DB_NAME:-deliverydb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${DELIVERY_DB_USER:-delivery_user}
+      SPRING_DATASOURCE_PASSWORD: ${DELIVERY_DB_PASSWORD:-delivery_pwd}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8084:8080"
+    networks:
+      - mtogo_net
+
+  financial-service:
+    build:
+      context: ./financial-service
+      dockerfile: Dockerfile
+    container_name: mtogo_financial_service
+    restart: always
+    depends_on:
+      - financial-db
+      - rabbitmq
+    env_file:
+      - ./financial-service/.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://financial-db:5432/${FINANCIAL_DB_NAME:-financialdb}
+      SPRING_DATASOURCE_USERNAME: ${FINANCIAL_DB_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${FINANCIAL_DB_PASSWORD:-secret}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8085:8080"
+    networks:
+      - mtogo_net
+
+  restaurant-service:
+    build:
+      context: ./restaurant-service
+      dockerfile: Dockerfile
+    container_name: mtogo_restaurant_service
+    restart: always
+    depends_on:
+      - restaurant-db
+      - rabbitmq
+    env_file:
+      - ./restaurant-service/.env.restaurant
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/${RESTAURANT_DB_NAME:-restaurantdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${RESTAURANT_DB_USER:-restaurant_user}
+      SPRING_DATASOURCE_PASSWORD: ${RESTAURANT_DB_PASSWORD:-restaurant_pwd}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    ports:
+      - "8086:8087"
+    networks:
+      - mtogo_net
+
+  
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: mtogo_gateway
+    restart: always
+    depends_on:
+      - ordering-service
+      - restaurant-service
+      - customer-service    
+    ports:
+      - "9000:9000"
+    networks:
+      - mtogo_net
+
+volumes:
+  customer_data:
+  ordering_data:
+  fulfillment_data:
+  delivery_data:
+  financial_data:
+  restaurant_data:

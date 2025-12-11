@@ -1,0 +1,29 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: restaurant-service
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://restaurant-db:3306/restaurantdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${SPRING_DATASOURCE_USERNAME:restaurant_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:restaurant_pwd}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      initializationFailTimeout: 60000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:rabbitmq}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:admin}
+    password: ${RABBITMQ_PASSWORD:secret123}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/index.html

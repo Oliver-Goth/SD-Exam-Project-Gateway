@@ -1,0 +1,75 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: mtogo-api-gateway
+
+  cloud:
+    gateway:
+      routes:
+
+        - id: restaurants
+          uri: http://restaurant-service:8087
+          predicates:
+            - Path=/api/restaurants/**
+
+        - id: orders
+          uri: http://ordering-service:8080
+          predicates:
+            - Path=/orders/**
+
+        - id: customers-auth
+          uri: http://customer-service:8080
+          predicates:
+            - Path=/api/auth/**
+
+        - id: customers
+          uri: http://customer-service:8080
+          predicates:
+            - Path=/api/customers/**
+          filters:
+            - StripPrefix=1
+
+        - id: swagger-ui
+          uri: http://ordering-service:8080
+          predicates:
+            - Path=/swagger-ui/**
+
+        - id: swagger-index
+          uri: http://ordering-service:8080
+          predicates:
+            - Path=/swagger-ui.html
+
+        - id: openapi
+          uri: http://ordering-service:8080
+          predicates:
+            - Path=/v3/api-docs/**
+
+        # Customer Swagger via gateway
+        - id: customer-swagger-ui
+          uri: http://customer-service:8080
+          predicates:
+            - Path=/customer/swagger-ui/**
+        - id: customer-swagger-index
+          uri: http://customer-service:8080
+          predicates:
+            - Path=/customer/swagger-ui.html
+        - id: customer-openapi
+          uri: http://customer-service:8080
+          predicates:
+            - Path=/customer/v3/api-docs/**
+
+        # Restaurant Swagger via gateway
+        - id: restaurant-swagger-ui
+          uri: http://restaurant-service:8087
+          predicates:
+            - Path=/restaurant/swagger-ui/**
+        - id: restaurant-swagger-index
+          uri: http://restaurant-service:8087
+          predicates:
+            - Path=/restaurant/swagger-ui.html
+        - id: restaurant-openapi
+          uri: http://restaurant-service:8087
+          predicates:
+            - Path=/restaurant/v3/api-docs/**

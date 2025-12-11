@@ -1,0 +1,69 @@
+services:
+  # ==========================
+  # RabbitMQ Message Broker
+  # ==========================
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: ordering_rabbitmq
+    ports:
+      - "5673:5672"     # different port so it doesn't conflict with customer-service
+      - "15673:15672"   # management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    networks:
+      - resturant_net
+
+  # ==========================
+  # Databases
+  # ==========================
+
+  restaurant-db:
+    image: mysql:8
+    container_name: mtogo_restaurant_db
+    restart: always
+    env_file:
+      - .env.restaurant
+    environment:
+      MYSQL_ROOT_PASSWORD: ${RESTAURANT_DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${RESTAURANT_DB_NAME}
+      MYSQL_USER: ${RESTAURANT_DB_USER}
+      MYSQL_PASSWORD: ${RESTAURANT_DB_PASSWORD}
+    volumes:
+      - restaurant_data:/var/lib/mysql
+    networks:
+      - resturant_net
+
+  # ==========================
+  # Microservices
+  # ==========================
+
+  restaurant-service:
+    build:
+      context: ./restaurant-service
+      dockerfile: Dockerfile
+    container_name: mtogo_restaurant_service
+    restart: always
+    ports:
+      - "8087:8087"
+    depends_on:
+      restaurant-db:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/${RESTAURANT_DB_NAME}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: ${RESTAURANT_DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${RESTAURANT_DB_PASSWORD}
+      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
+      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+    networks:
+      - resturant_net
+
+networks:
+  resturant_net:
+
+volumes:
+  restaurant_data:
