@@ -1,0 +1,139 @@
+name: CD - Build and Push Docker Images
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      services:
+        description: 'Services to build (comma-separated: customer,ordering,delivery,fulfillment,financial,restaurant,gateway or "all")'
+        required: true
+        default: "all"
+
+env:
+  REGISTRY: ghcr.io
+  # Change this to your Docker Hub username if using Docker Hub
+  # REGISTRY: docker.io
+
+jobs:
+  # Build and push Docker images for each microservice
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        service:
+          - name: customer-service
+            context: ./customer-service
+            dockerfile: ./customer-service/Dockerfile
+            java-version: "21"
+          - name: ordering-service
+            context: ./ordering-service
+            dockerfile: ./ordering-service/Dockerfile
+            java-version: "17"
+          - name: delivery-service
+            context: ./delivery-service
+            dockerfile: ./delivery-service/Dockerfile
+            java-version: "17"
+          - name: fulfillment-service
+            context: ./fulfillment-service
+            dockerfile: ./fulfillment-service/Dockerfile
+            java-version: "17"
+          - name: financial-service
+            context: ./financial-service
+            dockerfile: ./financial-service/Dockerfile
+            java-version: "17"
+          - name: restaurant-service
+            context: ./restaurant-service
+            dockerfile: ./restaurant-service/Dockerfile
+            java-version: "17"
+          - name: gateway
+            context: ./gateway
+            dockerfile: ./gateway/Dockerfile
+            java-version: "17"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Login to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Uncomment below if using Docker Hub instead
+      # - name: Log in to Docker Hub
+      #   uses: docker/login-action@v3
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Extract metadata (tags, labels) for Docker
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/mtogo-${{ matrix.service.name }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      # Build and push Docker image
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ${{ matrix.service.context }}
+          file: ${{ matrix.service.dockerfile }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+            VCS_REF=${{ github.sha }}
+            VERSION=${{ github.ref_name }}
+
+      - name: Image digest
+        run: echo "Image pushed with digest ${{ steps.build.outputs.digest }}"
+
+  # Create a summary of all built images
+  build-summary:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Summary
+        run: |
+          echo "## Docker Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Images built and pushed:" >> $GITHUB_STEP_SUMMARY
+          echo "- customer-service" >> $GITHUB_STEP_SUMMARY
+          echo "- ordering-service" >> $GITHUB_STEP_SUMMARY
+          echo "- delivery-service" >> $GITHUB_STEP_SUMMARY
+          echo "- fulfillment-service" >> $GITHUB_STEP_SUMMARY
+          echo "- financial-service" >> $GITHUB_STEP_SUMMARY
+          echo "- restaurant-service" >> $GITHUB_STEP_SUMMARY
+          echo "- gateway" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Registry:** ${{ env.REGISTRY }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+
+# test
