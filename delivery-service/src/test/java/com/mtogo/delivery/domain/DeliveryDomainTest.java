@@ -1,4 +1,4 @@
-package com.mtogo.delivery_service.domain;
+package com.mtogo.delivery.domain;
 
 
 import com.mtogo.delivery.domain.model.DeliveryStatus;
