@@ -1,4 +1,4 @@
-package com.mtogo.delivery_service;
+package com.mtogo.delivery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
