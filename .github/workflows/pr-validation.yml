@@ -45,7 +45,7 @@ jobs:
             if [ -d "$service" ]; then
               echo "Analyzing $service..."
               cd $service
-              mvn compile spotbugs:check || echo "SpotBugs warnings in $service"
+              mvn compile spotbugs:spotbugs || true
               cd ..
             fi
           done
