@@ -17,4 +17,8 @@ public class Menu {
     public void archive() {
         this.status = MenuStatus.ARCHIVED;
     }
+
+    public MenuStatus getStatus() {
+        return status;
+    }
 }
