@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Exam-logging
+        working-directory: ./Exam-Logging
 
     steps:
       - name: Checkout code
@@ -65,8 +65,7 @@ jobs:
 
   # Build and test Customer Service
   build-customer-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.customer == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -104,8 +103,7 @@ jobs:
 
   # Build and test Ordering Service
   build-ordering-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.ordering == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -140,8 +138,7 @@ jobs:
 
   # Build and test Delivery Service
   build-delivery-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.delivery == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -176,8 +173,7 @@ jobs:
 
   # Build and test Fulfillment Service
   build-fulfillment-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.fulfillment == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -212,8 +208,7 @@ jobs:
 
   # Build and test Financial Service
   build-financial-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.financial == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -248,8 +243,7 @@ jobs:
 
   # Build and test Restaurant Service
   build-restaurant-service:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.restaurant == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -284,8 +278,7 @@ jobs:
 
   # Build and test Gateway
   build-gateway:
-    needs: [detect-changes, build-exam-logging]
-    if: needs.detect-changes.outputs.gateway == 'true' || github.event_name == 'push'
+    needs: build-exam-logging
     runs-on: ubuntu-latest
     defaults:
       run:
