@@ -21,7 +21,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DeliveryRepositoryMySQLContainerTest {
 
     @Container
-    static MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8");
+    static MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0")
+            .withCommand("--default-authentication-plugin=mysql_native_password");
 
     @DynamicPropertySource
     static void overrideProps(DynamicPropertyRegistry registry) {
