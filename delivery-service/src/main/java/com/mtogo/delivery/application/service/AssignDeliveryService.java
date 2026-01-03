@@ -22,6 +22,10 @@ public class AssignDeliveryService {
                         "DeliveryTask not found: " + deliveryTaskId
                 ));
 
+        if (agentId == null){
+            return task;
+        }
+
         task.assignAgent(agentId);
 
         DeliveryTask updatedTask = deliveryTaskRepository.save(task);
