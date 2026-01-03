@@ -65,7 +65,8 @@ jobs:
 
   # Build and test Customer Service
   build-customer-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.customer == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -103,7 +104,8 @@ jobs:
 
   # Build and test Ordering Service
   build-ordering-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.ordering == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -138,7 +140,8 @@ jobs:
 
   # Build and test Delivery Service
   build-delivery-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.delivery == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -174,7 +177,8 @@ jobs:
 
   # Build and test Fulfillment Service
   build-fulfillment-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.fulfillment == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -209,7 +213,8 @@ jobs:
 
   # Build and test Financial Service
   build-financial-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.financial == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -244,7 +249,8 @@ jobs:
 
   # Build and test Restaurant Service
   build-restaurant-service:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.restaurant == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -279,7 +285,8 @@ jobs:
 
   # Build and test Gateway
   build-gateway:
-    needs: build-exam-logging
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.gateway == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
