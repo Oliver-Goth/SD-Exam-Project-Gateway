@@ -1,0 +1,12 @@
+2025-11-24 17:03:14 INFO  [e24f690c-87a1-4ab8-95be-8cdb1170b060] [u123] com.example.App - test get completed in 121 ms
+2025-11-24 17:03:14 INFO  [e24f690c-87a1-4ab8-95be-8cdb1170b060] [u123] com.example.App - test get
+2025-11-24 17:03:14 INFO  [e24f690c-87a1-4ab8-95be-8cdb1170b060] [u123] com.example.RequestLogger - Request handled method=GET path=/reservations status=201 elapsed_ms=201
+2025-11-24 17:03:14 INFO  [085c92be-8b0c-4917-9193-235b1982baf0] [u123] com.example.App - test post completed in 121 ms
+2025-11-24 17:03:14 INFO  [085c92be-8b0c-4917-9193-235b1982baf0] [u123] com.example.App - test post
+2025-11-24 17:03:14 INFO  [085c92be-8b0c-4917-9193-235b1982baf0] [u123] com.example.RequestLogger - Request handled method=POST path=/reservations status=201 elapsed_ms=121
+2025-11-24 17:03:15 INFO  [746f5d51-ef58-4ef8-8928-d316207572ba] [u123] com.example.App - test put completed in 121 ms
+2025-11-24 17:03:15 INFO  [746f5d51-ef58-4ef8-8928-d316207572ba] [u123] com.example.App - test put
+2025-11-24 17:03:15 INFO  [746f5d51-ef58-4ef8-8928-d316207572ba] [u123] com.example.RequestLogger - Request handled method=PUT path=/reservations status=201 elapsed_ms=122
+2025-11-24 17:03:15 INFO  [03361894-aa0a-48e8-a248-975a13e766e8] [u123] com.example.App - test delete completed in 121 ms
+2025-11-24 17:03:15 INFO  [03361894-aa0a-48e8-a248-975a13e766e8] [u123] com.example.App - test delete
+2025-11-24 17:03:15 INFO  [03361894-aa0a-48e8-a248-975a13e766e8] [u123] com.example.RequestLogger - Request handled method=DELETE path=/reservations status=201 elapsed_ms=122
