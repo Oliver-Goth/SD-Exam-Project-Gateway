@@ -1,6 +1,7 @@
 FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 COPY . .
+RUN dos2unix mvnw || sed -i 's/\r$//' mvnw || true
 RUN chmod +x mvnw
 RUN ./mvnw -q -DskipTests package
 
