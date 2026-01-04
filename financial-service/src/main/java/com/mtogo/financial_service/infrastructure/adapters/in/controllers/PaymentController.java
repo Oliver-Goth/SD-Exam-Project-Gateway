@@ -1,5 +1,7 @@
 package com.mtogo.financial_service.infrastructure.adapters.in.controllers;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,13 +13,12 @@ import com.mtogo.financial_service.domain.model.Commission;
 import com.mtogo.financial_service.domain.model.Payment;    
 import com.mtogo.financial_service.domain.port.in.CreatePaymentCommand;
 import com.mtogo.financial_service.domain.port.in.CreatePaymentUseCase;
+import com.mtogo.financial_service.domain.port.in.GetCommissionsUseCase;
 import com.mtogo.financial_service.domain.port.in.GetPaymentUseCase;
 import com.mtogo.financial_service.domain.port.in.PaymentStatusUseCase;
+import com.mtogo.financial_service.infrastructure.adapters.in.dto.CommissionResponseDTO;
 import com.mtogo.financial_service.infrastructure.adapters.in.dto.CreatePaymentDTO;
 import com.mtogo.financial_service.infrastructure.adapters.in.dto.PaymentResponseDTO;
-import com.mtogo.financial_service.domain.port.in.GetCommissionsUseCase;
-import com.mtogo.financial_service.infrastructure.adapters.in.dto.CommissionResponseDTO;
-import java.util.List;
 
 @RestController
 @RequestMapping("/payments")
@@ -57,8 +58,8 @@ public class PaymentController {
         return new PaymentResponseDTO(payment);
     }
     
-    @GetMapping("/{orderId}/status")
-    public PaymentResponseDTO getStatusPayment(@PathVariable Long paymentId) {
+    @GetMapping("/{paymentId}/status")
+    public PaymentResponseDTO getStatusPayment(@PathVariable("paymentId") Long paymentId) {
         Payment payment = paymentStatusUseCase.getPaymentStatus(paymentId);
         return new PaymentResponseDTO(payment);
     }
