@@ -151,3 +151,45 @@ The tests include:
 - Values just above the boundary
 
 This ensures correct behavior when commission calculation rules changes. 
+
+
+## Design Patterns used in MTOGO Application
+
+#### Adapter Design Pattern
+Type: Structural Pattern
+Purpose: To allow two incompatible components to work together by acting as a translator between them.
+
+The MTOGO Legacy Application uses a Spring Boot backend connected to a React frontend.
+Inside the backend, the system uses Entity classes such as `Order`, `Customer`, Restaurant`, etc. to represent database tables.
+The entities contain database relationships and are not exposed directly through the REST API.
+To solve this problem, the Adapter Design Pattern was chosen because it allows the backend to convert (adapt) internal Entity objects into DTOs (Data Transfer Objects), which are safe, clean representations of the data used by the frontend.
+
+![alt text](images/patterns_1.png)
+
+![alt text](images/patterns_2.png)
+
+In the controller, this adapter is used to return DTOs to the frontend:
+Benefits of Using the Adapter Pattern
+* Loose Coupling: The API layer is independent of the database entity structure.
+* Security: Sensitive or internal fields (like passwords or IDs) are hidden.                        	
+* Maintainability: Entities can change internally without breaking the API.                                      	
+* Reusability: The adapter can be reused across multiple services and controllers.                    	
+* Clarity: DTOs give a clean, well-defined data structure for React frontend consumption.
+
+Why this pattern fits MTOGO Application:
+The project aims to modernize a legacy monolithic system, not rewrite it entirely.
+The Adapter Pattern allowed gradual modernization by decoupling internal models from external APIs.
+It keeps the backend structure stable while letting the frontend evolve freely.
+It prepares the system for a future microservice migration, where adapters (mappers) will remain as boundaries between services.
+
+#### The Singleton Pattern
+
+The Singleton Pattern is applied automatically by the Spring Boot framework.
+All @Service, @Repository, and @Controller classes  including the adapters are managed as singleton beans, ensuring only one instance of each exists across the application.
+This pattern improves performance and consistency without requiring manual implementation.
+
+![alt text](images/patterns_3.png)
+
+![alt text](images/patterns_4.png)
+
+![alt text](images/patterns_5.png)
