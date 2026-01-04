@@ -1,18 +1,6 @@
 # Software Quality Exam - MTOGO Application 
 
-MTOGO Software Solutions develops, tests, and maintains all software entirely in-house to ensure full control over quality, performance, security, and maintainability.
-Documents containing the Test Strategy, Test Design, and two separate Test Plans for both the Legacy Monolithic System and the new Microservice Platform of the MTOGO application can be found in this repository.
-Both systems share the same business goals, but they are different in architecture and testing focus:
-
-*	Legacy Monolithic System:
- Legacy system: is tested to find weaknesses, improve stability, and prepare for migration to the new microservice system.
-*	Microservice Platform:
- Designed for scalability, automation, and continuous testing through CI/CD pipelines.
-
-This document demonstrates how a single in-house Software Quality Assurance (SQA) framework can be applied to different architectures while maintaining consistent quality standards.
-Regular checkpoints, automated tests, and review meetings ensure that changes are verified before release and that no new issues are introduced.
-By using multiple testing strategies and tracking metrics like coverage, defect density, and response time, the team maintains transparency and control over software quality.
-This structured SQA process helps reduce long-term maintenance costs, increase reliability, and support continuous improvement for both the legacy and microservice systems.
+Evidence of different tests made in both the Legacy System and the new Microservice solutions can be found in this README file as well as our choice of code patterns and examples of how we have used this. 
 
 ## Legacy System 
 
@@ -22,6 +10,7 @@ This structured SQA process helps reduce long-term maintenance costs, increase r
 
 The full automated test suite was executed using the mvn test command.
 This command ran all JUnit 5 tests, including Mockito-based unit tests, MockMvc controller tests, and H2-backed integration tests, as part of the Maven test lifecycle.
+
 A total of 48 tests were executed, with zero failures, zero errors, and zero skipped tests, confirming that all implemented unit, controller, and integration tests passed successfully.
 
 The Spring test profile is a dedicated configuration used only during testing.
@@ -86,40 +75,35 @@ A small refactoring was performed in the customer service logic to improve error
 
 ### Financial Microservice
 
-The Financial Microservice is not yet fully tested like customer and order microservice. 
+To run only the tests related to the Financial Service, navigate to the `financial-service` directory and execute the following command:
 
-The JaCoCo report:
+* mvn test
 
-![alt text](images/financial_2.png)
+The Financial Microservice is not yet fully tested but a substanstial amount of the functionality and business logic has been tested. 
+
+The JaCoCo report shows:
+
+![alt text](images/financial_test_jajaco.png)
 
 Most of the testing has been to test the commissions model with Equivalence Partitioning and Boundary Value Analysis (explanation will follow) because a lot of the business logic for this Microservice has been there. 
 
-In total 30 tests has passed: 
+In total 32 tests has passed: 
 
-![alt text](images/financial_1.png)
-
+![alt text](images/TEST.png)
 
 #### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
 
-The `CommissionCalculatorTest` class applies Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) to verify that commission and fee calculations in the Financial Microservice behave correctly under both normal and edge-case conditions.
-
-#### Testing Approach
-- **Testing Level:** Unit Testing
-- **Techniques Applied:**
-  - Equivalence Partitioning (EP)
-  - Boundary Value Analysis (BVA)
-- **Framework:** JUnit 5
-- **Scope:** Commission calculation logic only, with no external dependencies
+The `CommissionCalculatorTest` class applies Equivalence Partitioning and Boundary Value Analysis  to verify that commission and fee calculations in the Financial Microservice behave correctly under normal circumstances and edge case circumstances.
 
 #### Commission Model Explanation
 The commission calculation used by the MTOGO system is based on an incremental fee structure rather than a flat percentage.
 
-The total amount for each order is divided into defined ranges, and within each range, is charged a different commission rate:
+The total amount for each order is divided into defined ranges, and within each range,a different commission rate is charged:
 
-- The first 100 of the order amount is charged at 6%
-- The portion from 101 to 500 is charged at 5%
-- The portion from 501 to 1000 is charged at 4%
-- Any amount above 1000 is charged at 3%
+- The first 100 of the order amount is 6% that goes to MTOGO
+- The portion from 101 to 500 is 5% that goes to MTOGO
+- The portion from 501 to 1000 is 4% that goes to MTOGO
+- Any amount above 1000 is 3% that goes to MTOGO
 
 #### Example: Order Amount = 700
 - 6% is applied to the first 100
@@ -151,7 +135,6 @@ The tests include:
 - Values just above the boundary
 
 This ensures correct behavior when commission calculation rules changes. 
-
 
 ## Design Patterns used in MTOGO Application
 
