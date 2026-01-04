@@ -4,9 +4,9 @@ MTOGO Software Solutions develops, tests, and maintains all software entirely in
 Documents containing the Test Strategy, Test Design, and two separate Test Plans for both the Legacy Monolithic System and the new Microservice Platform of the MTOGO application can be found in this repository.
 Both systems share the same business goals, but they are different in architecture and testing focus:
 
-•	Legacy Monolithic System:
+*	Legacy Monolithic System:
  Legacy system: is tested to find weaknesses, improve stability, and prepare for migration to the new microservice system.
-•	Microservice Platform:
+*	Microservice Platform:
  Designed for scalability, automation, and continuous testing through CI/CD pipelines.
 
 This document demonstrates how a single in-house Software Quality Assurance (SQA) framework can be applied to different architectures while maintaining consistent quality standards.
