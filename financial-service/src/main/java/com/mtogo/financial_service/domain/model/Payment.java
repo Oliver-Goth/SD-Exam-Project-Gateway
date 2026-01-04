@@ -57,6 +57,13 @@ public class Payment {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public Payment(Long orderId, Double amount) {
+        this.orderId = orderId;
+        this.amount = amount;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
     public Long getId() {
         return id;
     }

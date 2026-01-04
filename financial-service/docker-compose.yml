@@ -47,13 +47,8 @@ services:
     env_file:
       - .env
     environment:
-<<<<<<< Updated upstream
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: secret123
-=======
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
->>>>>>> Stashed changes
     restart: unless-stopped
 
 volumes:

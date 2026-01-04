@@ -39,4 +39,4 @@ public class CommissionEvent {
                 ", commissions=" + commissions +
                 '}';
     }
-}
+} 

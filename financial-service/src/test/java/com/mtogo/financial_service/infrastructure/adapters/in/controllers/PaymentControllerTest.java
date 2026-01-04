@@ -26,13 +26,13 @@ import com.mtogo.financial_service.domain.port.in.GetPaymentUseCase;
 import com.mtogo.financial_service.domain.port.in.PaymentStatusUseCase;
 
 @WebMvcTest(controllers = PaymentController.class)
-@AutoConfigureMockMvc(addFilters = false) // disable security
+@AutoConfigureMockMvc(addFilters = false) 
 class PaymentControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    // Depricated (maybe find a new way to test?)
+    // All use cases are mocked
     @MockBean
     private CreatePaymentUseCase createPaymentUseCase;
 
@@ -46,14 +46,14 @@ class PaymentControllerTest {
     private GetCommissionsUseCase getCommissionsUseCase;
 
     @Test
-    void createPayment_returnsCreatedPayment() throws Exception {
+    void createPaymentTest() throws Exception {
 
         Payment payment = new Payment(
                 1L,
                 250.0,
                 PaymentStatus.COMPLETED,
-                "TestProvider",
-                "test_123"
+                "TEST",
+                "TEST_ID"
         );
         payment.setId(10L);
 
@@ -65,9 +65,9 @@ class PaymentControllerTest {
         {
                   "orderId": 1,
                   "amount": 250.0,
-                  "currency": "EUR",
-                  "paymentProvider": "TestProvider",
-                  "paymentProviderId": "test_123"
+                  "currency": "DKK",
+                  "paymentProvider": "TEST",
+                  "paymentProviderId": "TEST_ID"
                 }
 
                 """
@@ -82,18 +82,18 @@ class PaymentControllerTest {
                 .andExpect(jsonPath("$.orderId").value(1L))
                 .andExpect(jsonPath("$.amount").value(250.0))
                 .andExpect(jsonPath("$.status").value("COMPLETED"))
-                .andExpect(jsonPath("$.paymentProvider").value("TestProvider"));
+                .andExpect(jsonPath("$.paymentProvider").value("TEST"));
     }
 
     @Test
-    void getPayment_returnsPayment() throws Exception {
+    void getPaymentTest() throws Exception {
 
         Payment payment = new Payment(
                 1L,
                 150.0,
                 PaymentStatus.PENDING,
-                "TestProvider",
-                "test_456"
+                "TEST",
+                "TEST"
         );
         payment.setId(20L);
 
@@ -108,14 +108,14 @@ class PaymentControllerTest {
     }
 
     @Test
-    void getPaymentStatus_returnsStatus() throws Exception {
+    void getPaymentStatusFailedTest() throws Exception {
 
         Payment payment = new Payment(
                 1L,
                 99.0,
                 PaymentStatus.FAILED,
-                "TestProvider",
-                "test_789"
+                "TEST",
+                "TEST"
         );
         payment.setId(30L);
 
@@ -129,14 +129,14 @@ class PaymentControllerTest {
     }
 
     @Test
-    void getCommissions_returnsCommissionList() throws Exception {
+    void getCommissionsTest() throws Exception {
 
         Payment payment = new Payment(
                 1L,
                 100.0,
                 PaymentStatus.COMPLETED,
-                "TestProvider",
-                "test_000"
+                "TEST",
+                "TEST"
         );
        
         payment.setId(99L);
@@ -144,18 +144,18 @@ class PaymentControllerTest {
         Commission commission = new Commission(
                 payment,
                 Role.MTOGO,
-                15.0
+                6
         );
 
         List<Commission> commissions = Collections.singletonList(commission);
 
-        when(getCommissionsUseCase.getCommissions(1L))
-                .thenReturn(commissions);
+        when(getCommissionsUseCase.getCommissions(1L)).thenReturn(commissions);
 
         mockMvc.perform(get("/payments/commissions/{paymentId}", 1L))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].paymentId").value(99L))
                 .andExpect(jsonPath("$[0].role").value("MTOGO"))
-                .andExpect(jsonPath("$[0].amount").value(15.0));
+                .andExpect(jsonPath("$[0].amount").value(6));
+                
     }
 }

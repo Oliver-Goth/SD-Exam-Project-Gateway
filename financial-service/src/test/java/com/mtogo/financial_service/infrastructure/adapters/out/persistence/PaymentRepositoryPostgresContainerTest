@@ -1,6 +1,6 @@
 @Testcontainers(disabledWithoutDocker = true)
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // Important: do not replace real DB with in-memory
 class PaymentRepositoryPostgresContainerTest {
 
     @Container
@@ -22,14 +22,16 @@ class PaymentRepositoryPostgresContainerTest {
     private PaymentJpaRepository paymentRepository;
 
     @Test
-    void savePayment_real_database() {
+    void savePaymentTestDB() {
+        
         Payment payment = new Payment(
                 1L,
                 300.0,
                 PaymentStatus.COMPLETED,
-                "TestProvider",
+                "TEST",
                 "TEST12345"
         );
+        
         payment.setCurrency(Currency.DKK);
 
         Payment saved = paymentRepository.save(payment);

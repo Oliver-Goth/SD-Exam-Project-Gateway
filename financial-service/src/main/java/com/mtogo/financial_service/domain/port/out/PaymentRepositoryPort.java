@@ -10,8 +10,6 @@ public interface PaymentRepositoryPort {
 
     Optional<Payment> findByPaymentId(Long id);
 
-    // List<Payment> findAllByRestaurantId(Long restaurantId);
-
     Optional<Payment> getStatus (Long id);
 
 }

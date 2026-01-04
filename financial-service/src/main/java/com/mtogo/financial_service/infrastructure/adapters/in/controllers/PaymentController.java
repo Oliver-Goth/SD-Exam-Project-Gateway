@@ -45,16 +45,14 @@ public class PaymentController {
         command.orderId = dto.orderId;
         command.amount = dto.amount;
         command.currency = dto.currency;
-        command.paymentProvider = dto.paymentProvider;
-        command.paymentProviderId = dto.paymentProviderId;
 
         Payment payment = createPaymentUseCase.createPayment(command);
         return new PaymentResponseDTO(payment);
     }
 
-    @GetMapping("/{orderId}")
-    public PaymentResponseDTO getPayment(@PathVariable Long orderId) {
-        Payment payment = getPaymentUseCase.getPayment(orderId);
+    @GetMapping("/{paymentId}")
+    public PaymentResponseDTO getPayment(@PathVariable Long paymentId) {
+        Payment payment = getPaymentUseCase.getPayment(paymentId);
         return new PaymentResponseDTO(payment);
     }
     

@@ -29,13 +29,10 @@ public class OrderEventConsumer {
             CreatePaymentCommand command = new CreatePaymentCommand();
             command.orderId = event.getOrderId();
             command.amount = event.getTotal().doubleValue();
-            command.currency = Currency.USD; // Default or determine from event
-            command.paymentProvider = "STRIPE"; // Default provider
-            command.paymentProviderId = ""; // Can be left empty initially
-
-            // Create a payment for the received order
+            command.currency = Currency.DKK; // Just DKK for simplicity 
+       
             createPaymentUseCase.createPayment(command);
-            logger.info("Payment created successfully for orderId: " + event.getOrderId());
+            logger.info("Payment created with success for order with orderID " + event.getOrderId());
         } catch (Exception e) {
             logger.error("Error creating payment for orderId: " + event.getOrderId(), e);
             throw new RuntimeException("Failed to create payment", e);

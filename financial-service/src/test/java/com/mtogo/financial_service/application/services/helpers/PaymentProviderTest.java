@@ -8,26 +8,27 @@ import org.junit.jupiter.api.Test;
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
 
-class PaymentProviderCalculatorTest {
+class PaymentProviderTest {
 
     @Test
-    void processPayment_setsRequiredPaymentFields() {
+    void processPaymentTest() {
 
         Payment payment = new Payment();
         payment.setAmount(100.0);
 
-        PaymentProviderCalculator calculator = new PaymentProviderCalculator();
+        PaymentProvider calculator = new PaymentProvider();
 
         calculator.processPayment(payment);
 
         assertNotNull(payment.getStatus());
+        
         assertTrue(
             payment.getStatus() == PaymentStatus.COMPLETED ||
             payment.getStatus() == PaymentStatus.PENDING ||
             payment.getStatus() == PaymentStatus.FAILED
         );
 
-        assertEquals("PayPal", payment.getPaymentProvider());
+        assertEquals("TEST", payment.getPaymentProvider());
         assertNotNull(payment.getPaymentProviderId());
         assertNotNull(payment.getUpdatedAt());
     }
