@@ -1,4 +1,4 @@
-## Software Quality Exam - MTOGO Application 
+# Software Quality Exam - MTOGO Application 
 
 MTOGO Software Solutions develops, tests, and maintains all software entirely in-house to ensure full control over quality, performance, security, and maintainability.
 Documents containing the Test Strategy, Test Design, and two separate Test Plans for both the Legacy Monolithic System and the new Microservice Platform of the MTOGO application can be found in this repository.
@@ -14,15 +14,15 @@ Regular checkpoints, automated tests, and review meetings ensure that changes ar
 By using multiple testing strategies and tracking metrics like coverage, defect density, and response time, the team maintains transparency and control over software quality.
 This structured SQA process helps reduce long-term maintenance costs, increase reliability, and support continuous improvement for both the legacy and microservice systems.
 
+## Legacy System 
 
+## Microservices
 
+### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
 
-## Equivalence Partitioning and Boundary Value Analysis – The Commission Model
-
-### Overview
 The `CommissionCalculatorTest` class applies Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) to verify that commission and fee calculations in the Financial Microservice behave correctly under both normal and edge-case conditions.
 
-### Testing Approach
+#### Testing Approach
 - **Testing Level:** Unit Testing
 - **Techniques Applied:**
   - Equivalence Partitioning (EP)
@@ -30,7 +30,7 @@ The `CommissionCalculatorTest` class applies Equivalence Partitioning (EP) and B
 - **Framework:** JUnit 5
 - **Scope:** Commission calculation logic only, with no external dependencies
 
-### Commission Model Explanation
+#### Commission Model Explanation
 The commission calculation used by the MTOGO system is based on an incremental fee structure rather than a flat percentage.
 
 The total amount for each order is divided into defined ranges, and within each range, is charged a different commission rate:
@@ -45,7 +45,7 @@ The total amount for each order is divided into defined ranges, and within each 
 - 5% is applied to the portion from 101 to 500
 - 4% is applied to the portion from 501 to 700
 
-### Equivalence Partitions (EP)
+#### Equivalence Partitions (EP)
 
 | EP  | Order Amount Range |
 |-----|--------------------|
@@ -56,7 +56,7 @@ The total amount for each order is divided into defined ranges, and within each 
 
 Random values from each partition are tested to ensure correct commission calculations within each range.
 
-### Boundary Value Analysis (BVA)
+#### Boundary Value Analysis (BVA)
 
 | Boundary Case | Order Amount |
 |--------------|--------------|
