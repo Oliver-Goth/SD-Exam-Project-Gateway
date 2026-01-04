@@ -1,6 +1,6 @@
 # Software Quality Exam - MTOGO Application 
 
-Evidence of different tests made in both the Legacy System and the new Microservice solutions can be found in this README file as well as our choice of code patterns and examples of how we have used this. 
+Evidence of different tests made in both the Legacy System and the new Microservice solution, can be found in this README file as well as our choice of code patterns and examples of how we have used this in our code 
 
 ## Legacy System 
 
@@ -8,13 +8,16 @@ Evidence of different tests made in both the Legacy System and the new Microserv
 
 ![alt text](images/1.png)
 
-The full automated test suite was executed using the mvn test command.
+The full automated test suite was executed using the: 
+
+* mvn test command.
+
 This command ran all JUnit 5 tests, including Mockito-based unit tests, MockMvc controller tests, and H2-backed integration tests, as part of the Maven test lifecycle.
 
-A total of 48 tests were executed, with zero failures, zero errors, and zero skipped tests, confirming that all implemented unit, controller, and integration tests passed successfully.
+A total of 48 tests were executed, with zero failures, zero errors, and zero skipped tests, which confirms that all implemented unit, controller, and integration tests passed successfully.
 
-The Spring test profile is a dedicated configuration used only during testing.
-It allows the application to run with test-specific settings, such as an H2 in-memory database, instead of production resources like MySQL.
+The Spring test profile is a configuration used only during testing.
+It allows the application to run with test-specific settings, such as an H2 in-memory database, instead of production ressources like MySQL.
 
 Using the test profile, the following tests were executed:
 * JUnit 5 unit tests for service-layer business logic
@@ -25,19 +28,27 @@ Using the test profile, the following tests were executed:
 ![alt text](images/2.png)
 
 Code Coverage Results (JaCoCo): 
+
 * mvn -Dspring.profiles.active=test clean test
+
 Code Coverage Analysis
 JaCoCo was used to measure test coverage during automated test execution.
-The final coverage report shows 75% instruction coverage and 63% branch coverage in the service layer, exceeding the defined minimum coverage requirement of 65%.
-Coverage analysis focused on business-critical logic in the service layer rather than boilerplate code such as DTOs, configuration classes, and simple mapping logic.
+The final coverage report shows 75% instruction coverage and 63% branch coverage in the service layer, exceeding the defined minimum coverage requirement of 65% in the test strategy and test plan.
+Coverage analysis focused on bcritical business logic in the service layer rather than boilerplate code such as DTOs, configuration classes, and simple mapping logic.
 This approach ensures meaningful coverage that reflects real application risk.
 
 ![alt text](images/3.png)
 
-Static code analysis: mvn pmd:check
+Static code analysis:
+
+* mvn pmd:check
+
 Static code analysis was performed using PMD to identify potential code quality issues such as duplicated code, unused variables, and design violations.
-The analysis was executed via Maven using the commands mvn pmd:check and mvn pmd:pmd.
-The PMD execution completed successfully, and no critical violations were detected.
+The analysis was executed via Maven using the commands: 
+* mvn pmd:check 
+and
+* mvn pmd:pmd.
+The PMD execution completed successfully, and no critical violations were detected here. 
 
 ![alt text](images/4.png)
 
@@ -50,19 +61,22 @@ Each step returned the expected HTTP responses and successfully triggered the ne
 #### Acceptance Testing (Business Flows)
 Acceptance testing validated predefined business scenarios against functional requirements.
 The primary business flow Order -> Payment -> Delivery -> Feedback was executed manually using Swagger UI and Postman.
-The observed results matched the expected business behavior, confirming that core requirements such as order status transitions, payment handling, and feedback constraints were correctly implemented.
+The observed results matched the expected business behavior, which confirmed that the core requirements, such as order status transitions, payment handling, and feedback constraints were correctly implemented.
 
 ![alt text](images/5.png)
 
 
 #### Peer Review Note – Customer Classes
-A peer review was conducted with a classmate focusing on customer-related logic. The review compared expected behavior with the current implementation and resulted in agreed improvements.
+A peer review was done with a group member focusing on customer-related logic. The review compared expected behavior with the current implementation and resulted in agreed improvements.
+
 Scope
 * CustomerService
 * CustomerServiceTest
+
 Before (review observations)
 * CustomerService.getCustomerById(Long) returned null when a customer did not exist.
 * Tests expected null for missing customer IDs.
+
 After (applied changes)
 * CustomerService.getCustomerById(Long) now throws an IllegalArgumentException when a customer is not found.
 * Tests were updated to expect the exception on missing IDs.
@@ -75,7 +89,7 @@ A small refactoring was performed in the customer service logic to improve error
 
 ### Financial Microservice
 
-To run only the tests related to the Financial Service, navigate to the `financial-service` directory and execute the following command:
+To run only the tests related to the Financial Service, navigate to the `financial-service` directory and execute the command below, but the tests are also run automatically in the pipeline:
 
 * mvn test
 
@@ -85,20 +99,20 @@ The JaCoCo report shows:
 
 ![alt text](images/financial_test_jajaco.png)
 
-Most of the testing has been to test the commissions model with Equivalence Partitioning and Boundary Value Analysis (explanation will follow) because a lot of the business logic for this Microservice has been there. 
+Most of the testing has been to evaluate the commissions model with equivalence partitioning and boundary value analysis (explanation will follow) because a lot of the business logic for this Microservice has been within this model. 
 
 In total 32 tests has passed: 
 
 ![alt text](images/TEST.png)
 
-#### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
+#### Equivalence Partitioning and Boundary Value Analysis 
 
-The `CommissionCalculatorTest` class applies Equivalence Partitioning and Boundary Value Analysis  to verify that commission and fee calculations in the Financial Microservice behave correctly under normal circumstances and edge case circumstances.
+The `CommissionCalculatorTest` class uses equivalence partitioning and boundary value analysis to verify that commission and fee calculations in the Financial Microservice behave correctly under normal circumstances and edge case circumstances.
 
 #### Commission Model Explanation
 The commission calculation used by the MTOGO system is based on an incremental fee structure rather than a flat percentage.
 
-The total amount for each order is divided into defined ranges, and within each range,a different commission rate is charged:
+The total amount for each order is divided into defined ranges, and within each range, a different commission rate is charged:
 
 - The first 100 of the order amount is 6% that goes to MTOGO
 - The portion from 101 to 500 is 5% that goes to MTOGO
@@ -152,6 +166,7 @@ To solve this problem, the Adapter Design Pattern was chosen because it allows t
 ![alt text](images/patterns_2.png)
 
 In the controller, this adapter is used to return DTOs to the frontend:
+
 Benefits of Using the Adapter Pattern
 * Loose Coupling: The API layer is independent of the database entity structure.
 * Security: Sensitive or internal fields (like passwords or IDs) are hidden.                        	
@@ -160,10 +175,10 @@ Benefits of Using the Adapter Pattern
 * Clarity: DTOs give a clean, well-defined data structure for React frontend consumption.
 
 Why this pattern fits MTOGO Application:
-The project aims to modernize a legacy monolithic system, not rewrite it entirely.
-The Adapter Pattern allowed gradual modernization by decoupling internal models from external APIs.
-It keeps the backend structure stable while letting the frontend evolve freely.
-It prepares the system for a future microservice migration, where adapters (mappers) will remain as boundaries between services.
+* The project aims to modernize a legacy monolithic system, not rewrite it entirely.
+* The Adapter Pattern allowed gradual modernization by decoupling internal models from external APIs.
+* It keeps the backend structure stable while letting the frontend evolve freely.
+* It prepares the system for a future microservice migration, where adapters (mappers) will remain as boundaries between services.
 
 #### The Singleton Pattern
 
@@ -176,3 +191,9 @@ This pattern improves performance and consistency without requiring manual imple
 ![alt text](images/patterns_4.png)
 
 ![alt text](images/patterns_5.png)
+
+### Pipeline 
+
+Image of CI/CD Pipeline using Github Actions. 
+
+![alt text](images/PIPELINE.png)
