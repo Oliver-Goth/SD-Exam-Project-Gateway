@@ -45,7 +45,9 @@ public class Payment {
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL, orphanRemoval = true)
     private final List<Commission> commissions = new ArrayList<>();
 
-    public Payment() {}
+    public Payment() {
+        // PMD suggestion to write comment
+    }
 
     public Payment(Long orderId, Double amount, PaymentStatus status, String paymentProvider, String paymentProviderId) {
         this.orderId = orderId;

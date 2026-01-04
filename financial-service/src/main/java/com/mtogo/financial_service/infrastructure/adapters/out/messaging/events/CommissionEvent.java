@@ -9,7 +9,9 @@ public class CommissionEvent {
     private Long paymentId;
     private List<Commission> commissions;
 
-    public CommissionEvent() {}
+    public CommissionEvent() {
+        // PMD suggestion to write comment
+    }
 
     public CommissionEvent(Long paymentId, List<Commission> commissions) {
         this.paymentId = paymentId;

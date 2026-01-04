@@ -150,6 +150,14 @@ The tests include:
 
 This ensures correct behavior when commission calculation rules changes. 
 
+#### PMD report in Financial Microservice
+
+The PMD report from the Financial Microservice is almost clean, with the exception of one priority 3 violation that we didnt find neccesary to change.
+In the first PMD report there were about 30 violations - most of the issues were low priority, such as empty constructors without documentation or code that was not written cleanly, even though it functioned correctly. 
+The PMD report helped to solve these issues and make the code cleaner and more safe. 
+
+![alt text](images/PMD.png)
+
 ## Design Patterns used in MTOGO Application
 
 #### Adapter Design Pattern

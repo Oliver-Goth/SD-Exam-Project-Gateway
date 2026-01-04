@@ -18,7 +18,6 @@ import com.mtogo.financial_service.domain.port.in.CreatePaymentUseCase;
 import com.mtogo.financial_service.domain.port.in.GetCommissionsUseCase;
 import com.mtogo.financial_service.domain.port.in.GetPaymentUseCase;
 import com.mtogo.financial_service.domain.port.in.PaymentStatusUseCase;
-import com.mtogo.financial_service.domain.port.out.CommissionEventPublisherPort;
 import com.mtogo.financial_service.domain.port.out.CommissionRepositoryPort;
 import com.mtogo.financial_service.domain.port.out.PaymentEventPublisherPort;
 import com.mtogo.financial_service.domain.port.out.PaymentRepositoryPort;
@@ -41,7 +40,6 @@ public class FinancialApplicationService implements
             PaymentRepositoryPort paymentRepositoryPort,
             PaymentEventPublisherPort eventPublisherPayment,
             CommissionRepositoryPort commissionsRepositoryPort,
-            CommissionEventPublisherPort eventPublisherCommission,
             ConfirmPaymentProvider paymentProvider
     ) {
         this.paymentRepositoryPort = paymentRepositoryPort;

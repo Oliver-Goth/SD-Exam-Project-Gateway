@@ -11,7 +11,7 @@ public class CreatePaymentCommand {
     public Currency currency;  
 
     public CreatePaymentCommand() {
-
+        // PMD suggestion to write comment
     }
 
     public CreatePaymentCommand(Long orderId, Double amount) {

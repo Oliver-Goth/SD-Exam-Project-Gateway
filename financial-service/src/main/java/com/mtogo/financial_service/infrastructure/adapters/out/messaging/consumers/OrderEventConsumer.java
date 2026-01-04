@@ -10,12 +10,13 @@ import com.mtogo.financial_service.domain.port.in.CreatePaymentCommand;
 import com.mtogo.financial_service.domain.port.in.CreatePaymentUseCase;
 import com.mtogo.financial_service.infrastructure.adapters.out.messaging.events.OrderEvent;
 
-
 @Component
 public class OrderEventConsumer {
 
+    private static final Logger logger =
+            LoggerFactory.getLogger(OrderEventConsumer.class);
+
     private final CreatePaymentUseCase createPaymentUseCase;
-    private static final Logger logger = LoggerFactory.getLogger(OrderEventConsumer.class);
 
     public OrderEventConsumer(CreatePaymentUseCase createPaymentUseCase) {
         this.createPaymentUseCase = createPaymentUseCase;
@@ -23,18 +24,34 @@ public class OrderEventConsumer {
 
     @RabbitListener(queues = "order.confirmed.queue")
     public void receiveMessage(OrderEvent event) {
-        logger.info("Received order event: " + event.getMessage());
+
+        if (logger.isInfoEnabled()) {
+            logger.info("Received order event: {}", event.getMessage());
+        }
+
         try {
-            // Create a payment command from the order event
             CreatePaymentCommand command = new CreatePaymentCommand();
             command.orderId = event.getOrderId();
             command.amount = event.getTotal().doubleValue();
-            command.currency = Currency.DKK; // Just DKK for simplicity 
-       
+            command.currency = Currency.DKK;
+
             createPaymentUseCase.createPayment(command);
-            logger.info("Payment created with success for order with orderID " + event.getOrderId());
+
+            if (logger.isInfoEnabled()) {
+                logger.info(
+                    "Payment created successfully for orderId {}",
+                    event.getOrderId()
+                );
+            }
+
         } catch (Exception e) {
-            logger.error("Error creating payment for orderId: " + event.getOrderId(), e);
+            if (logger.isErrorEnabled()) {
+                logger.error(
+                    "Error creating payment for orderId {}",
+                    event.getOrderId(),
+                    e
+                );
+            }
             throw new RuntimeException("Failed to create payment", e);
         }
     }

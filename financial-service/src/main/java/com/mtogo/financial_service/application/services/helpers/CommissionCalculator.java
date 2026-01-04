@@ -9,12 +9,15 @@ import com.mtogo.financial_service.domain.model.Commission;
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.Role;
 
-public class CommissionCalculator {
+public final class CommissionCalculator {
+
+    private CommissionCalculator() {
+        // PMD suggestion 
+    }
 
     public static List<Commission> calculateCommissions(Payment payment) {
-        
         double orderAmount = payment.getAmount();
-        
+
         List<Commission> commissions = new ArrayList<>();
 
         double mtogoFee = calculateMTOGOFee(orderAmount);
@@ -30,12 +33,9 @@ public class CommissionCalculator {
     }
 
     private static double calculateMTOGOFee(double totalAmount) {
-        
         double fee = 0.0;
-
         double amount = totalAmount;
 
-        // Incremental fee calculation based on amount
         if (amount > 1000) {
             fee += (amount - 1000) * 0.03;
             amount = 1000;
@@ -50,35 +50,30 @@ public class CommissionCalculator {
         }
 
         fee += amount * 0.06;
-
         return fee;
     }
 
-   
     public static double calculateDeliveryAgentCommission(Payment payment) {
-        
         double bonusFee = 0.0;
 
         double amount = payment.getAmount();
-
         LocalDateTime createdAt = payment.getCreatedAt();
+
         int hour = createdAt.getHour();
         Month month = createdAt.getMonth();
         int day = createdAt.getDayOfMonth();
 
-        // Time-based bonus
         if (hour >= 20) {
             bonusFee += amount * 0.10;
         } else {
-            bonusFee += amount * 0.05; 
+            bonusFee += amount * 0.05;
         }
-       
-        // Extra holiday bonus
-        if ((month == Month.JANUARY && day == 1) || (month == Month.DECEMBER && day == 24)) {
-            bonusFee += amount * 0.05; 
+
+        if (month == Month.JANUARY && day == 1
+                || month == Month.DECEMBER && day == 24) {
+            bonusFee += amount * 0.05;
         }
 
         return bonusFee;
     }
 }
-

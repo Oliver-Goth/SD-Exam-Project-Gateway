@@ -9,7 +9,9 @@ public class OrderEvent {
     private BigDecimal total;
     private String currency;
 
-    public OrderEvent() {} 
+    public OrderEvent() {
+        // PMD suggestion to write comment
+    } 
 
     public OrderEvent(Long orderId, Long customerId, BigDecimal total, String currency) {
         this.orderId = orderId;

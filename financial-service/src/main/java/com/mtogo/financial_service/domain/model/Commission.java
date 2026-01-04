@@ -31,7 +31,9 @@ public class Commission {
     @Column(nullable = false)
     private double amount;
 
-    public Commission() {}
+    public Commission() {
+        // PMD suggestion to write comment
+    }
 
     public Commission(Payment payment, Role role, double amount) {
         this.payment = payment;
