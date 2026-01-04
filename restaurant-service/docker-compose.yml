@@ -40,12 +40,12 @@ services:
 
   restaurant-service:
     build:
-      context: ./restaurant-service
+      context: .
       dockerfile: Dockerfile
     container_name: mtogo_restaurant_service
     restart: always
     ports:
-      - "8087:8087"
+      - "8086:8087"
     depends_on:
       restaurant-db:
         condition: service_started

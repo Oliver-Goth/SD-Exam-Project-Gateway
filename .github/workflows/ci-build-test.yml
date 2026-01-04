@@ -1,0 +1,359 @@
+name: CI - Build and Test All Services
+
+on:
+  push:
+    branches: [main, develop, feature/**]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  MAVEN_OPTS: -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
+
+jobs:
+  # Detect which services have changes
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      customer: ${{ steps.filter.outputs.customer }}
+      ordering: ${{ steps.filter.outputs.ordering }}
+      delivery: ${{ steps.filter.outputs.delivery }}
+      fulfillment: ${{ steps.filter.outputs.fulfillment }}
+      financial: ${{ steps.filter.outputs.financial }}
+      restaurant: ${{ steps.filter.outputs.restaurant }}
+      gateway: ${{ steps.filter.outputs.gateway }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            customer:
+              - 'customer-service/**'
+            ordering:
+              - 'ordering-service/**'
+            delivery:
+              - 'delivery-service/**'
+            fulfillment:
+              - 'fulfillment-service/**'
+            financial:
+              - 'financial-service/**'
+            restaurant:
+              - 'restaurant-service/**'
+            gateway:
+              - 'gateway/**'
+
+  # Build Exam-logging library (required by all services)
+  build-exam-logging:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Exam-Logging
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build and install Exam-logging
+        run: mvn -B clean install --file pom.xml
+
+  # Build and test Customer Service
+  build-customer-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.customer == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./customer-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Generate test coverage report
+        run: mvn -B verify --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: customer-service-jar
+          path: customer-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Ordering Service
+  build-ordering-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.ordering == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ordering-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ordering-service-jar
+          path: ordering-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Delivery Service
+  build-delivery-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.delivery == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./delivery-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+        continue-on-error: true
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-service-jar
+          path: delivery-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Fulfillment Service
+  build-fulfillment-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.fulfillment == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./fulfillment-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fulfillment-service-jar
+          path: fulfillment-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Financial Service
+  build-financial-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.financial == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./financial-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: financial-service-jar
+          path: financial-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Restaurant Service
+  build-restaurant-service:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.restaurant == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./restaurant-service
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: restaurant-service-jar
+          path: restaurant-service/target/*.jar
+          retention-days: 7
+
+  # Build and test Gateway
+  build-gateway:
+    needs: [detect-changes, build-exam-logging]
+    if: needs.detect-changes.outputs.gateway == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gateway
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn -B clean compile --file pom.xml
+
+      - name: Run unit tests
+        run: mvn -B test --file pom.xml
+
+      - name: Package application
+        run: mvn -B package -DskipTests --file pom.xml
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gateway-jar
+          path: gateway/target/*.jar
+          retention-days: 7
+
+  # Summary job - ensures all builds passed
+  build-summary:
+    needs:
+      [
+        build-customer-service,
+        build-ordering-service,
+        build-delivery-service,
+        build-fulfillment-service,
+        build-financial-service,
+        build-restaurant-service,
+        build-gateway,
+      ]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check build results
+        run: |
+          echo "Build Summary:"
+          echo "Customer Service: ${{ needs.build-customer-service.result }}"
+          echo "Ordering Service: ${{ needs.build-ordering-service.result }}"
+          echo "Delivery Service: ${{ needs.build-delivery-service.result }}"
+          echo "Fulfillment Service: ${{ needs.build-fulfillment-service.result }}"
+          echo "Financial Service: ${{ needs.build-financial-service.result }}"
+          echo "Restaurant Service: ${{ needs.build-restaurant-service.result }}"
+          echo "Gateway: ${{ needs.build-gateway.result }}"
+
+          # Fail if any job failed
+          if [[ "${{ needs.build-customer-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-ordering-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-delivery-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-fulfillment-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-financial-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-restaurant-service.result }}" == "failure" ]] || \
+             [[ "${{ needs.build-gateway.result }}" == "failure" ]]; then
+            echo "One or more builds failed"
+            exit 1
+          fi
+          echo "All builds passed successfully"

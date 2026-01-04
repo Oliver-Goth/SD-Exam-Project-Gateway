@@ -85,6 +85,11 @@
       <version>1.19.3</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>com.example</groupId>
+        <artifactId>Exam-logging</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        </dependency>
   </dependencies>
 
   <build>
