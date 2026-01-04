@@ -16,6 +16,72 @@ This structured SQA process helps reduce long-term maintenance costs, increase r
 
 ## Legacy System 
 
+### Evidence of tests
+
+![alt text](images/1.png)
+
+The full automated test suite was executed using the mvn test command.
+This command ran all JUnit 5 tests, including Mockito-based unit tests, MockMvc controller tests, and H2-backed integration tests, as part of the Maven test lifecycle.
+A total of 48 tests were executed, with zero failures, zero errors, and zero skipped tests, confirming that all implemented unit, controller, and integration tests passed successfully.
+
+The Spring test profile is a dedicated configuration used only during testing.
+It allows the application to run with test-specific settings, such as an H2 in-memory database, instead of production resources like MySQL.
+
+Using the test profile, the following tests were executed:
+* JUnit 5 unit tests for service-layer business logic
+* Mockito-based mocked dependency tests
+* MockMvc controller and API tests
+* Integration tests using an H2 in-memory database
+
+![alt text](images/2.png)
+
+Code Coverage Results (JaCoCo): 
+* mvn -Dspring.profiles.active=test clean test
+Code Coverage Analysis
+JaCoCo was used to measure test coverage during automated test execution.
+The final coverage report shows 75% instruction coverage and 63% branch coverage in the service layer, exceeding the defined minimum coverage requirement of 65%.
+Coverage analysis focused on business-critical logic in the service layer rather than boilerplate code such as DTOs, configuration classes, and simple mapping logic.
+This approach ensures meaningful coverage that reflects real application risk.
+
+![alt text](images/3.png)
+
+Static code analysis: mvn pmd:check
+Static code analysis was performed using PMD to identify potential code quality issues such as duplicated code, unused variables, and design violations.
+The analysis was executed via Maven using the commands mvn pmd:check and mvn pmd:pmd.
+The PMD execution completed successfully, and no critical violations were detected.
+
+![alt text](images/4.png)
+
+#### System Testing (End-to-End)
+System testing was performed manually using Swagger UI and Postman.
+The application was started locally, and REST API endpoints were executed following the complete business workflow.
+The tested flow included customer creation, order placement, payment processing, and feedback submission.
+Each step returned the expected HTTP responses and successfully triggered the next stage of the workflow.
+
+#### Acceptance Testing (Business Flows)
+Acceptance testing validated predefined business scenarios against functional requirements.
+The primary business flow Order -> Payment -> Delivery -> Feedback was executed manually using Swagger UI and Postman.
+The observed results matched the expected business behavior, confirming that core requirements such as order status transitions, payment handling, and feedback constraints were correctly implemented.
+
+![alt text](images/5.png)
+
+
+#### Peer Review Note – Customer Classes
+A peer review was conducted with a classmate focusing on customer-related logic. The review compared expected behavior with the current implementation and resulted in agreed improvements.
+Scope
+* CustomerService
+* CustomerServiceTest
+Before (review observations)
+* CustomerService.getCustomerById(Long) returned null when a customer did not exist.
+* Tests expected null for missing customer IDs.
+After (applied changes)
+* CustomerService.getCustomerById(Long) now throws an IllegalArgumentException when a customer is not found.
+* Tests were updated to expect the exception on missing IDs.
+* A positive-path test was added to validate correct DTO mapping for a valid customer ID.
+
+#### Refactoring without Regression
+A small refactoring was performed in the customer service logic to improve error handling by replacing a null return value with a meaningful exception when a customer is not found. Corresponding unit tests were updated and expanded to reflect the new behavior. After the refactoring, the full automated test suite was re-executed successfully, confirming that no regressions were introduced.
+
 ## Microservices
 
 ### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
