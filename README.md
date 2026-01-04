@@ -84,7 +84,22 @@ A small refactoring was performed in the customer service logic to improve error
 
 ## Microservices
 
-### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
+### Financial Microservice
+
+The Financial Microservice is not yet fully tested like customer and order microservice. 
+
+The JaCoCo report:
+
+![alt text](images/financial_2.png)
+
+Most of the testing has been to test the commissions model with Equivalence Partitioning and Boundary Value Analysis (explanation will follow) because a lot of the business logic for this Microservice has been there. 
+
+In total 30 tests has passed: 
+
+![alt text](images/financial_1.png)
+
+
+#### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
 
 The `CommissionCalculatorTest` class applies Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) to verify that commission and fee calculations in the Financial Microservice behave correctly under both normal and edge-case conditions.
 
