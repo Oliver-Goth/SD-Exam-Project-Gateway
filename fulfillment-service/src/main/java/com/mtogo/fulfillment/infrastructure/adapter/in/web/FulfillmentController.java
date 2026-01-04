@@ -24,40 +24,35 @@ public class FulfillmentController {
         this.markPreparedUseCase = markPreparedUseCase;
     }
 
-    @PostMapping("/orders/{orderId}/prepared")
-    public ResponseEntity<Void> markPrepared(@PathVariable("orderId") Long orderId) {
-        markPreparedUseCase.markPrepared(orderId);
-        return ResponseEntity.accepted().build();
-    }
 
-//    @PostMapping("/orders/{orderId}/prepared")
-//    public ResponseEntity<Void> markPrepared(@PathVariable("orderId") Long orderId) {
-//        String actorId = String.valueOf(orderId);
-//
-//        markPreparedUseCase.markPrepared(
-//                RequestLogger.log(
-//                        actorId,
-//                        "POST",
-//                        "/orders/{orderId}/prepared",
-//                        202,
-//
-//                        () -> TimeIt.info(log, "Mark Prepared", () -> {
-//                            markPreparedUseCase.markPrepared(orderId);
-//
-//                            AuditLogger.log(
-//                                    "MARK_PREPARED",
-//                                    actorId,
-//                                    "order prepared:" + orderId,
-//                                    "203.0.113.7"
-//                            );
-//
-//                            return null;
-//                        })
-//                )
-//        );
-//
-//        return ResponseEntity.accepted().build();
-//    }
+   @PostMapping("/orders/{orderId}/prepared")
+   public ResponseEntity<Void> markPrepared(@PathVariable("orderId") Long orderId) {
+       String actorId = String.valueOf(orderId);
+
+       markPreparedUseCase.markPrepared(
+               RequestLogger.log(
+                       actorId,
+                       "POST",
+                       "/orders/{orderId}/prepared",
+                       202,
+
+                       () -> TimeIt.info(log, "Mark Prepared", () -> {
+                           markPreparedUseCase.markPrepared(orderId);
+
+                           AuditLogger.log(
+                                   "MARK_PREPARED",
+                                   actorId,
+                                   "order prepared:" + orderId,
+                                   "203.0.113.7"
+                           );
+
+                           return null;
+                       })
+               )
+       );
+
+       return ResponseEntity.accepted().build();
+   }
 
 
 

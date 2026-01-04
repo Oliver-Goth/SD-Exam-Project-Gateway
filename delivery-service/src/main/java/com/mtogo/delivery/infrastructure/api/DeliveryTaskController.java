@@ -26,12 +26,6 @@ public class DeliveryTaskController {
         this.updateUseCase = updateUseCase;
     }
 
-//    @PostMapping
-//    public DeliveryTaskResponse create(@RequestBody DeliveryTaskRequest request) {
-//        DeliveryTask task = createUseCase.createForOrder(request.orderId(), request.restaurantId(), request.customerId());
-//        return toResponse(task);
-//    }
-
     @PostMapping
     public DeliveryTaskResponse create(@RequestBody DeliveryTaskRequest request) {
         String userId = String.valueOf(request.customerId());
@@ -102,13 +96,6 @@ public class DeliveryTaskController {
     }
 
 
-//    @PostMapping("/{id}/assign")
-//    public DeliveryTaskResponse assignAgent(@PathVariable("id") Long deliveryId, @RequestBody AssignAgentRequest req) {
-//        DeliveryTask task = updateUseCase.assignAgent(deliveryId, req.agentId());
-//        return toResponse(task);
-//    }
-
-
     @PostMapping("/{id}/pickup")
     public DeliveryTaskResponse pickUp(@PathVariable("id") Long deliveryId, @RequestBody LocationDto loc){
 
@@ -144,12 +131,6 @@ public class DeliveryTaskController {
 
         return toResponse(task);
     }
-
-//    @PostMapping("/{id}/pickup")
-//    public DeliveryTaskResponse pickup(@PathVariable("id") Long deliveryId, @RequestBody LocationDto loc) {
-//        DeliveryTask task = updateUseCase.markPickedUp(deliveryId, Instant.now(), new Location(loc.latitude(), loc.longitude()));
-//        return toResponse(task);
-//    }
 
     @PostMapping("/{id}/deliver")
     public DeliveryTaskResponse deliver(@PathVariable("id") Long deliveryId, @RequestBody LocationDto loc){
@@ -187,12 +168,6 @@ public class DeliveryTaskController {
         return toResponse(task);
     }
 
-
-//    @PostMapping("/{id}/deliver")
-//    public DeliveryTaskResponse deliver(@PathVariable("id") Long deliveryId, @RequestBody LocationDto loc) {
-//        DeliveryTask task = updateUseCase.markDelivered(deliveryId, Instant.now(), new Location(loc.latitude(), loc.longitude()));
-//        return toResponse(task);
-//    }
 
     private DeliveryTaskResponse toResponse(DeliveryTask t) {
         return new DeliveryTaskResponse(
