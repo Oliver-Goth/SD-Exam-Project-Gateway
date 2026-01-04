@@ -1,19 +1,5 @@
 # Software Quality Exam - MTOGO Application 
 
-MTOGO Software Solutions develops, tests, and maintains all software entirely in-house to ensure full control over quality, performance, security, and maintainability.
-Documents containing the Test Strategy, Test Design, and two separate Test Plans for both the Legacy Monolithic System and the new Microservice Platform of the MTOGO application can be found in this repository.
-Both systems share the same business goals, but they are different in architecture and testing focus:
-
-*	Legacy Monolithic System:
- Legacy system: is tested to find weaknesses, improve stability, and prepare for migration to the new microservice system.
-*	Microservice Platform:
- Designed for scalability, automation, and continuous testing through CI/CD pipelines.
-
-This document demonstrates how a single in-house Software Quality Assurance (SQA) framework can be applied to different architectures while maintaining consistent quality standards.
-Regular checkpoints, automated tests, and review meetings ensure that changes are verified before release and that no new issues are introduced.
-By using multiple testing strategies and tracking metrics like coverage, defect density, and response time, the team maintains transparency and control over software quality.
-This structured SQA process helps reduce long-term maintenance costs, increase reliability, and support continuous improvement for both the legacy and microservice systems.
-
 ## Legacy System 
 
 ### Evidence of tests
@@ -84,7 +70,22 @@ A small refactoring was performed in the customer service logic to improve error
 
 ## Microservices
 
-### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
+### Financial Microservice
+
+The Financial Microservice is not yet fully tested like customer and order microservice. 
+
+The JaCoCo report:
+
+![alt text](images/financial_2.png)
+
+Most of the testing has been to test the commissions model with Equivalence Partitioning and Boundary Value Analysis (explanation will follow) because a lot of the business logic for this Microservice has been there. 
+
+In total 30 tests has passed: 
+
+![alt text](images/financial_1.png)
+
+
+#### Equivalence Partitioning and Boundary Value Analysis – The Commission Model
 
 The `CommissionCalculatorTest` class applies Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) to verify that commission and fee calculations in the Financial Microservice behave correctly under both normal and edge-case conditions.
 
@@ -136,3 +137,45 @@ The tests include:
 - Values just above the boundary
 
 This ensures correct behavior when commission calculation rules changes. 
+
+
+## Design Patterns used in MTOGO Application
+
+#### Adapter Design Pattern
+Type: Structural Pattern
+Purpose: To allow two incompatible components to work together by acting as a translator between them.
+
+The MTOGO Legacy Application uses a Spring Boot backend connected to a React frontend.
+Inside the backend, the system uses Entity classes such as `Order`, `Customer`, Restaurant`, etc. to represent database tables.
+The entities contain database relationships and are not exposed directly through the REST API.
+To solve this problem, the Adapter Design Pattern was chosen because it allows the backend to convert (adapt) internal Entity objects into DTOs (Data Transfer Objects), which are safe, clean representations of the data used by the frontend.
+
+![alt text](images/patterns_1.png)
+
+![alt text](images/patterns_2.png)
+
+In the controller, this adapter is used to return DTOs to the frontend:
+Benefits of Using the Adapter Pattern
+* Loose Coupling: The API layer is independent of the database entity structure.
+* Security: Sensitive or internal fields (like passwords or IDs) are hidden.                        	
+* Maintainability: Entities can change internally without breaking the API.                                      	
+* Reusability: The adapter can be reused across multiple services and controllers.                    	
+* Clarity: DTOs give a clean, well-defined data structure for React frontend consumption.
+
+Why this pattern fits MTOGO Application:
+The project aims to modernize a legacy monolithic system, not rewrite it entirely.
+The Adapter Pattern allowed gradual modernization by decoupling internal models from external APIs.
+It keeps the backend structure stable while letting the frontend evolve freely.
+It prepares the system for a future microservice migration, where adapters (mappers) will remain as boundaries between services.
+
+#### The Singleton Pattern
+
+The Singleton Pattern is applied automatically by the Spring Boot framework.
+All @Service, @Repository, and @Controller classes  including the adapters are managed as singleton beans, ensuring only one instance of each exists across the application.
+This pattern improves performance and consistency without requiring manual implementation.
+
+![alt text](images/patterns_3.png)
+
+![alt text](images/patterns_4.png)
+
+![alt text](images/patterns_5.png)
