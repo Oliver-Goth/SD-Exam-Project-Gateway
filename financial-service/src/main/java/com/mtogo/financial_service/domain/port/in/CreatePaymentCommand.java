@@ -11,5 +11,10 @@ public class CreatePaymentCommand {
     public Currency currency;  
     public String paymentProvider;    
     public String paymentProviderId;  
-    
+    public CreatePaymentCommand() {}
+
+    public CreatePaymentCommand(Long orderId, Double amount) {
+        this.orderId = orderId;
+        this.amount = amount;
+    }
 }

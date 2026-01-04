@@ -32,21 +32,21 @@ public class CommissionCalculator {
 
     private static double calculateMToGoFee(double orderAmount) {
         double fee = 0.0;
-        double remaining = orderAmount;
+        double amount = orderAmount;
 
-        if (remaining > 1000) {
-            fee += (remaining - 1000) * 0.03;
-            remaining = 1000;
+        if (amount > 1000) {
+            fee += (amount - 1000) * 0.03;
+            amount = 1000;
         }
-        if (remaining > 500) {
-            fee += (remaining - 500) * 0.04;
-            remaining = 500;
+        if (amount > 500) {
+            fee += (amount - 500) * 0.04;
+            amount = 500;
         }
-        if (remaining > 100) {
-            fee += (remaining - 100) * 0.05;
-            remaining = 100;
+        if (amount > 100) {
+            fee += (amount - 100) * 0.05;
+            amount = 100;
         }
-        fee += remaining * 0.06;
+        fee += amount * 0.06;
 
         return fee;
     }
@@ -67,7 +67,7 @@ public class CommissionCalculator {
             bonusAmountCommission += amount * 0.05; 
         }
        
-        if ((month == Month.JANUARY && day == 1) || (month == Month.DECEMBER && day == 25)) {
+        if ((month == Month.JANUARY && day == 1) || (month == Month.DECEMBER && day == 24)) {
             bonusAmountCommission += amount * 0.05; 
         }
 
