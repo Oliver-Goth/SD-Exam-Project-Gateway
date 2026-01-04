@@ -9,7 +9,6 @@ import com.mtogo.financial_service.application.exceptions.PaymentNotCreatedExcep
 import com.mtogo.financial_service.application.exceptions.PaymentNotFoundException;
 import com.mtogo.financial_service.application.exceptions.PaymentStatusNotFoundException;
 import com.mtogo.financial_service.application.services.helpers.CommissionCalculator;
-import com.mtogo.financial_service.application.services.helpers.PaymentProviderCalculator;
 import com.mtogo.financial_service.domain.model.Commission;
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
@@ -25,7 +24,6 @@ import com.mtogo.financial_service.domain.port.out.PaymentEventPublisherPort;
 import com.mtogo.financial_service.domain.port.out.PaymentRepositoryPort;
 import com.mtogo.financial_service.infrastructure.adapters.out.messaging.events.PaymentEvent;
 
-
 @Service
 @Transactional
 public class FinancialApplicationService implements
@@ -37,43 +35,40 @@ public class FinancialApplicationService implements
     private final PaymentRepositoryPort paymentRepositoryPort;
     private final PaymentEventPublisherPort eventPublisherPayment;
     private final CommissionRepositoryPort commissionsRepositoryPort;
-    private final CommissionEventPublisherPort eventPublisherCommission;
+    private final ConfirmPaymentProvider paymentProvider;
 
-    public FinancialApplicationService(PaymentRepositoryPort paymentRepositoryPort,
+    public FinancialApplicationService(
+            PaymentRepositoryPort paymentRepositoryPort,
             PaymentEventPublisherPort eventPublisherPayment,
             CommissionRepositoryPort commissionsRepositoryPort,
-            CommissionEventPublisherPort eventPublisherCommission  ) {
+            CommissionEventPublisherPort eventPublisherCommission,
+            ConfirmPaymentProvider paymentProvider
+    ) {
         this.paymentRepositoryPort = paymentRepositoryPort;
         this.eventPublisherPayment = eventPublisherPayment;
         this.commissionsRepositoryPort = commissionsRepositoryPort;
-        this.eventPublisherCommission = eventPublisherCommission;
+        this.paymentProvider = paymentProvider;
     }
 
     @Override
     public Payment createPayment(CreatePaymentCommand command) {
 
-        Payment payment = new Payment(
-                command.orderId,
-                command.amount,
-                PaymentStatus.PENDING, 
-                "", 
-                "" 
-        );
+        // Creates a new Payment entity
+        Payment payment = new Payment(command.orderId, command.amount);
 
-        ConfirmPaymentProvider provider = new PaymentProviderCalculator();
+        // Process payment with a mockedish external payment provider
+        paymentProvider.processPayment(payment);
 
-        provider.processPayment(payment); 
+        // Calculate and add commissions to the payment
+        List<Commission> commissions = CommissionCalculator.calculateCommissions(payment);
+        commissions.forEach(payment::addCommission);
 
+        // Save the payment to the repository
         Payment savedPayment = paymentRepositoryPort.save(payment);
-
-        List<Commission> commissions = CommissionCalculator.calculateFor(savedPayment);
-        commissions.forEach(savedPayment::addCommission);
-
-        paymentRepositoryPort.save(savedPayment);
 
         if (savedPayment == null || savedPayment.getId() == null) {
             throw new PaymentNotCreatedException(command.orderId);
-        }
+        } 
 
         if (savedPayment.getStatus() == PaymentStatus.COMPLETED) {
             eventPublisherPayment.publish(PaymentEvent.created(savedPayment));
@@ -83,9 +78,9 @@ public class FinancialApplicationService implements
     }
 
     @Override
-    public Payment getPayment(Long id) {
-        return paymentRepositoryPort.findByPaymentId(id)
-                .orElseThrow(() -> new PaymentNotFoundException(id));
+    public Payment getPayment(Long paymentId) {
+        return paymentRepositoryPort.findByPaymentId(paymentId)
+                .orElseThrow(() -> new PaymentNotFoundException(paymentId));
     }
 
     @Override
@@ -96,9 +91,6 @@ public class FinancialApplicationService implements
 
     @Override
     public List<Commission> getCommissions(Long paymentId) {
-
         return commissionsRepositoryPort.findByPaymentId(paymentId);
-
     }
-
 }

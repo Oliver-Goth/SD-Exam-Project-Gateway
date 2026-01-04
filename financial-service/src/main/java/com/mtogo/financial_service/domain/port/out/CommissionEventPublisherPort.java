@@ -6,4 +6,4 @@ public interface CommissionEventPublisherPort {
     
     void publish(CommissionEvent event);
 
-}
+} 

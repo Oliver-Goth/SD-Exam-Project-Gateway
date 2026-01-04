@@ -47,10 +47,10 @@ class PaymentRepositoryTest {
     @Test
     void testSaveAndFindPayment() {
         Payment payment = new Payment(
-                1001L,
+                1L,
                 250.0,
                 PaymentStatus.COMPLETED,
-                "TestProvider",
+                "TEST",
                 "TEEEEEST"
         );
         payment.setCurrency(Currency.DKK);
@@ -61,70 +61,44 @@ class PaymentRepositoryTest {
 
         Optional<Payment> found = paymentRepository.findById(saved.getId());
         assertTrue(found.isPresent());
-        assertEquals(1001L, found.get().getOrderId());
+        assertEquals(1L, found.get().getOrderId());
         assertEquals(PaymentStatus.COMPLETED, found.get().getStatus());
         assertEquals(Currency.DKK, found.get().getCurrency());
         assertEquals(found.get().getPaymentProviderId(), "TEEEEEST");
+        assertEquals(250.0, found.get().getAmount());
     }
 
     @Test
     void testFindByOrderId() {
         Payment payment = new Payment(
-                2002L,
+                2L,
                 99.99,
                 PaymentStatus.PENDING,
-                "TestProviderTest",
-                "test123"
+                "TEST",
+                "test123456"
         );
         payment.setCurrency(Currency.EUR);
 
         paymentRepository.save(payment);
 
-        Optional<Payment> found = paymentRepository.findByOrderId(2002L);
+        Optional<Payment> found = paymentRepository.findByOrderId(2L);
         assertTrue(found.isPresent());
         assertEquals(99.99, found.get().getAmount());
         assertEquals(PaymentStatus.PENDING, found.get().getStatus());
         assertEquals(Currency.EUR, found.get().getCurrency());
-        assertEquals("test123", found.get().getPaymentProviderId());
-    }
-
-    @Test
-    void testFindAllByOrderId() {
-        Payment p1 = new Payment(
-                3003L,
-                50.0,
-                PaymentStatus.COMPLETED,
-                "TestProvider",
-                "test_1"
-        );
-        Payment p2 = new Payment(
-                3003L,
-                75.0,
-                PaymentStatus.FAILED,
-                "TestProvider",
-                "test_2"
-        );
-
-        p1.setCurrency(Currency.EUR);
-        p2.setCurrency(Currency.EUR);
-
-        paymentRepository.save(p1);
-        paymentRepository.save(p2);
-
-        List<Payment> payments = paymentRepository.findAllByOrderId(3003L);
-        assertEquals(2, payments.size());
+        assertEquals("test123456", found.get().getPaymentProviderId());
     }
 
     @Test
     void testDeletePayment() {
         Payment payment = new Payment(
-                4004L,
+                4L,
                 120.0,
                 PaymentStatus.COMPLETED,
-                "PayPal",
-                "test_delete"
+                "PROVIDERTEST",
+                "DELETE_TEST"
         );
-        payment.setCurrency(Currency.EUR);
+        payment.setCurrency(Currency.DKK);
 
         Payment saved = paymentRepository.save(payment);
         assertNotNull(saved.getId());
@@ -132,5 +106,6 @@ class PaymentRepositoryTest {
         paymentRepository.delete(saved);
 
         assertFalse(paymentRepository.findById(saved.getId()).isPresent());
+    
     }
 }

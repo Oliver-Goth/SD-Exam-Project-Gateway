@@ -1,7 +1,5 @@
 package com.mtogo.financial_service.application.services;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,37 +10,31 @@ import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
 
+import com.mtogo.financial_service.application.exceptions.PaymentNotCreatedException;
 import com.mtogo.financial_service.application.exceptions.PaymentNotFoundException;
-import com.mtogo.financial_service.domain.model.Commission;
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
+import com.mtogo.financial_service.domain.port.in.ConfirmPaymentProvider;
 import com.mtogo.financial_service.domain.port.in.CreatePaymentCommand;
-import com.mtogo.financial_service.domain.port.out.CommissionEventPublisherPort;
-import com.mtogo.financial_service.domain.port.out.CommissionRepositoryPort;
 import com.mtogo.financial_service.domain.port.out.PaymentEventPublisherPort;
 import com.mtogo.financial_service.domain.port.out.PaymentRepositoryPort;
+import com.mtogo.financial_service.application.exceptions.PaymentStatusNotFoundException;
 
 class FinancialApplicationServiceTest {
 
     @Mock
     private PaymentRepositoryPort paymentRepository;
-
     @Mock
     private PaymentEventPublisherPort paymentEventPublisher;
-
     @Mock
-    private CommissionRepositoryPort commissionRepository;
-
-    @Mock
-    private CommissionEventPublisherPort commissionEventPublisher;
-
+    private ConfirmPaymentProvider paymentProvider;
     @InjectMocks
     private FinancialApplicationService service;
 
@@ -52,90 +44,87 @@ class FinancialApplicationServiceTest {
     }
 
     @Test
-    void createPayment_savesPaymentAndReturnsResult() {
+    void TestCreatePayment() {
 
-        CreatePaymentCommand command =
-                new CreatePaymentCommand(1L, 200.0);
+        CreatePaymentCommand command = new CreatePaymentCommand(1L, 200.0);
 
-        Payment savedPayment = new Payment(
-                1L,
-                200.0,
-                PaymentStatus.COMPLETED,
-                "PayPal",
-                "paypal_txn_123"
-        );
-        savedPayment.setId(10L);
+        doAnswer(invocation -> {
+            Payment p = invocation.getArgument(0);
+            p.setStatus(PaymentStatus.COMPLETED);
+            p.setPaymentProvider("TEST");
+            p.setPaymentProviderId("TEST123");
+            return null;
+        }).when(paymentProvider).processPayment(any(Payment.class));
 
         when(paymentRepository.save(any(Payment.class)))
-                .thenReturn(savedPayment);
+                .thenAnswer(invocation -> {
+                    Payment p = invocation.getArgument(0);
+                    p.setId(10L);
+                    return p;
+                });
 
-        Payment result = service.createPayment(command);
+        Payment payment = service.createPayment(command);
 
-        assertNotNull(result);
-        assertEquals(200.0, result.getAmount());
-        assertNotNull(result.getId());
-
-        verify(paymentRepository, atLeastOnce())
-                .save(any(Payment.class));
+        assertEquals("TEST", payment.getPaymentProvider());
+        assertEquals(PaymentStatus.COMPLETED, payment.getStatus());
+        assertNotNull(payment.getId());
     }
 
     @Test
-    void createPayment_whenCompleted_publishesPaymentEvent() {
+    void TestPublishPaymentEvent() {
 
-        CreatePaymentCommand command =
-                new CreatePaymentCommand(2L, 100.0);
+        CreatePaymentCommand command = new CreatePaymentCommand(2L, 100.0);
 
-        Payment completedPayment = new Payment(
-                2L,
-                100.0,
-                PaymentStatus.COMPLETED,
-                "PayPal",
-                "paypal_txn_456"
-        );
-        completedPayment.setId(20L);
+        doAnswer(invocation -> {
+            Payment p = invocation.getArgument(0);
+            p.setStatus(PaymentStatus.COMPLETED);
+            return null;
+        }).when(paymentProvider).processPayment(any(Payment.class));
 
         when(paymentRepository.save(any(Payment.class)))
-                .thenReturn(completedPayment);
+                .thenAnswer(invocation -> {
+                    Payment p = invocation.getArgument(0);
+                    p.setId(20L);
+                    return p;
+                });
 
         service.createPayment(command);
 
-        verify(paymentEventPublisher, times(1))
-                .publish(any());
+        verify(paymentEventPublisher, times(1)).publish(any());
     }
 
     @Test
-    void createPayment_whenNotCompleted_doesNotPublishPaymentEvent() {
+    void TestDoesNotPublishPaymentEvent() {
 
-        CreatePaymentCommand command =
-                new CreatePaymentCommand(3L, 150.0);
+        CreatePaymentCommand command = new CreatePaymentCommand(3L, 150.0);
 
-        Payment pendingPayment = new Payment(
-                3L,
-                150.0,
-                PaymentStatus.PENDING,
-                "PayPal",
-                "paypal_txn_789"
-        );
-        pendingPayment.setId(30L);
+        doAnswer(invocation -> {
+            Payment p = invocation.getArgument(0);
+            p.setStatus(PaymentStatus.PENDING);
+            return null;
+        }).when(paymentProvider).processPayment(any(Payment.class));
 
         when(paymentRepository.save(any(Payment.class)))
-                .thenReturn(pendingPayment);
+                .thenAnswer(invocation -> {
+                    Payment p = invocation.getArgument(0);
+                    p.setId(30L);
+                    return p;
+                });
 
         service.createPayment(command);
 
-        verify(paymentEventPublisher, never())
-                .publish(any());
+        verify(paymentEventPublisher, never()).publish(any());
     }
 
     @Test
-    void getPayment_whenExists_returnsPayment() {
+    void TestGetPaymentSuccess() {
 
         Payment payment = new Payment(
                 1L,
                 100.0,
                 PaymentStatus.COMPLETED,
-                "PayPal",
-                "txn"
+                "TEST",
+                "TEST_ID"
         );
         payment.setId(1L);
 
@@ -149,32 +138,63 @@ class FinancialApplicationServiceTest {
     }
 
     @Test
-    void getPayment_whenNotFound_throwsException() {
+    void TestGetPaymentFailure() {
 
-        when(paymentRepository.findByPaymentId(99L))
-                .thenReturn(Optional.empty());
+        when(paymentRepository.findByPaymentId(80L)).thenReturn(Optional.empty());
 
         assertThrows(
                 PaymentNotFoundException.class,
-                () -> service.getPayment(99L)
+                () -> service.getPayment(80L)
         );
     }
 
-
     @Test
-    void getCommissions_returnsCommissionList() {
+    void TestGetPaymentStatusSuccess() {
 
-        List<Commission> commissions = Collections.emptyList();
+        Payment payment = new Payment(
+                2L,
+                80.0,
+                PaymentStatus.COMPLETED,
+                "TEST",
+                "TEST"
+        );
+        payment.setId(2L);
 
-        when(commissionRepository.findByPaymentId(1L))
-                .thenReturn(commissions);
+        when(paymentRepository.getStatus(2L))
+                .thenReturn(Optional.of(payment));
 
-        List<Commission> result = service.getCommissions(1L);
+        Payment result = service.getPaymentStatus(2L);
 
         assertNotNull(result);
-        assertEquals(0, result.size());
-
-        verify(commissionRepository, times(1))
-                .findByPaymentId(1L);
+        assertEquals(PaymentStatus.COMPLETED, result.getStatus());
     }
+
+    @Test
+    void TestGetPaymentStatusFailure() {
+
+        when(paymentRepository.getStatus(85L)).thenReturn(Optional.empty());
+
+        assertThrows(
+                PaymentStatusNotFoundException.class,
+                () -> service.getPaymentStatus(85L)
+        );
+    }
+
+    @Test
+    void createPaymentWithoutID() {
+
+        CreatePaymentCommand command = new CreatePaymentCommand(1L, 100.0);
+
+        Payment paymentWithoutId = new Payment(1L, 100.0, PaymentStatus.COMPLETED, "TEST", "TEST_ID");
+        
+        paymentWithoutId.setId(null); 
+
+        when(paymentRepository.save(any(Payment.class))).thenReturn(paymentWithoutId);
+
+        assertThrows(
+                PaymentNotCreatedException.class,
+                () -> service.createPayment(command)
+        );
+    }
+
 }

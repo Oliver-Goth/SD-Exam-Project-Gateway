@@ -6,10 +6,12 @@ import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
 import com.mtogo.financial_service.domain.port.in.ConfirmPaymentProvider;
 
-public class PaymentProviderCalculator implements ConfirmPaymentProvider {
+public class PaymentProvider implements ConfirmPaymentProvider {
 
     private final Random random = new Random();
 
+    // This is a mockish implementation simulating interaction with a payment provider API (The idea in real life would be to use PayPal or such)
+    // Also simulates different outcomes based on random chance (if payments completes, fails or is pending)
     @Override
     public void processPayment(Payment payment) {
         try {
@@ -29,8 +31,8 @@ public class PaymentProviderCalculator implements ConfirmPaymentProvider {
         }
 
         payment.setStatus(status);
-        payment.setPaymentProvider("PayPal");
-        payment.setPaymentProviderId("paypal_txn_" + System.currentTimeMillis());
+        payment.setPaymentProvider("TEST");
+        payment.setPaymentProviderId("TEST" + System.currentTimeMillis());
         payment.setUpdatedAt(java.time.LocalDateTime.now());
     }
 }

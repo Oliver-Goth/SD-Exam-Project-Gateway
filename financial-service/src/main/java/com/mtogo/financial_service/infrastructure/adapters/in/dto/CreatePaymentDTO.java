@@ -8,6 +8,5 @@ public class CreatePaymentDTO {
     public Currency currency;
     public String paymentProvider;
     public String paymentProviderId;
-
 }
 
