@@ -200,8 +200,57 @@ This pattern improves performance and consistency without requiring manual imple
 
 ![alt text](images/patterns_5.png)
 
-### Pipeline 
+## CI/CD Pipeline 
 
-Image of CI/CD Pipeline using Github Actions. 
+Our CI/CD pipeline is implemented using **GitHub Actions** with three main workflows that automate build, test, and deployment processes for our microservices architecture.
+
+### Workflows
+
+#### 1. CI - Build and Test (`ci-build-test.yml`)
+**Triggers:** Push to `main`, `develop`, `feature/**` branches; Pull requests to `main`, `develop`
+
+**Process:**
+- Detects changed services using path filters to optimize build times
+- **Only services with changes are tested** - minimizes CI/CD load and speeds up builds
+- Feature branch naming (`feature/<description>`) enables selective testing and parallel development
+- Builds shared `Exam-logging` library dependency first
+- Runs parallel builds for affected services only
+- Executes unit tests with Maven
+- Generates test coverage reports (JaCoCo)
+- Uploads build artifacts for deployment
+
+**Services:** customer, ordering, delivery, fulfillment, financial, restaurant, gateway
+
+#### 2. CD - Docker Build & Push (`docker-build-push.yml`)
+**Triggers:** Push to `main`, version tags (`v*.*.*`), manual dispatch
+
+**Process:**
+- Builds Docker images for all microservices
+- Uses Docker Buildx for multi-platform support
+- Pushes images to GitHub Container Registry (GHCR)
+- Tags images with version, branch, SHA, and `latest`
+- Supports manual selection of specific services to build
+
+**Image naming format:**
+
+- `ghcr.io/<owner>/mtogo-<service-name>:<branch-name>` (e.g., `feature/add-payment`, `main`, `develop`)
+
+#### 3. PR Validation (`pr-validation.yml`)
+**Triggers:** Pull requests to `main`, `develop` (open, sync, reopen)
+
+**Checks:**
+- Code quality analysis (Checkstyle)
+- Static analysis (SpotBugs)
+- Security vulnerability scanning (OWASP Dependency Check)
+- Dockerfile linting (Hadolint)
+- Uploads security reports as artifacts
+
+### Deployment
+Services are containerized and orchestrated using Docker Compose (`docker-compose.all.yml`) with:
+- RabbitMQ for message brokering
+- MySQL databases per service
+- Networked microservices architecture
+
+#### Image of CI/CD Pipeline using Github Actions. 
 
 ![alt text](images/PIPELINE.png)
