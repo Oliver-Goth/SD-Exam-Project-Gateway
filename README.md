@@ -173,6 +173,8 @@ To solve this problem, the Adapter Design Pattern was chosen because it allows t
 
 ![alt text](images/patterns_2.png)
 
+![alt text](images/patterns_6.png)
+
 In the controller, this adapter is used to return DTOs to the frontend:
 
 Benefits of Using the Adapter Pattern
