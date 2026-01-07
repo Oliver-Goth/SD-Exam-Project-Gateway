@@ -1,0 +1,466 @@
+2026-01-06 12:47:23 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.CustomerServiceApplicationTests]: CustomerServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:47:23 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.CustomerServiceApplicationTests
+2026-01-06 12:47:24 INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-06 12:47:24 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Starting CustomerServiceApplicationTests using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:47:24 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - The following 1 profile is active: "test"
+2026-01-06 12:47:26 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 12:47:26 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 1 JPA repository interface.
+2026-01-06 12:47:26 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 12:47:27 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:f1347e72-4988-464c-a79a-820097884ca4;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 12:47:28 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 12:47:28 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-06 12:47:28 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 12:47:28 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 12:47:29 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@8f65a66']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 12:47:30 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 12:47:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 12:47:31 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-06 12:47:31 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6e42b30c-f457-4418-b516-be060450aba5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:47:31 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:47:32 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Started CustomerServiceApplicationTests in 8.681 seconds (process running for 14.971)
+2026-01-06 12:47:32 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:47:32 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest
+2026-01-06 12:47:32 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Starting AuthControllerTest using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:47:32 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:47:33 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2d85e29a-0fe0-4fc1-8a34-7cd99430270d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:47:33 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:47:33 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 12:47:33 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 12:47:33 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 12:47:33 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Started AuthControllerTest in 0.604 seconds (process running for 15.713)
+2026-01-06 12:47:33 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:47:33 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest
+2026-01-06 12:47:33 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Starting CustomerControllerTest using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:47:33 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:47:34 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d7f38ce8-22b9-4ffa-be10-b3074cff1233
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:47:34 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:47:34 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 12:47:34 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 12:47:34 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 12:47:34 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Started CustomerControllerTest in 0.452 seconds (process running for 16.559)
+2026-01-06 12:47:34 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.6
+2026-01-06 12:47:34 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-06 12:47:35 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-06 12:47:35 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-06 12:47:35 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-06 12:47:35 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-06 12:47:35 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-06 12:47:35 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2026-01-06 12:47:36 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: 7934b0002a62be6a0093196658b3069e385a311f882720a692be527922200ed5
+2026-01-06 12:47:37 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT1.3888225S
+2026-01-06 12:47:37 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-06 12:47:37 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-06 12:47:37 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-06 12:47:37 INFO  [] [] tc.mysql:8.0 - Creating container for image: mysql:8.0
+2026-01-06 12:47:37 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 is starting: 703faea25fd3a6876f3d2392e20eb48a0f66713ef73adecd729d8c6d5b3c92ee
+2026-01-06 12:47:37 INFO  [] [] tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:62012/customer_test using query 'SELECT 1'
+2026-01-06 12:47:57 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 started in PT20.7739451S
+2026-01-06 12:47:57 INFO  [] [] tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:62012/customer_test)
+2026-01-06 12:47:57 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest]: CustomerRepositoryMysqlContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:47:58 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest
+2026-01-06 12:47:58 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Starting CustomerRepositoryMysqlContainerTest using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:47:58 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:47:58 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 12:47:58 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2026-01-06 12:47:58 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 12:47:58 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 12:47:58 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 12:47:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-06 12:47:58 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57a7a80f
+2026-01-06 12:47:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-06 12:47:58 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.44
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 12:47:58 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 12:47:59 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 12:47:59 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Started CustomerRepositoryMysqlContainerTest in 1.594 seconds (process running for 41.953)
+2026-01-06 12:48:00 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:48:00 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest
+2026-01-06 12:48:00 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Starting CustomerRepositoryTest using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:48:00 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:48:01 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 12:48:01 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2026-01-06 12:48:01 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 12:48:01 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:ada44648-faea-4f5e-9619-7d147725074a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 12:48:01 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 12:48:01 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 12:48:01 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 12:48:01 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@da5f598']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 12:48:01 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 12:48:01 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 12:48:01 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Started CustomerRepositoryTest in 0.464 seconds (process running for 43.684)
+2026-01-06 12:48:01 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:48:01 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.config.SecurityConfigTest
+2026-01-06 12:48:01 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 39580 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 12:48:01 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:48:01 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 27da13e0-3b6d-4734-aad0-6acfabd49b3a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:48:01 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:48:01 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 12:48:01 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 12:48:01 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 12:48:02 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Started SecurityConfigTest in 0.363 seconds (process running for 44.312)
+2026-01-06 12:48:02 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 12:48:02 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 12:48:02 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-06 12:48:02 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-06 12:48:02 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:22:49 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.CustomerServiceApplicationTests]: CustomerServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:22:50 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.CustomerServiceApplicationTests
+2026-01-06 20:22:50 INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-06 20:22:51 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Starting CustomerServiceApplicationTests using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:22:51 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - The following 1 profile is active: "test"
+2026-01-06 20:22:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 20:22:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 258 ms. Found 1 JPA repository interface.
+2026-01-06 20:22:54 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 20:22:55 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:0216722c-15c4-4f77-a397-03a876b078ac;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 20:22:56 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 20:22:56 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-06 20:22:56 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 20:22:56 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 20:22:57 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@71951028']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 20:22:58 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 20:22:58 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:22:59 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-06 20:22:59 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 271e80cc-8716-4266-afd4-a6585f1c5695
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:22:59 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:23:00 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-06 20:23:00 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Started CustomerServiceApplicationTests in 10.524 seconds (process running for 16.298)
+2026-01-06 20:23:01 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:23:01 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest
+2026-01-06 20:23:01 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Starting AuthControllerTest using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:23:01 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:23:01 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 046ae299-1cd0-47ce-8466-6e456e7bea97
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:23:01 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:23:01 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 20:23:01 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 20:23:01 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 20:23:01 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Started AuthControllerTest in 0.496 seconds (process running for 17.044)
+2026-01-06 20:23:01 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:23:01 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest
+2026-01-06 20:23:02 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Starting CustomerControllerTest using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:23:02 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:23:02 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 15dd2528-fa08-49e5-9bc9-f31aa21895d8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:23:02 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:23:02 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 20:23:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 20:23:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 20:23:02 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Started CustomerControllerTest in 0.439 seconds (process running for 17.809)
+2026-01-06 20:23:02 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.6
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-06 20:23:03 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-06 20:23:03 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling docker image: testcontainers/ryuk:0.11.0. Please be patient; this may take some time but only needs to be done once.
+2026-01-06 20:23:05 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Starting to pull image
+2026-01-06 20:23:05 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  2 pending,  1 downloaded,  0 extracted, (5 MB/? MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  1 pending,  2 downloaded,  0 extracted, (5 MB/? MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  0 pending,  3 downloaded,  0 extracted, (7 MB/10 MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  0 pending,  3 downloaded,  1 extracted, (7 MB/10 MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  0 pending,  3 downloaded,  2 extracted, (7 MB/10 MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pulling image layers:  0 pending,  3 downloaded,  3 extracted, (7 MB/10 MB)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Pull complete. 3 layers, pulled in 1s (downloaded 7 MB at 7 MB/s)
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Image testcontainers/ryuk:0.11.0 pull took PT2.8920481S
+2026-01-06 20:23:06 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2026-01-06 20:23:07 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: fd342f0370c4800f3da596e70cf1807dbc41cf16289564e60a4df2028a89b43d
+2026-01-06 20:23:07 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT0.7865939S
+2026-01-06 20:23:07 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-06 20:23:07 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-06 20:23:07 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-06 20:23:07 INFO  [] [] tc.mysql:8.0 - Creating container for image: mysql:8.0
+2026-01-06 20:23:07 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 is starting: bea8e4bc5ba8f506a28774dda3551d48fcd00bf13b610e60411a592348227e65
+2026-01-06 20:23:08 INFO  [] [] tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:51970/customer_test using query 'SELECT 1'
+2026-01-06 20:23:21 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 started in PT13.6470594S
+2026-01-06 20:23:21 INFO  [] [] tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:51970/customer_test)
+2026-01-06 20:23:21 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest]: CustomerRepositoryMysqlContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:23:21 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest
+2026-01-06 20:23:21 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Starting CustomerRepositoryMysqlContainerTest using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:23:21 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:23:21 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 20:23:21 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2026-01-06 20:23:21 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 20:23:21 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 20:23:21 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 20:23:21 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-06 20:23:21 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52cc5843
+2026-01-06 20:23:21 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-06 20:23:21 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.44
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 20:23:21 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 20:23:22 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:23:22 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Started CustomerRepositoryMysqlContainerTest in 1.372 seconds (process running for 38.102)
+2026-01-06 20:23:23 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:23:23 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest
+2026-01-06 20:23:23 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Starting CustomerRepositoryTest using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:23:23 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:23:23 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 20:23:23 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-01-06 20:23:23 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 20:23:23 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:fca8ef52-ee84-465d-8406-f738a5f59158;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 20:23:23 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 20:23:23 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 20:23:23 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 20:23:23 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@267fa1f9']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 20:23:24 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 20:23:24 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:23:24 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Started CustomerRepositoryTest in 0.455 seconds (process running for 39.52)
+2026-01-06 20:23:24 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:23:24 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.config.SecurityConfigTest
+2026-01-06 20:23:24 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 25804 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 20:23:24 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:23:24 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 598f1f7a-bd19-48e3-bb19-95ff261ae999
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:23:24 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:23:24 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 20:23:24 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 20:23:24 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+2026-01-06 20:23:24 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Started SecurityConfigTest in 0.269 seconds (process running for 39.984)
+2026-01-06 20:23:24 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:23:24 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 20:23:24 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-06 20:23:24 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-06 20:23:24 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:19 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.CustomerServiceApplicationTests]: CustomerServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:19 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.CustomerServiceApplicationTests
+2026-01-06 21:42:20 INFO  [] [] org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-01-06 21:42:21 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Starting CustomerServiceApplicationTests using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:21 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - The following 1 profile is active: "test"
+2026-01-06 21:42:23 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 21:42:23 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interface.
+2026-01-06 21:42:23 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 21:42:24 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:8c1e28a5-b08d-4e57-b52e-02c1fb4d0204;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 21:42:24 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 21:42:24 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-06 21:42:24 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 21:42:25 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 21:42:25 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@392aabea']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 21:42:26 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 21:42:26 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:27 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-06 21:42:27 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4a8238d5-4445-408f-82b2-d2c2a13489f5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:42:27 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:42:28 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-06 21:42:28 INFO  [] [] com.mtogo.customer.CustomerServiceApplicationTests - Started CustomerServiceApplicationTests in 8.693 seconds (process running for 13.914)
+2026-01-06 21:42:29 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:29 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest
+2026-01-06 21:42:29 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Starting AuthControllerTest using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:29 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:42:29 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 40b54630-03cb-430b-98d5-0e7366817a02
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:42:29 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:42:29 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 21:42:29 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 21:42:29 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+2026-01-06 21:42:29 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.AuthControllerTest - Started AuthControllerTest in 0.525 seconds (process running for 14.613)
+2026-01-06 21:42:29 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:29 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest
+2026-01-06 21:42:29 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Starting CustomerControllerTest using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:29 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:42:30 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f15cbc9d-162d-4e62-a92a-f639bc7f69d1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:42:30 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:42:30 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 21:42:30 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 21:42:30 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 21:42:30 INFO  [] [] com.mtogo.customer.infrastructure.adapter.in.web.CustomerControllerTest - Started CustomerControllerTest in 0.385 seconds (process running for 15.329)
+2026-01-06 21:42:30 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.20.6
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-06 21:42:31 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-06 21:42:31 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Creating container for image: testcontainers/ryuk:0.11.0
+2026-01-06 21:42:32 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 is starting: c1c6b6f2be9d64059fa458667fdb110ba6de05eeffa5b6b3da2d0e812873f582
+2026-01-06 21:42:32 INFO  [] [] tc.testcontainers/ryuk:0.11.0 - Container testcontainers/ryuk:0.11.0 started in PT1.0751714S
+2026-01-06 21:42:32 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-06 21:42:32 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-06 21:42:32 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-06 21:42:32 INFO  [] [] tc.mysql:8.0 - Creating container for image: mysql:8.0
+2026-01-06 21:42:33 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 is starting: f56c5e4786a0a4e28992a7e30519bdc85ee1920dc5fa1559a84acb705a3560dc
+2026-01-06 21:42:33 INFO  [] [] tc.mysql:8.0 - Waiting for database connection to become available at jdbc:mysql://localhost:49701/customer_test using query 'SELECT 1'
+2026-01-06 21:42:50 INFO  [] [] tc.mysql:8.0 - Container mysql:8.0 started in PT17.516297S
+2026-01-06 21:42:50 INFO  [] [] tc.mysql:8.0 - Container is started (JDBC URL: jdbc:mysql://localhost:49701/customer_test)
+2026-01-06 21:42:50 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest]: CustomerRepositoryMysqlContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:50 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest
+2026-01-06 21:42:50 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Starting CustomerRepositoryMysqlContainerTest using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:50 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:42:50 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 21:42:50 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2026-01-06 21:42:50 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 21:42:50 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 21:42:50 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 21:42:50 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-06 21:42:51 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19ac514d
+2026-01-06 21:42:51 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-06 21:42:51 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.44
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 21:42:51 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 21:42:51 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:51 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryMysqlContainerTest - Started CustomerRepositoryMysqlContainerTest in 1.334 seconds (process running for 36.881)
+2026-01-06 21:42:52 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest]: CustomerRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:53 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Starting CustomerRepositoryTest using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:42:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 21:42:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2026-01-06 21:42:53 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-06 21:42:53 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:861449a1-1ca8-4699-b98c-1512cfeb7d2e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-06 21:42:53 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 21:42:53 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 21:42:53 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 21:42:53 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@2ff1f0f']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 21:42:53 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 21:42:53 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.adapter.out.persistence.CustomerRepositoryTest - Started CustomerRepositoryTest in 0.42 seconds (process running for 38.437)
+2026-01-06 21:42:53 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.customer.infrastructure.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:42:53 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.customer.CustomerServiceApplication for test class com.mtogo.customer.infrastructure.config.SecurityConfigTest
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 20136 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\customer-service)
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:42:53 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e7aae17b-08fd-4ec7-b71f-f0bbc2fc7bd8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:42:53 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:42:53 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 21:42:53 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 21:42:53 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 21:42:53 INFO  [] [] com.mtogo.customer.infrastructure.config.SecurityConfigTest - Started SecurityConfigTest in 0.244 seconds (process running for 38.868)
+2026-01-06 21:42:53 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:54 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 21:42:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-06 21:42:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-06 21:42:54 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

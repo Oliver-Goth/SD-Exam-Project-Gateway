@@ -1,0 +1,1083 @@
+2026-01-04 14:12:08 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:12:08 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:12:09 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 41904 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:12:09 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:12:11 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:12:12 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:12:12 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:12:12 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:12:12 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 14:12:12 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.922 seconds (process running for 16.444)
+2026-01-04 14:12:13 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:12:14 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:12:14 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:12:14 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:12:14 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:12:14 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:12:14 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:12:14 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: db970ffb5d26200301e7124c29eecd42bd008c8273564b4e18b2e542cabff9ae
+2026-01-04 14:12:15 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.0178484S
+2026-01-04 14:12:15 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:12:15 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:12:15 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:12:15 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:12:15 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 0badfcb08002018afdc5a890883cf69b745f3a4a97cb0231d5702ee46653ac5f
+2026-01-04 14:12:18 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.5880665S
+2026-01-04 14:12:18 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:62025/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:12:18 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:12:18 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:12:18 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 41904 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:12:18 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:12:18 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:12:18 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:12:18 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:12:19 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:12:19 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:12:19 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:12:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:12:19 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@73051634
+2026-01-04 14:12:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:12:20 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:12:21 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:12:21 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:12:22 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 4.25 seconds (process running for 26.257)
+2026-01-04 14:12:23 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:12:23 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:12:23 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 14:20:03 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:20:04 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:20:05 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 41168 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:20:05 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:20:07 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:20:07 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:20:08 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:20:08 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:20:08 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 14:20:08 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.832 seconds (process running for 16.14)
+2026-01-04 14:20:09 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:20:09 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:20:09 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:20:10 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:20:10 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:20:10 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:20:10 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:20:10 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 0f25ce78b007a74f3545a8f0afae01f644c41ecc8cbffd1ca5aa85069f63c0ef
+2026-01-04 14:20:11 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.0199021S
+2026-01-04 14:20:11 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:20:11 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:20:11 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:20:11 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:20:11 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 3e0c423ec73e451ef3254c62fbf2985d8a55febf8c551b97f26598de4829f1ed
+2026-01-04 14:20:13 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.5996489S
+2026-01-04 14:20:13 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:50170/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:20:13 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:20:13 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:20:14 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 41168 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:20:14 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:20:14 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:20:14 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:20:14 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:20:14 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:20:14 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:20:15 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:20:15 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:20:15 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56259be0
+2026-01-04 14:20:15 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:20:15 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:20:16 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:20:17 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:20:17 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.54 seconds (process running for 25.379)
+2026-01-04 14:20:18 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:20:18 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:20:18 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 14:21:29 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:21:29 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:21:31 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 18496 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:21:31 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:21:32 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:21:33 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:21:33 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:21:33 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:21:33 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 14:21:33 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.838 seconds (process running for 15.557)
+2026-01-04 14:21:34 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:21:35 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:21:35 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:21:35 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:21:35 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:21:35 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:21:35 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:21:36 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: be5c915569470ef2328523575e4bc596535217f61262dff53295ed37af9a65dd
+2026-01-04 14:21:36 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT0.9847207S
+2026-01-04 14:21:36 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:21:36 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:21:36 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:21:36 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:21:36 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 5bfec3dd6abd6d3fed5d9e0ee2696ed129e603b368460ab31d859dffba81bcf1
+2026-01-04 14:21:39 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.5066465S
+2026-01-04 14:21:39 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:49684/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:21:39 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:21:39 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:21:39 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 18496 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:21:39 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:21:39 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:21:39 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:21:40 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:21:40 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:21:40 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:21:40 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:21:40 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:21:41 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58407fb7
+2026-01-04 14:21:41 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:21:41 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:21:42 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:21:42 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:21:43 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.929 seconds (process running for 24.878)
+2026-01-04 14:21:44 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:21:44 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:21:44 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 14:22:41 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:22:42 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:22:43 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 42036 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:22:43 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:22:45 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:22:46 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:22:46 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:22:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:22:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 14:22:46 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 4.187 seconds (process running for 16.558)
+2026-01-04 14:22:47 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:22:48 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:22:48 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:22:48 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:22:48 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:22:48 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:22:48 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:22:49 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 3edc933f0a6e2300ee35aa67d6326da2bf34d525b6fcebe70cead636a8ab721f
+2026-01-04 14:22:50 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.3010698S
+2026-01-04 14:22:50 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:22:50 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:22:50 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:22:50 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:22:50 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 9870bab3c9a4164c7a59dc04627822f495dbd3c18bd05f09f1c81334bdccaae7
+2026-01-04 14:22:52 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.5513646S
+2026-01-04 14:22:52 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:49719/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:22:52 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:22:52 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:22:52 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 42036 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:22:52 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:22:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:22:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:22:53 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:22:53 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:22:53 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:22:54 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:22:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:22:54 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@589d106c
+2026-01-04 14:22:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:22:54 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:22:56 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:22:56 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:22:56 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.842 seconds (process running for 26.715)
+2026-01-04 14:22:57 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:22:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:22:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 14:52:14 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:52:14 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:52:15 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 34692 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:52:15 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:52:17 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:52:17 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:52:18 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:52:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:52:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+2026-01-04 14:52:18 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.552 seconds (process running for 10.241)
+2026-01-04 14:52:19 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:52:20 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:52:20 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:52:20 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:52:20 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:52:20 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:52:20 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:52:21 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 4d0c4733377a16b2e8b98c6cfaaaabb531dea4e3e56ed23f5afefd5fd9987757
+2026-01-04 14:52:22 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.4414305S
+2026-01-04 14:52:22 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:52:22 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:52:22 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:52:22 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:52:22 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 49111a69516348c6969344d612ddfc1096a4f2c2191f0bdcbc9a90b9e4d8774f
+2026-01-04 14:52:25 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT3.4204175S
+2026-01-04 14:52:25 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:65250/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:52:25 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:52:25 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:52:25 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 34692 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:52:25 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:52:25 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:52:25 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:52:26 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:52:26 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:52:26 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:52:26 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:52:26 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:52:27 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1886b84c
+2026-01-04 14:52:27 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:52:27 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:52:28 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:52:28 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:52:29 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.814 seconds (process running for 21.246)
+2026-01-04 14:52:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:52:31 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:52:31 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 14:55:15 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:55:16 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 14:55:17 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 6860 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:55:17 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:55:18 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 14:55:19 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 14:55:19 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 14:55:19 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 14:55:19 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 14:55:19 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.599 seconds (process running for 13.787)
+2026-01-04 14:55:20 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 14:55:21 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 14:55:21 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 14:55:21 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 14:55:21 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 14:55:21 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 14:55:21 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 14:55:21 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 4ec2d32e10d123ab9e32f3acc7ad38db8340f579f45cd44fad9ada13a52323d9
+2026-01-04 14:55:22 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.0048404S
+2026-01-04 14:55:22 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 14:55:22 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 14:55:22 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 14:55:22 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 14:55:22 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 6bae4bd228b4eb87b828ed3f7cd54eb12d5f80492c9c570811dea9f0e95d85c7
+2026-01-04 14:55:25 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.5726045S
+2026-01-04 14:55:25 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:61604/payment_test_db?loggerLevel=OFF)
+2026-01-04 14:55:25 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 14:55:25 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 14:55:25 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 6860 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 14:55:25 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 14:55:25 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 14:55:25 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2026-01-04 14:55:26 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 14:55:26 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 14:55:26 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 14:55:26 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 14:55:26 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 14:55:26 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27d579b3
+2026-01-04 14:55:26 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 14:55:27 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 14:55:28 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 14:55:28 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:55:28 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.659 seconds (process running for 23.014)
+2026-01-04 14:55:29 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 14:55:30 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 14:55:30 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:05:26 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:05:26 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:05:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 7364 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:05:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:05:29 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:05:30 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:05:30 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:05:30 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:05:30 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+2026-01-04 15:05:30 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.986 seconds (process running for 11.838)
+2026-01-04 15:05:31 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:05:32 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:05:32 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:05:33 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:05:33 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:05:33 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:05:33 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:05:33 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: c37f6c9ca4439825a5eddfba2d91ee72c4f798230850b03597ebb273a4be8cf2
+2026-01-04 15:05:34 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.1939416S
+2026-01-04 15:05:34 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:05:34 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:05:34 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:05:34 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:05:34 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: a89b8151ecdfabefa9efb9835377b92ab7754fe189411787f5fac6c78186a6d1
+2026-01-04 15:05:37 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.4904176S
+2026-01-04 15:05:37 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:54743/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:05:37 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:05:37 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:05:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 7364 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:05:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:05:37 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:05:37 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:05:38 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:05:38 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:05:38 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:05:38 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:05:38 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:05:39 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59daf355
+2026-01-04 15:05:39 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:05:39 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:05:40 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:05:41 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:05:41 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 4.601 seconds (process running for 22.842)
+2026-01-04 15:05:42 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:05:43 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:05:43 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:08:58 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:08:59 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:09:00 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 42724 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:09:00 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:09:01 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:09:02 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:09:02 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:09:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:09:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 15:09:02 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.895 seconds (process running for 9.711)
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:09:03 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:09:04 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:09:04 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 158a16a9b8f6d283cd8fdfb3643a90e16bc4606096dc83862d3b232f6c731b8c
+2026-01-04 15:09:05 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT0.9708367S
+2026-01-04 15:09:05 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:09:05 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:09:05 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:09:05 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:09:05 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: ba1658abf391538d23935fb835165acad47bc2a0e856e01e996cdf768082342f
+2026-01-04 15:09:07 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.3029604S
+2026-01-04 15:09:07 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:60258/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:09:07 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:09:07 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:09:07 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 42724 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:09:07 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:09:07 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:09:07 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:09:08 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:09:08 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:09:08 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:09:08 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:09:08 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:09:08 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23488e7a
+2026-01-04 15:09:08 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:09:09 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:09:10 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:09:10 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:09:10 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.557 seconds (process running for 18.379)
+2026-01-04 15:09:11 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:09:12 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:09:12 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:10:29 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:10:29 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:10:30 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 44660 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:10:30 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:10:31 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:10:32 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:10:32 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:10:32 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:10:32 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 15:10:32 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.721 seconds (process running for 9.384)
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:10:33 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:10:34 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:10:34 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 0a1e29283a37f516fd4c4bec6ad6cb9f44116c32b4b5749077a37609de6ef46d
+2026-01-04 15:10:35 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT0.8602609S
+2026-01-04 15:10:35 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:10:35 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:10:35 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:10:35 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:10:35 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 391621cb406baec5e4c91ff7a76fdde7a2a19b482f875d78a26a69396496285e
+2026-01-04 15:10:37 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.2386857S
+2026-01-04 15:10:37 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:60383/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:10:37 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:10:37 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:10:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 44660 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:10:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:10:37 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:10:37 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:10:37 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:10:38 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:10:38 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:10:38 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:10:38 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:10:38 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23488e7a
+2026-01-04 15:10:38 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:10:38 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:10:40 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:10:40 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:10:40 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.212 seconds (process running for 17.537)
+2026-01-04 15:10:41 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:10:41 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:10:41 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:14:25 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:14:25 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:14:26 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 32312 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:14:26 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:14:27 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:14:28 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:14:28 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:14:28 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:14:28 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+2026-01-04 15:14:28 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.305 seconds (process running for 10.714)
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:14:30 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:14:31 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:14:31 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: c72ae6df59e9a62d05cee7ebade73a3c04257ff175f9eeedf91df83d784957af
+2026-01-04 15:14:32 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT0.9444049S
+2026-01-04 15:14:32 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:14:32 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:14:32 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:14:32 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:14:32 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: a58e049fa59b56d1e5aaa19e6c89eb6b711361b008e31aaeb8271a8164ba78d5
+2026-01-04 15:14:34 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.2266577S
+2026-01-04 15:14:34 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:52064/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:14:34 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:14:34 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:14:34 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 32312 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:14:34 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:14:34 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:14:34 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:14:35 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:14:35 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:14:35 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:14:35 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:14:35 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:14:35 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4509be44
+2026-01-04 15:14:35 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:14:36 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:14:37 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:14:37 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:14:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.539 seconds (process running for 19.625)
+2026-01-04 15:14:38 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:14:39 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:14:39 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:22:59 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:22:59 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:23:00 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 11280 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:23:00 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:23:01 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:23:02 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:23:02 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:23:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:23:02 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 15:23:02 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.862 seconds (process running for 9.943)
+2026-01-04 15:23:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:23:03 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:23:04 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:23:04 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:23:04 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:23:04 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:23:04 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:23:04 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 723203e5cf2fa84cee6c22afff685dc3c891a82d7c1e554dd59e085e9f6b0d4a
+2026-01-04 15:23:05 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT0.9107515S
+2026-01-04 15:23:05 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:23:05 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:23:05 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:23:05 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:23:05 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: cad231d14e4b56d369a0c3a9758b7653780df30f4ffe399a26170131dc02c414
+2026-01-04 15:23:07 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.189871S
+2026-01-04 15:23:07 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:53188/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:23:07 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:23:07 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:23:07 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 11280 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:23:07 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:23:07 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:23:07 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:23:08 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:23:08 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:23:08 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:23:08 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:23:08 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:23:08 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cc30d13
+2026-01-04 15:23:08 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:23:09 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:23:10 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:23:10 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:23:10 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.552 seconds (process running for 18.321)
+2026-01-04 15:23:11 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:23:12 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:23:12 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 15:41:15 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:41:15 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 15:41:16 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 5220 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:41:16 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:41:17 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 15:41:18 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 15:41:18 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 15:41:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 15:41:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 15:41:18 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.903 seconds (process running for 10.366)
+2026-01-04 15:41:19 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 15:41:19 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 15:41:19 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 15:41:20 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 15:41:20 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 15:41:20 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 15:41:20 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 15:41:20 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: e968699960fb7960927e5ec03cd5a3cc9281a9f3323df82b81ad0e69b4294d21
+2026-01-04 15:41:21 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.1140967S
+2026-01-04 15:41:21 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 15:41:21 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 15:41:21 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 15:41:21 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 15:41:21 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 17daf4d0b8e73892d11f4335e1a9cfd49d843ce0456dc5f3e07f6392c1cf3cf3
+2026-01-04 15:41:23 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.2777923S
+2026-01-04 15:41:23 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:63298/payment_test_db?loggerLevel=OFF)
+2026-01-04 15:41:23 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 15:41:23 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 15:41:23 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 5220 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 15:41:23 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 15:41:24 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 15:41:24 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-01-04 15:41:24 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 15:41:24 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 15:41:24 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 15:41:24 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 15:41:24 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 15:41:25 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cdc470b
+2026-01-04 15:41:25 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 15:41:25 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 15:41:26 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 15:41:26 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:41:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.325 seconds (process running for 19.013)
+2026-01-04 15:41:28 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 15:41:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 15:41:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 19:51:16 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 19:51:16 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 19:51:17 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 14216 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 19:51:17 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 19:51:19 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 19:51:19 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 19:51:20 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 19:51:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 19:51:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 19:51:20 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.094 seconds (process running for 9.023)
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 19:51:21 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 19:51:22 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 19:51:22 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 1acb68c9638117bdac784b7315608cd8248227b1b32b61558d80afda97c34868
+2026-01-04 19:51:23 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.616379S
+2026-01-04 19:51:23 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 19:51:23 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 19:51:23 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 19:51:23 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 19:51:23 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 6ae5eb9e9e8696c65e073d5e9bdd93becffb687bdefcab169f635603c71163c4
+2026-01-04 19:51:26 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT3.2813477S
+2026-01-04 19:51:26 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:52964/payment_test_db?loggerLevel=OFF)
+2026-01-04 19:51:26 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 19:51:27 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 19:51:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 14216 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 19:51:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 19:51:27 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 19:51:27 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2026-01-04 19:51:27 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 19:51:27 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 19:51:27 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 19:51:28 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 19:51:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 19:51:28 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e083478
+2026-01-04 19:51:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 19:51:28 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 19:51:30 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 19:51:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 19:51:30 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.839 seconds (process running for 19.84)
+2026-01-04 19:51:31 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 19:51:32 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 19:51:32 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 20:25:35 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:25:36 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 20:25:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 17924 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:25:37 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:25:38 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 20:25:38 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 20:25:39 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 20:25:39 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 20:25:39 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 20:25:39 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.763 seconds (process running for 10.592)
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 20:25:40 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 20:25:41 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 20:25:41 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 941b26398974cf293ba2f1e7d6f6d7c38091df190cb4994b70fa45da9e869ad4
+2026-01-04 20:25:42 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.5131715S
+2026-01-04 20:25:42 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 20:25:42 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 20:25:42 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 20:25:42 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 20:25:42 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 486dd2ce22b8ec820d361d021de0b5b5219bbdfe0f4ec1c221aceff4cb3f62cc
+2026-01-04 20:25:45 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT3.2903214S
+2026-01-04 20:25:45 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:55598/payment_test_db?loggerLevel=OFF)
+2026-01-04 20:25:45 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:25:46 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 20:25:46 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 17924 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:25:46 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:25:46 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 20:25:46 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 2 JPA repository interfaces.
+2026-01-04 20:25:46 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 20:25:46 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 20:25:46 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 20:25:47 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 20:25:47 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 20:25:47 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43d67fe9
+2026-01-04 20:25:47 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 20:25:47 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 20:25:49 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 20:25:49 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:25:49 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.843 seconds (process running for 21.212)
+2026-01-04 20:25:50 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:25:51 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 20:25:51 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 20:39:26 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:39:26 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 20:39:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 32816 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:39:27 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:39:29 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 20:39:29 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 20:39:29 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 20:39:29 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 20:39:29 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 20:39:29 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 2.979 seconds (process running for 10.386)
+2026-01-04 20:39:30 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 20:39:31 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 20:39:31 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 20:39:31 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 20:39:31 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 20:39:31 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 20:39:31 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 20:39:32 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 84234638db56bfa76ffd3d88e29a97d118f2252ec0cfe2922d44d881221f9bc6
+2026-01-04 20:39:33 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.2469454S
+2026-01-04 20:39:33 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 20:39:33 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 20:39:33 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 20:39:33 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 20:39:33 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 39017c70ccc6788df266687f93a2f50bb7710b8b6543c7825f32c2e28c3bacb1
+2026-01-04 20:39:35 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.6972779S
+2026-01-04 20:39:35 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:61687/payment_test_db?loggerLevel=OFF)
+2026-01-04 20:39:35 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:39:35 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 20:39:35 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 32816 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:39:35 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:39:36 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 20:39:36 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 2 JPA repository interfaces.
+2026-01-04 20:39:36 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 20:39:36 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 20:39:36 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 20:39:37 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 20:39:37 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 20:39:37 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@616fbf6b
+2026-01-04 20:39:37 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 20:39:37 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 20:39:39 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 20:39:39 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:39:39 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.743 seconds (process running for 20.094)
+2026-01-04 20:39:40 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:39:41 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 20:39:41 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 20:40:25 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:40:25 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 20:40:26 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 22612 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:40:26 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:40:27 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 20:40:28 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 20:40:28 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 20:40:28 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 20:40:28 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 20:40:28 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.054 seconds (process running for 9.336)
+2026-01-04 20:40:30 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 20:40:30 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 20:40:30 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 20:40:30 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 20:40:31 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 20:40:31 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 20:40:31 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 20:40:31 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: 928b6c4021bd187e0eb8d9e37c9813bdad954420bee4c4a7c10ca3ca2bab7c1c
+2026-01-04 20:40:32 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.1290182S
+2026-01-04 20:40:32 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 20:40:32 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 20:40:32 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 20:40:32 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 20:40:32 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 3c5a6fd3f10611d5852efc1e4930b8998e401749b24ba026c91973c929e06ee5
+2026-01-04 20:40:35 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.6904326S
+2026-01-04 20:40:35 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:60959/payment_test_db?loggerLevel=OFF)
+2026-01-04 20:40:35 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 20:40:35 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 20:40:35 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 22612 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 20:40:35 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 20:40:35 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 20:40:35 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2026-01-04 20:40:35 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 20:40:36 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 20:40:36 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 20:40:36 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 20:40:36 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 20:40:36 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@616fbf6b
+2026-01-04 20:40:36 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 20:40:37 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 20:40:38 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 20:40:38 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:40:39 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 4.213 seconds (process running for 19.973)
+2026-01-04 20:40:40 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 20:40:40 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 20:40:40 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 21:19:09 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 21:19:10 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 21:19:11 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 38660 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 21:19:11 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 21:19:12 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 21:19:13 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 21:19:13 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 21:19:13 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 21:19:13 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-04 21:19:13 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.183 seconds (process running for 9.424)
+2026-01-04 21:19:14 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 21:19:15 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 21:19:15 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 21:19:15 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 21:19:15 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 21:19:15 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 21:19:15 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 21:19:16 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: d9fa38253bfd7bc95f2190ade9df07c7c753b461925b78782a58478c0e5fa954
+2026-01-04 21:19:17 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.5019949S
+2026-01-04 21:19:17 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 21:19:17 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 21:19:17 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 21:19:17 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 21:19:17 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: 41837fcd9a46737cd676bbac7bbffe8928df2e4c5da2516894851632b4686a85
+2026-01-04 21:19:20 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT3.259521S
+2026-01-04 21:19:20 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:51904/payment_test_db?loggerLevel=OFF)
+2026-01-04 21:19:20 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 21:19:20 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 21:19:20 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 38660 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 21:19:20 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 21:19:20 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 21:19:20 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2026-01-04 21:19:21 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 21:19:21 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 21:19:21 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 21:19:21 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 21:19:21 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 21:19:22 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56f4c2b1
+2026-01-04 21:19:22 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 21:19:22 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 21:19:23 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 21:19:24 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 21:19:24 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 4.054 seconds (process running for 20.425)
+2026-01-04 21:19:25 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 21:19:25 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 21:19:25 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 21:20:42 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 21:20:43 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 21:20:44 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 32892 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 21:20:44 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 21:20:45 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 21:20:46 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 21:20:46 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 21:20:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 21:20:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-04 21:20:46 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 3.438 seconds (process running for 10.808)
+2026-01-04 21:20:47 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 21:20:48 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 21:20:48 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 21:20:48 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 21:20:48 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 21:20:48 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 21:20:48 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 21:20:49 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: a7eae667acbcde93f8446746590f1aefa0c2ea9582e29ddc0f911a6cc51a4114
+2026-01-04 21:20:49 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT1.3633247S
+2026-01-04 21:20:49 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 21:20:49 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 21:20:49 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 21:20:50 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 21:20:50 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: a3446c3aa140e59ad1ad206c3a1f5a7dd00f52d93a89346c71c761bc969e2b1b
+2026-01-04 21:20:52 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT2.8675509S
+2026-01-04 21:20:52 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:58570/payment_test_db?loggerLevel=OFF)
+2026-01-04 21:20:52 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 21:20:52 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 21:20:52 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 32892 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 21:20:52 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 21:20:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 21:20:53 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 2 JPA repository interfaces.
+2026-01-04 21:20:53 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 21:20:53 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 21:20:53 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 21:20:54 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 21:20:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 21:20:54 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@616fbf6b
+2026-01-04 21:20:54 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 21:20:54 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 21:20:56 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 21:20:56 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 21:20:56 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 3.745 seconds (process running for 20.885)
+2026-01-04 21:20:57 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 21:20:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 21:20:58 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-04 22:16:13 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest]: PaymentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 22:16:14 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest
+2026-01-04 22:16:15 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Starting PaymentControllerTest using Java 17.0.17 with PID 14016 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 22:16:15 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 22:16:18 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-04 22:16:19 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-04 22:16:20 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-04 22:16:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-04 22:16:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 5 ms
+2026-01-04 22:16:20 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.in.controllers.PaymentControllerTest - Started PaymentControllerTest in 5.899 seconds (process running for 16.266)
+2026-01-04 22:16:22 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-04 22:16:23 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-04 22:16:23 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-04 22:16:23 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+2026-01-04 22:16:23 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-04 22:16:23 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-04 22:16:24 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Creating container for image: testcontainers/ryuk:0.6.0
+2026-01-04 22:16:25 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 is starting: bf24dcf6bc41d07389397443d02a6961f82a8029da64fa803fbddcdac8f1135c
+2026-01-04 22:16:26 INFO  [] [] tc.testcontainers/ryuk:0.6.0 - Container testcontainers/ryuk:0.6.0 started in PT2.7561549S
+2026-01-04 22:16:26 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-04 22:16:26 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-04 22:16:26 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-04 22:16:26 INFO  [] [] tc.postgres:15 - Creating container for image: postgres:15
+2026-01-04 22:16:27 INFO  [] [] tc.postgres:15 - Container postgres:15 is starting: c7250ca93b0e8c1dbbe46b2bca49fd747bb91e42c14f71479b223b799f3c9ddd
+2026-01-04 22:16:32 INFO  [] [] tc.postgres:15 - Container postgres:15 started in PT5.4049174S
+2026-01-04 22:16:32 INFO  [] [] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:52802/payment_test_db?loggerLevel=OFF)
+2026-01-04 22:16:32 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest]: PaymentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-04 22:16:32 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.financial_service.FinancialServiceApplication for test class com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest
+2026-01-04 22:16:32 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Starting PaymentRepositoryTest using Java 17.0.17 with PID 14016 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\financial-service)
+2026-01-04 22:16:32 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-04 22:16:33 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-04 22:16:33 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 168 ms. Found 2 JPA repository interfaces.
+2026-01-04 22:16:34 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-04 22:16:34 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-04 22:16:34 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-04 22:16:35 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-04 22:16:35 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-04 22:16:35 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56600f12
+2026-01-04 22:16:35 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-04 22:16:36 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-04 22:16:39 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-04 22:16:39 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 22:16:40 INFO  [] [] com.mtogo.financial_service.infrastructure.adapters.out.persistence.PaymentRepositoryTest - Started PaymentRepositoryTest in 7.973 seconds (process running for 36.522)
+2026-01-04 22:16:42 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-04 22:16:42 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-04 22:16:42 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

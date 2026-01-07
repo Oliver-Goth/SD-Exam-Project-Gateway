@@ -2,10 +2,13 @@ package com.mtogo.financial_service.application.services.helpers;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
 import com.mtogo.financial_service.domain.model.Payment;
 import com.mtogo.financial_service.domain.model.PaymentStatus;
 import com.mtogo.financial_service.domain.port.in.ConfirmPaymentProvider;
 
+@Component
 public class PaymentProvider implements ConfirmPaymentProvider {
 
     private final Random random = new Random();

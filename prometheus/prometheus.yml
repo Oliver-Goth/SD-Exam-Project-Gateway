@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+
+scrape_configs:
+  - job_name: "spring-boot-services"
+    metrics_path: /actuator/prometheus
+    scrape_timeout: 5s
+    static_configs:
+      - targets:
+          - customer-service:8080
+          - ordering-service:8080
+          - financial-service:8080
+          - fulfillment-service:8083
+          - restaurant-service:8087
+
+  - job_name: "rabbitmq"
+    static_configs:
+      - targets:
+          - rabbitmq:15692

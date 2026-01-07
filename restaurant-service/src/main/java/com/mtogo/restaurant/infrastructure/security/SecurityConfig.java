@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -34,12 +35,14 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/restaurants/onboard", "/api/restaurants/login", "/swagger-ui/**",
-                                "/v3/api-docs/**")
-                        .permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/restaurants/**").permitAll()
-                        .requestMatchers("/api/restaurants/**").authenticated()
-                        .anyRequest().permitAll())
+                    .requestMatchers("/api/restaurants/onboard", "/api/restaurants/login", "/swagger-ui/**",
+                        "/v3/api-docs/**")
+                    .permitAll()
+                    .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+                    .requestMatchers(HttpMethod.GET, "/api/restaurants/**").permitAll()
+                    .requestMatchers("/api/restaurants/**").authenticated()
+                    .requestMatchers("/actuator/**").permitAll()
+                    .anyRequest().permitAll())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(
                         (request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED)))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

@@ -5,7 +5,6 @@ networks:
     driver: bridge
 
 services:
-
   # ---------------- RabbitMQ ----------------
   rabbitmq:
     image: rabbitmq:3-management
@@ -132,6 +131,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://customer-db:3306/${CUSTOMER_DB_NAME:-customerdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${CUSTOMER_DB_USER:-customer_user}
       SPRING_DATASOURCE_PASSWORD: ${CUSTOMER_DB_PASSWORD:-customer_pwd}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -156,6 +157,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://ordering-db:3306/${ORDERING_DB_NAME:-orderingdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${ORDERING_DB_USER:-ordering_user}
       SPRING_DATASOURCE_PASSWORD: ${ORDERING_DB_PASSWORD:-ordering_pwd}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -180,6 +183,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://fulfillment-db:3306/${FULFILLMENT_DB_NAME:-fulfillmentdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${FULFILLMENT_DB_USER:-fulfillment_user}
       SPRING_DATASOURCE_PASSWORD: ${FULFILLMENT_DB_PASSWORD:-fulfillment_pwd}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -204,6 +209,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://delivery-db:3306/${DELIVERY_DB_NAME:-deliverydb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${DELIVERY_DB_USER:-delivery_user}
       SPRING_DATASOURCE_PASSWORD: ${DELIVERY_DB_PASSWORD:-delivery_pwd}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -228,6 +235,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://financial-db:5432/${FINANCIAL_DB_NAME:-financialdb}
       SPRING_DATASOURCE_USERNAME: ${FINANCIAL_DB_USER:-postgres}
       SPRING_DATASOURCE_PASSWORD: ${FINANCIAL_DB_PASSWORD:-secret}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -252,6 +261,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/${RESTAURANT_DB_NAME:-restaurantdb}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${RESTAURANT_DB_USER:-restaurant_user}
       SPRING_DATASOURCE_PASSWORD: ${RESTAURANT_DB_PASSWORD:-restaurant_pwd}
+      SPRING_SECURITY_USER_NAME: prometheus
+      SPRING_SECURITY_USER_PASSWORD: prompwd
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
@@ -261,7 +272,6 @@ services:
     networks:
       - mtogo_net
 
-  
   gateway:
     build:
       context: ./gateway
@@ -271,11 +281,45 @@ services:
     depends_on:
       - ordering-service
       - restaurant-service
-      - customer-service    
+      - customer-service
     ports:
       - "9000:9000"
     networks:
       - mtogo_net
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mtogo_prometheus
+    restart: always
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    networks:
+      - mtogo_net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mtogo_grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/grafana/dashboards
+    depends_on:
+      - prometheus
+    networks:
+      - mtogo_net
+
+
 
 volumes:
   customer_data:
@@ -284,3 +328,7 @@ volumes:
   delivery_data:
   financial_data:
   restaurant_data:
+  prometheus_data:
+  grafana_data:
+
+

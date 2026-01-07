@@ -1,6 +1,9 @@
-version: '3.9'
+version: "3.9"
 
 services:
+  # ==========================
+  # Financial Database
+  # ==========================
   financial-db:
     image: postgres:15
     container_name: financial_db
@@ -16,28 +19,9 @@ services:
     volumes:
       - financial_db_data:/var/lib/postgresql/data
 
-  financial-service:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: financial_service
-    restart: unless-stopped
-    depends_on:
-      - financial-db
-      - rabbitmq  
-    env_file:
-      - .env
-    environment:
-      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
-      SPRING_DATASOURCE_USERNAME: ${FINANCIAL_DB_USER}
-      SPRING_DATASOURCE_PASSWORD: ${FINANCIAL_DB_PASSWORD}
-      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}   
-      SPRING_RABBITMQ_PORT: 5672       
-      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_DEFAULT_USER}
-      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_DEFAULT_PASS}
-    ports:
-      - "8082:8080"
-
+  # ==========================
+  # RabbitMQ
+  # ==========================
   rabbitmq:
     image: rabbitmq:3-management
     container_name: financial_rabbitmq
@@ -50,6 +34,33 @@ services:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: secret123
     restart: unless-stopped
+
+  # ==========================
+  # Financial Service
+  # ==========================
+  financial-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: financial_service
+    restart: unless-stopped
+    depends_on:
+      - financial-db
+      - rabbitmq
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://financial-db:5432/${FINANCIAL_DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${FINANCIAL_DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${FINANCIAL_DB_PASSWORD}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: admin
+      SPRING_RABBITMQ_PASSWORD: secret123
+    ports:
+      - "8082:8080"
+    volumes:
+      - C:/Users/natas/.m2:/root/.m2
 
 volumes:
   financial_db_data:

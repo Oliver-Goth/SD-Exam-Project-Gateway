@@ -1,23 +1,29 @@
 version: "3.9"
 
 services:
-
+  # ==========================
+  # RabbitMQ
+  # ==========================
   rabbitmq:
     image: rabbitmq:3-management
     container_name: fulfillment_rabbitmq
+    restart: unless-stopped
     ports:
       - "5674:5672"
       - "15674:15672"
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: secret123
     networks:
       - fulfillment_net
 
+  # ==========================
+  # Fulfillment Database
+  # ==========================
   fulfillment-db:
     image: mysql:8.0
     container_name: fulfillment_mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - "3311:3306"
     environment:
@@ -30,28 +36,33 @@ services:
     networks:
       - fulfillment_net
 
+  # ==========================
+  # Fulfillment Service
+  # ==========================
   fulfillment-service:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: fulfillment_service
-    restart: always
+    restart: unless-stopped
     depends_on:
       - fulfillment-db
       - rabbitmq
-    ports:
-      - "8083:8083"
     env_file:
       - .env.fulfillment
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://fulfillment-db:3306/${FULFILLMENT_DB_NAME}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${FULFILLMENT_DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${FULFILLMENT_DB_PASSWORD}
-      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER}
-      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      SPRING_RABBITMQ_USERNAME: admin
+      SPRING_RABBITMQ_PASSWORD: secret123
       SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+    ports:
+      - "8083:8083"
+    volumes:
+      - C:/Users/natas/.m2:/root/.m2
     networks:
       - fulfillment_net
 

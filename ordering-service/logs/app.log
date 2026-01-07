@@ -1,0 +1,702 @@
+2026-01-07 00:02:01 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.controller.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:02:02 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.controller.OrderControllerTest
+2026-01-07 00:02:03 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Starting OrderControllerTest using Java 17.0.17 with PID 24916 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:02:03 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:02:04 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 00:02:04 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-07 00:02:04 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-07 00:02:04 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-07 00:02:04 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Started OrderControllerTest in 2.485 seconds (process running for 8.574)
+2026-01-07 00:02:04 INFO  [57679478-7932-45df-93f8-0b9b566a2890] [5] com.mtogo.ordering.infrastructure.adapter.in.web.OrderController - Get order by id completed in 0 ms
+2026-01-07 00:02:04 INFO  [57679478-7932-45df-93f8-0b9b566a2890] [5] com.example.RequestLogger - Request handled method=GET path=/orders/{id} status=200 elapsed_ms=39
+2026-01-07 00:02:05 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Starting OrderingServiceApplicationTests using Java 17.0.17 with PID 24916 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:02:05 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:02:06 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:02:06 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2026-01-07 00:02:07 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:02:07 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-07 00:02:07 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:02:07 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:02:07 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-07 00:02:08 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-01-07 00:02:08 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-07 00:02:08 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:02:09 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:02:09 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:10 WARN  [] [] org.springframework.web.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service\target\classes\com\mtogo\ordering\infrastructure\adapter\in\web\OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.mtogo.ordering.domain.port.in.CreateOrderUseCase' available: expected single matching bean but found 2: orderServiceBean,orderService
+2026-01-07 00:02:10 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:10 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 00:02:10 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-07 00:02:10 INFO  [] [] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-07 00:02:10 ERROR [] [] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.mtogo.ordering.infrastructure.adapter.in.web.OrderController required a single bean, but 2 were found:
+	- orderServiceBean: defined in file [C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service\target\classes\com\mtogo\ordering\application\service\OrderServiceBean.class]
+	- orderService: defined by method 'orderService' in class path resource [com/mtogo/ordering/infrastructure/config/OrderingConfig.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-01-07 00:02:10 WARN  [] [] org.springframework.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.mtogo.ordering.OrderingServiceApplicationTests@79d92b35]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@5b8e4980 testClass = com.mtogo.ordering.OrderingServiceApplicationTests, locations = [], classes = [com.mtogo.ordering.OrderServiceApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=MySQL", "spring.datasource.driverClassName=org.h2.Driver", "spring.datasource.username=sa", "spring.datasource.password=", "spring.jpa.hibernate.ddl-auto=update", "spring.jpa.show-sql=false", "org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2ccb8db3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1e387974, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a615950, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@67fda9fb, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@1ec98548, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@25dacc5a, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@7db2c34c], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service\target\classes\com\mtogo\ordering\infrastructure\adapter\in\web\OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.mtogo.ordering.domain.port.in.CreateOrderUseCase' available: expected single matching bean but found 2: orderServiceBean,orderService
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 80 common frames omitted
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.mtogo.ordering.domain.port.in.CreateOrderUseCase' available: expected single matching bean but found 2: orderServiceBean,orderService
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:218)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1747)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 106 common frames omitted
+2026-01-07 00:02:10 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryH2Test]: OrderRepositoryH2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:02:10 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryH2Test
+2026-01-07 00:02:10 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Starting OrderRepositoryH2Test using Java 17.0.17 with PID 24916 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:02:10 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:02:10 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:02:10 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2026-01-07 00:02:10 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-07 00:02:10 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:3900c904-6415-44cf-93c4-112f3a94f1a9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-07 00:02:10 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:02:10 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:02:10 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:02:10 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@34fe7a40']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:02:10 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:02:10 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:10 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Started OrderRepositoryH2Test in 0.465 seconds (process running for 14.633)
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.21.3
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-07 00:02:11 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-07 00:02:12 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Creating container for image: testcontainers/ryuk:0.12.0
+2026-01-07 00:02:12 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 is starting: 82e666448022d200a5e408638e29247545365f06f2acba98a77219c531b587b1
+2026-01-07 00:02:13 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 started in PT0.907757S
+2026-01-07 00:02:13 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-07 00:02:13 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-07 00:02:13 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-07 00:02:13 INFO  [] [] tc.mysql:8 - Creating container for image: mysql:8
+2026-01-07 00:02:13 INFO  [] [] tc.mysql:8 - Container mysql:8 is starting: ab34875efc4042da52420ec3a5e620136b2d07b957d9a5b01b6a8d621869661b
+2026-01-07 00:02:13 INFO  [] [] tc.mysql:8 - Waiting for database connection to become available at jdbc:mysql://localhost:57747/test using query 'SELECT 1'
+2026-01-07 00:02:28 INFO  [] [] tc.mysql:8 - Container mysql:8 started in PT15.6928175S
+2026-01-07 00:02:28 INFO  [] [] tc.mysql:8 - Container is started (JDBC URL: jdbc:mysql://localhost:57747/test)
+2026-01-07 00:02:28 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest]: OrderRepositoryMySQLContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:02:28 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest
+2026-01-07 00:02:28 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Starting OrderRepositoryMySQLContainerTest using Java 17.0.17 with PID 24916 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:02:28 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:02:28 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:02:28 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2026-01-07 00:02:28 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:02:28 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:02:28 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:02:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-07 00:02:29 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ce0010
+2026-01-07 00:02:29 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-07 00:02:29 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.7
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:02:29 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:02:29 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:29 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Started OrderRepositoryMySQLContainerTest in 0.67 seconds (process running for 33.328)
+2026-01-07 00:02:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:02:30 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-07 00:02:30 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-07 00:18:49 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.controller.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:18:50 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.controller.OrderControllerTest
+2026-01-07 00:18:51 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Starting OrderControllerTest using Java 17.0.17 with PID 30500 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:18:51 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:18:52 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 00:18:53 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-07 00:18:53 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-07 00:18:53 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-07 00:18:53 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Started OrderControllerTest in 2.861 seconds (process running for 9.852)
+2026-01-07 00:18:53 INFO  [5904ee7d-36e0-4d4a-a17e-79afad42a5ea] [5] com.mtogo.ordering.infrastructure.adapter.in.web.OrderController - Get order by id completed in 0 ms
+2026-01-07 00:18:53 INFO  [5904ee7d-36e0-4d4a-a17e-79afad42a5ea] [5] com.example.RequestLogger - Request handled method=GET path=/orders/{id} status=200 elapsed_ms=22
+2026-01-07 00:18:53 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Starting OrderingServiceApplicationTests using Java 17.0.17 with PID 30500 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:18:53 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:18:55 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:18:55 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 1 JPA repository interface.
+2026-01-07 00:18:56 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:18:56 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-07 00:18:56 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:18:56 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:18:56 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-07 00:18:57 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-01-07 00:18:57 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-07 00:18:57 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:18:58 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:18:58 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:18:59 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-07 00:19:00 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 00:19:00 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-07 00:19:00 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Started OrderingServiceApplicationTests in 6.913 seconds (process running for 17.235)
+2026-01-07 00:19:00 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryH2Test]: OrderRepositoryH2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:19:00 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryH2Test
+2026-01-07 00:19:00 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Starting OrderRepositoryH2Test using Java 17.0.17 with PID 30500 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:19:00 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:19:01 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:19:01 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2026-01-07 00:19:01 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-07 00:19:01 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:8b00fb69-1979-4516-aec8-967d00c2c493;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-07 00:19:01 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:19:01 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:19:01 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:19:01 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@79d202f7']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:19:01 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:19:01 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:19:01 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Started OrderRepositoryH2Test in 0.478 seconds (process running for 17.842)
+2026-01-07 00:19:01 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.21.3
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-07 00:19:02 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-07 00:19:02 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Creating container for image: testcontainers/ryuk:0.12.0
+2026-01-07 00:19:03 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 is starting: 2c5c2ce5e890e48396899fb451bc632d90b4e62a80b91700949b10c0ec215506
+2026-01-07 00:19:03 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 started in PT0.9003104S
+2026-01-07 00:19:03 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-07 00:19:03 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-07 00:19:03 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-07 00:19:03 INFO  [] [] tc.mysql:8 - Creating container for image: mysql:8
+2026-01-07 00:19:03 INFO  [] [] tc.mysql:8 - Container mysql:8 is starting: cff16ad64da9043caf8d8e1fa9ef012e43081c07ba6370df6437118a63252ecb
+2026-01-07 00:19:04 INFO  [] [] tc.mysql:8 - Waiting for database connection to become available at jdbc:mysql://localhost:57008/test using query 'SELECT 1'
+2026-01-07 00:19:17 INFO  [] [] tc.mysql:8 - Container mysql:8 started in PT14.0230114S
+2026-01-07 00:19:17 INFO  [] [] tc.mysql:8 - Container is started (JDBC URL: jdbc:mysql://localhost:57008/test)
+2026-01-07 00:19:17 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest]: OrderRepositoryMySQLContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 00:19:17 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest
+2026-01-07 00:19:17 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Starting OrderRepositoryMySQLContainerTest using Java 17.0.17 with PID 30500 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 00:19:17 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 00:19:17 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 00:19:17 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2026-01-07 00:19:17 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 00:19:17 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 00:19:17 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 00:19:17 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-07 00:19:18 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@82d521a
+2026-01-07 00:19:18 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-07 00:19:18 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.7
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 00:19:18 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 00:19:18 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:19:18 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Started OrderRepositoryMySQLContainerTest in 0.571 seconds (process running for 34.826)
+2026-01-07 00:19:18 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:19:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 00:19:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-07 00:19:19 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:19:19 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:19:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-07 00:19:19 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-07 07:48:03 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.controller.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:48:04 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.controller.OrderControllerTest
+2026-01-07 07:48:05 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Starting OrderControllerTest using Java 17.0.17 with PID 35132 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:48:05 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:48:07 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 07:48:07 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-07 07:48:07 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-07 07:48:07 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-07 07:48:07 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Started OrderControllerTest in 3.209 seconds (process running for 11.066)
+2026-01-07 07:48:08 INFO  [d87a8c33-5838-420f-b444-03aca7a86c71] [5] com.mtogo.ordering.infrastructure.adapter.in.web.OrderController - Get order by id completed in 1 ms
+2026-01-07 07:48:08 INFO  [d87a8c33-5838-420f-b444-03aca7a86c71] [5] com.example.RequestLogger - Request handled method=GET path=/orders/{id} status=200 elapsed_ms=60
+2026-01-07 07:48:08 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Starting OrderingServiceApplicationTests using Java 17.0.17 with PID 35132 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:48:08 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:48:10 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:48:10 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 1 JPA repository interface.
+2026-01-07 07:48:11 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:48:12 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-07 07:48:12 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:48:12 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:48:12 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-07 07:48:13 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-01-07 07:48:13 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-07 07:48:13 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:48:15 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:48:16 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:17 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-07 07:48:17 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 07:48:18 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-07 07:48:18 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Started OrderingServiceApplicationTests in 9.838 seconds (process running for 21.794)
+2026-01-07 07:48:18 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryH2Test]: OrderRepositoryH2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:48:18 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryH2Test
+2026-01-07 07:48:18 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Starting OrderRepositoryH2Test using Java 17.0.17 with PID 35132 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:48:18 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:48:18 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:48:18 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2026-01-07 07:48:18 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-07 07:48:18 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:367f5f11-12d4-443c-9933-fc955f3d6c45;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-07 07:48:18 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:48:18 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:48:18 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:48:18 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@70495470']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:48:18 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:48:18 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:19 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Started OrderRepositoryH2Test in 0.462 seconds (process running for 22.401)
+2026-01-07 07:48:19 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.21.3
+2026-01-07 07:48:20 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-07 07:48:21 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-07 07:48:21 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-07 07:48:21 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-07 07:48:21 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-07 07:48:21 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-07 07:48:21 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Creating container for image: testcontainers/ryuk:0.12.0
+2026-01-07 07:48:22 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 is starting: 97ffa39732186bc778597530c6b6a770062cad2b8c8c6dfc9f595ae44f4173a3
+2026-01-07 07:48:22 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 started in PT1.2798746S
+2026-01-07 07:48:22 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-07 07:48:22 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-07 07:48:22 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-07 07:48:22 INFO  [] [] tc.mysql:8 - Creating container for image: mysql:8
+2026-01-07 07:48:23 INFO  [] [] tc.mysql:8 - Container mysql:8 is starting: c18ad23c96381ea97c1a540c55a7b221449bc808bfd7dc5f370ec3f5eeccc9cf
+2026-01-07 07:48:23 INFO  [] [] tc.mysql:8 - Waiting for database connection to become available at jdbc:mysql://localhost:54318/test using query 'SELECT 1'
+2026-01-07 07:48:46 INFO  [] [] tc.mysql:8 - Container mysql:8 started in PT24.1606412S
+2026-01-07 07:48:46 INFO  [] [] tc.mysql:8 - Container is started (JDBC URL: jdbc:mysql://localhost:54318/test)
+2026-01-07 07:48:46 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest]: OrderRepositoryMySQLContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:48:46 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest
+2026-01-07 07:48:47 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Starting OrderRepositoryMySQLContainerTest using Java 17.0.17 with PID 35132 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:48:47 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:48:47 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:48:47 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2026-01-07 07:48:47 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:48:47 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:48:47 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:48:47 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-07 07:48:47 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b6ce423
+2026-01-07 07:48:47 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-07 07:48:47 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.7
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:48:47 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:48:47 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:48 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Started OrderRepositoryMySQLContainerTest in 1.021 seconds (process running for 51.366)
+2026-01-07 07:48:48 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:49 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 07:48:49 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-07 07:48:49 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:49 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:48:49 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-07 07:48:49 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-07 07:55:43 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.controller.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:55:43 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.controller.OrderControllerTest
+2026-01-07 07:55:44 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Starting OrderControllerTest using Java 17.0.17 with PID 7188 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:55:44 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:55:45 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 07:55:46 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-07 07:55:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-07 07:55:46 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-07 07:55:46 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Started OrderControllerTest in 2.818 seconds (process running for 9.311)
+2026-01-07 07:55:46 INFO  [c174e747-de74-4e60-8ab5-7b906408f412] [5] com.mtogo.ordering.infrastructure.adapter.in.web.OrderController - Get order by id completed in 1 ms
+2026-01-07 07:55:46 INFO  [c174e747-de74-4e60-8ab5-7b906408f412] [5] com.example.RequestLogger - Request handled method=GET path=/orders/{id} status=200 elapsed_ms=22
+2026-01-07 07:55:47 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Starting OrderingServiceApplicationTests using Java 17.0.17 with PID 7188 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:55:47 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:55:48 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:55:48 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interface.
+2026-01-07 07:55:49 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:55:49 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-07 07:55:49 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:55:49 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:55:49 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-07 07:55:50 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-01-07 07:55:50 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-07 07:55:50 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:55:52 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:55:52 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:55:53 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-07 07:55:53 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 07:55:53 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-07 07:55:54 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Started OrderingServiceApplicationTests in 6.957 seconds (process running for 16.82)
+2026-01-07 07:55:54 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryH2Test]: OrderRepositoryH2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:55:54 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryH2Test
+2026-01-07 07:55:54 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Starting OrderRepositoryH2Test using Java 17.0.17 with PID 7188 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:55:54 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:55:54 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:55:54 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2026-01-07 07:55:54 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-07 07:55:54 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:a9967eff-3cc0-4860-9e42-07bc447e939b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-07 07:55:54 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:55:54 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:55:54 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:55:54 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@70495470']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:55:54 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:55:54 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:55:54 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Started OrderRepositoryH2Test in 0.305 seconds (process running for 17.245)
+2026-01-07 07:55:54 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.21.3
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-07 07:55:55 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-07 07:55:56 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Creating container for image: testcontainers/ryuk:0.12.0
+2026-01-07 07:55:56 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 is starting: 4e7dc1b3613ce85cbdcdec21bc6332c89640a63305c2087977a29352a20b91cd
+2026-01-07 07:55:57 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 started in PT1.0308867S
+2026-01-07 07:55:57 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-07 07:55:57 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-07 07:55:57 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-07 07:55:57 INFO  [] [] tc.mysql:8 - Creating container for image: mysql:8
+2026-01-07 07:55:57 INFO  [] [] tc.mysql:8 - Container mysql:8 is starting: e01685a923d38975d76e904bb80f15100db62aa0148ba8747b42b0cbac117f18
+2026-01-07 07:55:57 INFO  [] [] tc.mysql:8 - Waiting for database connection to become available at jdbc:mysql://localhost:64764/test using query 'SELECT 1'
+2026-01-07 07:56:15 INFO  [] [] tc.mysql:8 - Container mysql:8 started in PT18.4195153S
+2026-01-07 07:56:15 INFO  [] [] tc.mysql:8 - Container is started (JDBC URL: jdbc:mysql://localhost:64764/test)
+2026-01-07 07:56:15 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest]: OrderRepositoryMySQLContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 07:56:15 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest
+2026-01-07 07:56:15 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Starting OrderRepositoryMySQLContainerTest using Java 17.0.17 with PID 7188 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 07:56:15 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 07:56:15 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 07:56:15 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2026-01-07 07:56:15 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 07:56:15 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 07:56:15 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 07:56:15 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-07 07:56:16 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21581253
+2026-01-07 07:56:16 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-07 07:56:16 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.7
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 07:56:16 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 07:56:16 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:56:16 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Started OrderRepositoryMySQLContainerTest in 0.772 seconds (process running for 39.206)
+2026-01-07 07:56:17 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:56:17 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 07:56:17 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-07 07:56:17 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:56:17 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 07:56:17 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-07 07:56:18 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-07 08:04:21 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.controller.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 08:04:22 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.controller.OrderControllerTest
+2026-01-07 08:04:23 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Starting OrderControllerTest using Java 17.0.17 with PID 35116 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 08:04:23 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 08:04:24 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 08:04:25 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-07 08:04:25 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-07 08:04:25 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-07 08:04:25 INFO  [] [] com.mtogo.ordering.controller.OrderControllerTest - Started OrderControllerTest in 2.732 seconds (process running for 9.51)
+2026-01-07 08:04:25 INFO  [f0a94fbc-9dca-40d3-a636-fd19b2ca2bf6] [5] com.mtogo.ordering.infrastructure.adapter.in.web.OrderController - Get order by id completed in 0 ms
+2026-01-07 08:04:25 INFO  [f0a94fbc-9dca-40d3-a636-fd19b2ca2bf6] [5] com.example.RequestLogger - Request handled method=GET path=/orders/{id} status=200 elapsed_ms=22
+2026-01-07 08:04:25 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Starting OrderingServiceApplicationTests using Java 17.0.17 with PID 35116 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 08:04:25 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 08:04:26 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 08:04:26 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2026-01-07 08:04:27 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 08:04:27 INFO  [] [] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.36.Final
+2026-01-07 08:04:27 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 08:04:28 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 08:04:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-07 08:04:28 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-01-07 08:04:28 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-07 08:04:28 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 08:04:30 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 08:04:30 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:31 WARN  [] [] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-07 08:04:31 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-07 08:04:32 INFO  [] [] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-07 08:04:32 INFO  [] [] com.mtogo.ordering.OrderingServiceApplicationTests - Started OrderingServiceApplicationTests in 6.619 seconds (process running for 16.606)
+2026-01-07 08:04:32 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryH2Test]: OrderRepositoryH2Test does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 08:04:32 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryH2Test
+2026-01-07 08:04:32 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Starting OrderRepositoryH2Test using Java 17.0.17 with PID 35116 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 08:04:32 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 08:04:32 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 08:04:32 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2026-01-07 08:04:32 INFO  [] [] org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-01-07 08:04:32 INFO  [] [] org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:37c387e4-1dee-41fc-a370-5b8f3ad28a41;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-01-07 08:04:32 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 08:04:32 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 08:04:32 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 08:04:32 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@6f5ba4d5']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 08:04:32 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 08:04:32 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:32 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryH2Test - Started OrderRepositoryH2Test in 0.323 seconds (process running for 17.054)
+2026-01-07 08:04:33 INFO  [] [] org.testcontainers.DockerClientFactory - Testcontainers version: 1.21.3
+2026-01-07 08:04:33 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2026-01-07 08:04:34 INFO  [] [] org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+2026-01-07 08:04:34 INFO  [] [] org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+2026-01-07 08:04:34 INFO  [] [] org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 28.3.3
+  API Version: 1.51
+  Operating System: Docker Desktop
+  Total Memory: 6851 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+2026-01-07 08:04:34 INFO  [] [] org.testcontainers.images.PullPolicy - Image pull policy will be performed by: DefaultPullPolicy()
+2026-01-07 08:04:34 INFO  [] [] org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2026-01-07 08:04:34 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Creating container for image: testcontainers/ryuk:0.12.0
+2026-01-07 08:04:34 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 is starting: 70418c71e615745d0c1143a424c904dfcbb3a5ef09f7f28bd7a5a4f83e19be18
+2026-01-07 08:04:35 INFO  [] [] tc.testcontainers/ryuk:0.12.0 - Container testcontainers/ryuk:0.12.0 started in PT1.0019486S
+2026-01-07 08:04:35 INFO  [] [] org.testcontainers.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2026-01-07 08:04:35 INFO  [] [] org.testcontainers.DockerClientFactory - Checking the system...
+2026-01-07 08:04:35 INFO  [] [] org.testcontainers.DockerClientFactory - ?? Docker server version should be at least 1.6.0
+2026-01-07 08:04:35 INFO  [] [] tc.mysql:8 - Creating container for image: mysql:8
+2026-01-07 08:04:35 INFO  [] [] tc.mysql:8 - Container mysql:8 is starting: e7e37ea94da1b8ad7d14469c7b72328dc3b39f2aa7a23ae783a9b53365eb8f90
+2026-01-07 08:04:36 INFO  [] [] tc.mysql:8 - Waiting for database connection to become available at jdbc:mysql://localhost:51073/test using query 'SELECT 1'
+2026-01-07 08:04:54 INFO  [] [] tc.mysql:8 - Container mysql:8 started in PT19.4153194S
+2026-01-07 08:04:54 INFO  [] [] tc.mysql:8 - Container is started (JDBC URL: jdbc:mysql://localhost:51073/test)
+2026-01-07 08:04:54 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest]: OrderRepositoryMySQLContainerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-07 08:04:54 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.ordering.OrderServiceApplication for test class com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest
+2026-01-07 08:04:54 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Starting OrderRepositoryMySQLContainerTest using Java 17.0.17 with PID 35116 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\ordering-service)
+2026-01-07 08:04:54 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-07 08:04:55 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-07 08:04:55 INFO  [] [] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2026-01-07 08:04:55 INFO  [] [] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-07 08:04:55 INFO  [] [] org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-07 08:04:55 INFO  [] [] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-07 08:04:55 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-07 08:04:55 INFO  [] [] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40bdd8e1
+2026-01-07 08:04:55 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-07 08:04:55 INFO  [] [] org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.7
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-07 08:04:55 INFO  [] [] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-07 08:04:55 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:56 INFO  [] [] com.mtogo.ordering.persistence.OrderRepositoryMySQLContainerTest - Started OrderRepositoryMySQLContainerTest in 1.072 seconds (process running for 40.295)
+2026-01-07 08:04:56 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:57 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 08:04:57 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-07 08:04:57 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:57 INFO  [] [] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 08:04:57 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-07 08:04:57 INFO  [] [] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.

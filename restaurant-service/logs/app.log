@@ -1,0 +1,129 @@
+2026-01-06 12:53:09 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest]: RestaurantControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:53:10 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest
+2026-01-06 12:53:11 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Starting RestaurantControllerTest using Java 17.0.17 with PID 17028 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 12:53:11 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:53:12 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 21e3e555-0ff1-4b30-b6f8-2b239c1c5470
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:53:12 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:53:13 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 12:53:13 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 12:53:13 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 12:53:13 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-06 12:53:13 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Started RestaurantControllerTest in 3.086 seconds (process running for 8.749)
+2026-01-06 12:53:13 INFO  [4dc4387f-3db4-4b23-bd21-6f6b196d8be2] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Create restaurant completed in 0 ms
+2026-01-06 12:53:13 INFO  [4dc4387f-3db4-4b23-bd21-6f6b196d8be2] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/onboard status=201 elapsed_ms=15
+2026-01-06 12:53:13 INFO  [ca3fc857-6b20-496f-b99c-19a21c739cda] [] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=0
+2026-01-06 12:53:13 INFO  [de3a2e91-9d16-4c5f-a695-11f8ac579437] [notfound@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 1 ms
+2026-01-06 12:53:13 INFO  [de3a2e91-9d16-4c5f-a695-11f8ac579437] [notfound@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=2
+2026-01-06 12:53:13 INFO  [c8a4781c-8114-4e55-9ebe-477ab5e19809] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 0 ms
+2026-01-06 12:53:13 INFO  [c8a4781c-8114-4e55-9ebe-477ab5e19809] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=2
+2026-01-06 12:53:13 INFO  [11b67996-c287-46f5-a964-b254673fcd76] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 0 ms
+2026-01-06 12:53:13 INFO  [11b67996-c287-46f5-a964-b254673fcd76] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=1
+2026-01-06 12:53:13 INFO  [81b2cbec-b58e-43cc-9e59-dd88e1ad04cd] [1] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/{restaurantId}/menu status=201 elapsed_ms=0
+2026-01-06 12:53:14 INFO  [3c07305a-fa01-48f8-a7f3-535eb7381e2d] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=0
+2026-01-06 12:53:14 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.security.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 12:53:14 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.security.SecurityConfigTest
+2026-01-06 12:53:14 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 17028 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 12:53:14 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 12:53:15 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: abd25593-f543-4390-be52-b9ea589235be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 12:53:15 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 12:53:15 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 12:53:15 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 12:53:15 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 12:53:15 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+2026-01-06 12:53:15 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Started SecurityConfigTest in 0.357 seconds (process running for 10.529)
+2026-01-06 20:17:16 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest]: RestaurantControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:17:16 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest
+2026-01-06 20:17:17 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Starting RestaurantControllerTest using Java 17.0.17 with PID 15608 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 20:17:17 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:17:20 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a18b34d1-6ac3-4314-9708-684cf860b24e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:17:20 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:17:20 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 20:17:20 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 20:17:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 20:17:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 20:17:20 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Started RestaurantControllerTest in 4.164 seconds (process running for 11.993)
+2026-01-06 20:17:21 INFO  [b4262e4d-db99-4152-9940-ab14c92d6775] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Create restaurant completed in 0 ms
+2026-01-06 20:17:21 INFO  [b4262e4d-db99-4152-9940-ab14c92d6775] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/onboard status=201 elapsed_ms=21
+2026-01-06 20:17:21 INFO  [e568c5a6-a336-4e44-8176-e6203205b6f7] [] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=1
+2026-01-06 20:17:21 INFO  [6e6b9369-f01c-46af-99d3-b13e22c8ac85] [notfound@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 2 ms
+2026-01-06 20:17:21 INFO  [6e6b9369-f01c-46af-99d3-b13e22c8ac85] [notfound@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=2
+2026-01-06 20:17:21 INFO  [93ec599b-e0b0-460b-b7a5-1677953c6425] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 1 ms
+2026-01-06 20:17:21 INFO  [93ec599b-e0b0-460b-b7a5-1677953c6425] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=2
+2026-01-06 20:17:21 INFO  [5ce77734-ed1c-4cd0-a37b-234252fcba98] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 0 ms
+2026-01-06 20:17:21 INFO  [5ce77734-ed1c-4cd0-a37b-234252fcba98] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=1
+2026-01-06 20:17:21 INFO  [04ab1f28-78e3-499d-83e6-f356fcfe5039] [1] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/{restaurantId}/menu status=201 elapsed_ms=1
+2026-01-06 20:17:21 INFO  [eefd07b5-4ae3-4663-a9c9-6246ea9131a3] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=0
+2026-01-06 20:17:22 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.security.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 20:17:22 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.security.SecurityConfigTest
+2026-01-06 20:17:22 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 15608 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 20:17:22 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 20:17:23 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b5bc7fc1-3945-4c41-87f1-8ce59dabdb52
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 20:17:23 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 20:17:23 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 20:17:23 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 20:17:23 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 20:17:23 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+2026-01-06 20:17:23 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Started SecurityConfigTest in 0.478 seconds (process running for 14.101)
+2026-01-06 21:46:15 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest]: RestaurantControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:46:15 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest
+2026-01-06 21:46:16 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Starting RestaurantControllerTest using Java 17.0.17 with PID 29084 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 21:46:16 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:46:17 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 24e8bd94-d826-44cb-bc93-7c7dd7d6121a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:46:17 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:46:18 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 21:46:18 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 21:46:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 21:46:18 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 2 ms
+2026-01-06 21:46:18 INFO  [] [] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantControllerTest - Started RestaurantControllerTest in 3.015 seconds (process running for 8.761)
+2026-01-06 21:46:18 INFO  [76260eb6-36e8-4552-b78f-d44d3e20690d] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Create restaurant completed in 0 ms
+2026-01-06 21:46:18 INFO  [76260eb6-36e8-4552-b78f-d44d3e20690d] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/onboard status=201 elapsed_ms=17
+2026-01-06 21:46:18 INFO  [4a849f94-07dd-426b-aeb3-43f9e7a47416] [] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=0
+2026-01-06 21:46:18 INFO  [2290ed05-1655-4b24-89fe-b1c550e833a0] [notfound@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 2 ms
+2026-01-06 21:46:18 INFO  [2290ed05-1655-4b24-89fe-b1c550e833a0] [notfound@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=3
+2026-01-06 21:46:18 INFO  [27d7515c-f850-4421-bd01-12e69a16d1ae] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 0 ms
+2026-01-06 21:46:18 INFO  [27d7515c-f850-4421-bd01-12e69a16d1ae] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=3
+2026-01-06 21:46:19 INFO  [5b007ac5-c300-4d7e-8a74-604491a62d98] [test@restaurant.com] com.mtogo.restaurant.infrastructure.adapter.in.web.RestaurantController - Authenticate restaurant completed in 0 ms
+2026-01-06 21:46:19 INFO  [5b007ac5-c300-4d7e-8a74-604491a62d98] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=1
+2026-01-06 21:46:19 INFO  [0fd20c53-353f-4f4a-b4c4-ff338e4068a2] [1] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/{restaurantId}/menu status=201 elapsed_ms=0
+2026-01-06 21:46:19 INFO  [f567c906-7b82-441c-ad3f-ff99cdbf85cc] [test@restaurant.com] com.example.RequestLogger - Request handled method=POST path=/api/restaurants/login status=200 elapsed_ms=0
+2026-01-06 21:46:19 INFO  [] [] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.mtogo.restaurant.infrastructure.security.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-06 21:46:19 INFO  [] [] org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.mtogo.restaurant.RestaurantServiceApplication for test class com.mtogo.restaurant.infrastructure.security.SecurityConfigTest
+2026-01-06 21:46:19 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Starting SecurityConfigTest using Java 17.0.17 with PID 29084 (started by natas in C:\Eksamen_softwarekvalitet\SD-Exam-Project-Gateway\restaurant-service)
+2026-01-06 21:46:19 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - No active profile set, falling back to 1 default profile: "default"
+2026-01-06 21:46:20 WARN  [] [] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 072ee8af-1cd2-4a93-ac59-4a7c42d076b0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-06 21:46:20 INFO  [] [] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-06 21:46:20 INFO  [] [] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-06 21:46:20 INFO  [] [] org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-01-06 21:46:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+2026-01-06 21:46:20 INFO  [] [] org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+2026-01-06 21:46:20 INFO  [] [] com.mtogo.restaurant.infrastructure.security.SecurityConfigTest - Started SecurityConfigTest in 0.375 seconds (process running for 10.506)

@@ -1,19 +1,19 @@
 version: "3.9"
 
 services:
-
   # ==========================
-  # RabbitMQ for Ordering
+  # RabbitMQ
   # ==========================
   rabbitmq:
     image: rabbitmq:3-management
     container_name: ordering_rabbitmq
+    restart: unless-stopped
     ports:
-      - "5673:5672"     # different port so it doesn't conflict with customer-service
-      - "15673:15672"   # management UI
+      - "5673:5672"
+      - "15673:15672"
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: secret123
     networks:
       - ordering_net
 
@@ -23,7 +23,7 @@ services:
   ordering-db:
     image: mysql:8
     container_name: ordering_mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - "3310:3306"
     environment:
@@ -44,23 +44,25 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: ordering_service
-    restart: always
+    restart: unless-stopped
     depends_on:
       - ordering-db
       - rabbitmq
-    ports:
-      - "8082:8080"
     env_file:
       - .env.ordering
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://ordering-db:3306/${ORDERING_DB_NAME}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${ORDERING_DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${ORDERING_DB_PASSWORD}
-      JWT_SECRET: ${JWT_SECRET}
-      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER}
-      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      SPRING_RABBITMQ_USERNAME: admin
+      SPRING_RABBITMQ_PASSWORD: secret123
+      JWT_SECRET: ${JWT_SECRET}
+    ports:
+      - "8082:8080"
+    volumes:
+      - C:/Users/natas/.m2:/root/.m2
     networks:
       - ordering_net
 
@@ -69,3 +71,4 @@ networks:
 
 volumes:
   ordering_data:
+

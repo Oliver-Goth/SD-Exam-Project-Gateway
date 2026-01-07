@@ -1,27 +1,29 @@
+version: "3.9"
+
 services:
   # ==========================
-  # RabbitMQ Message Broker
+  # RabbitMQ
   # ==========================
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: ordering_rabbitmq
+    container_name: restaurant_rabbitmq
+    restart: unless-stopped
     ports:
-      - "5673:5672"     # different port so it doesn't conflict with customer-service
-      - "15673:15672"   # management UI
+      - "5676:5672"
+      - "15676:15672"
     environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: secret123
     networks:
-      - resturant_net
+      - restaurant_net
 
   # ==========================
-  # Databases
+  # Restaurant Database
   # ==========================
-
   restaurant-db:
     image: mysql:8
-    container_name: mtogo_restaurant_db
-    restart: always
+    container_name: restaurant_mysql
+    restart: unless-stopped
     env_file:
       - .env.restaurant
     environment:
@@ -32,38 +34,39 @@ services:
     volumes:
       - restaurant_data:/var/lib/mysql
     networks:
-      - resturant_net
+      - restaurant_net
 
   # ==========================
-  # Microservices
+  # Restaurant Service
   # ==========================
-
   restaurant-service:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mtogo_restaurant_service
-    restart: always
-    ports:
-      - "8086:8087"
+    container_name: restaurant_service
+    restart: unless-stopped
     depends_on:
-      restaurant-db:
-        condition: service_started
-      rabbitmq:
-        condition: service_healthy
+      - restaurant-db
+      - rabbitmq
+    env_file:
+      - .env.restaurant
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/${RESTAURANT_DB_NAME}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://restaurant-db:3306/${RESTAURANT_DB_NAME}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${RESTAURANT_DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${RESTAURANT_DB_PASSWORD}
-      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER:-admin}
-      SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:-secret123}
+      SPRING_RABBITMQ_USERNAME: admin
+      SPRING_RABBITMQ_PASSWORD: secret123
+    ports:
+      - "8086:8087"
+    volumes:
+      - C:/Users/natas/.m2:/root/.m2
     networks:
-      - resturant_net
+      - restaurant_net
 
 networks:
-  resturant_net:
+  restaurant_net:
 
 volumes:
   restaurant_data:

@@ -9,8 +9,8 @@ services:
     image: rabbitmq:3-management
     container_name: delivery_rabbitmq
     ports:
-      - "5673:5672"     # different port so it doesn't conflict with customer-service
-      - "15673:15672"   # management UI
+      - "5673:5672"
+      - "15673:15672"
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
@@ -32,9 +32,9 @@ services:
       MYSQL_USER: ${DELIVERY_DB_USER}
       MYSQL_PASSWORD: ${DELIVERY_DB_PASSWORD}
     volumes:
-      - DELIVERY_data:/var/lib/mysql
+      - delivery_data:/var/lib/mysql
     networks:
-      - DELIVERY_net
+      - delivery_net
 
   # ==========================
   # Delivery Service
@@ -43,7 +43,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: DELIVERY_service
+    container_name: delivery_service
     restart: always
     depends_on:
       - delivery-db
@@ -56,10 +56,12 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://delivery-db:3306/${DELIVERY_DB_NAME}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ${DELIVERY_DB_USER}
       SPRING_DATASOURCE_PASSWORD: ${DELIVERY_DB_PASSWORD}
-      SPRING_RABBITMQ_HOST: ${RABBITMQ_HOST:-rabbitmq}
+      SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_RABBITMQ_PORT: 5672
       SPRING_RABBITMQ_USERNAME: ${RABBITMQ_USER}
       SPRING_RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+    volumes:
+      - C:/Users/natas/.m2:/root/.m2
     networks:
       - delivery_net
 

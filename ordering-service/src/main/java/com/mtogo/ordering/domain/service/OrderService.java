@@ -1,5 +1,9 @@
 package com.mtogo.ordering.domain.service;
 
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.mtogo.ordering.domain.model.Order;
 import com.mtogo.ordering.domain.model.OrderItem;
 import com.mtogo.ordering.domain.port.in.ConfirmOrderUseCase;
@@ -8,9 +12,6 @@ import com.mtogo.ordering.domain.port.in.CreateOrderUseCase;
 import com.mtogo.ordering.domain.port.in.GetOrderUseCase;
 import com.mtogo.ordering.domain.port.out.OrderEventPublisherPort;
 import com.mtogo.ordering.domain.port.out.OrderRepositoryPort;
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class OrderService implements
         CreateOrderUseCase,
