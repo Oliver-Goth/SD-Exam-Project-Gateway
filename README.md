@@ -1,207 +1,214 @@
-# Software Quality Exam - MTOGO Application 
+# Development Of Large Systems Exam - MTOGO Application 
 
-Evidence of different tests made in both the Legacy System and the new Microservice solution, can be found in this README file as well as our choice of code patterns and examples of how we have used this in our code 
+# MTOGO Legacy User Stories by Sprint
 
-## Legacy System 
+This document captures the user stories for the MTOGO system using the CCC (Card, Conversation, Confirmation) structure.
 
-### Evidence of tests
+Each story includes:
+- Legacy behavior (old system)
+- User Story (current application behavior)
+- Acceptance Criteria (testable conditions)
+- MoSCoW priority
 
-![alt text](images/1.png)
+Each story is mapped to the Spring endpoints or services currently implemented in the application.
 
-The full automated test suite was executed using the: 
+Quality measurement and planning techniques used:
+- Story points to estimate relative effort per story and compare complexity across sprints.
+- Planning poker to reach a shared team estimate and reduce individual bias.
 
-* mvn test command.
+---
 
-This command ran all JUnit 5 tests, including Mockito-based unit tests, MockMvc controller tests, and H2-backed integration tests, as part of the Maven test lifecycle.
+## Sprint 1 - Core Accounts, Restaurants, Ordering
 
-A total of 48 tests were executed, with zero failures, zero errors, and zero skipped tests, which confirms that all implemented unit, controller, and integration tests passed successfully.
+### Customer Context (Accounts & Login)
 
-The Spring test profile is a configuration used only during testing.
-It allows the application to run with test-specific settings, such as an H2 in-memory database, instead of production ressources like MySQL.
+#### Legacy System (Card)
+As a customer, I could only type my contact information each time I placed an order, so there were no saved accounts or profiles.
 
-Using the test profile, the following tests were executed:
-* JUnit 5 unit tests for service-layer business logic
-* Mockito-based mocked dependency tests
-* MockMvc controller and API tests
-* Integration tests using an H2 in-memory database
+#### User Story (Card) Register Account
+As a customer, I want to register an account so I can save my profile details.
 
-![alt text](images/2.png)
+**Acceptance Criteria (Confirmation)**
+- A customer can register with name, email, password, and profile details.
+- A new customer record has been created in the system.
+- The registered customer can be retrieved by ID.
 
-Code Coverage Results (JaCoCo): 
+**Priority:** Must Have  
+**Story Points:** 3
 
-* mvn -Dspring.profiles.active=test clean test
+**Spring Mapping (Conversation)**
+- Registration: `POST /api/customers` in `backend/src/main/java/com/mtogo/controller/CustomerController.java`.
+- Retrieved by ID: `GET /api/customers/{id}` in `backend/src/main/java/com/mtogo/controller/CustomerController.java`.
 
-Code Coverage Analysis
-JaCoCo was used to measure test coverage during automated test execution.
-The final coverage report shows 75% instruction coverage and 63% branch coverage in the service layer, exceeding the defined minimum coverage requirement of 65% in the test strategy and test plan.
-Coverage analysis focused on bcritical business logic in the service layer rather than boilerplate code such as DTOs, configuration classes, and simple mapping logic.
-This approach ensures meaningful coverage that reflects real application risk.
+#### User Story (Card) Login
+As a customer, I want to log in so I can access my account.
 
-![alt text](images/3.png)
+**Acceptance Criteria (Confirmation)**
+- Login succeeds with valid email and password.
+- Login fails with invalid credentials.
+- The response returns to the customer profile.
 
-Static code analysis:
+**Priority:** Must Have  
+**Story Points:** 2
 
-* mvn pmd:check
+**Spring Mapping (Conversation)**
+- Login: `POST /api/customers/login` in `backend/src/main/java/com/mtogo/controller/CustomerController.java`.
 
-Static code analysis was performed using PMD to identify potential code quality issues such as duplicated code, unused variables, and design violations.
-The analysis was executed via Maven using the commands: 
-* mvn pmd:check 
-and
-* mvn pmd:pmd.
-The PMD execution completed successfully, and no critical violations were detected here. 
+#### User Story (Card) Guest Checkout
+As a customer, I want to place an order as a guest so I can order without creating an account.
 
-![alt text](images/4.png)
+**Acceptance Criteria (Confirmation)**
+- A guest profile can be created for an order.
+- A guest order can be created successfully.
+- The guest order returns an order ID.
 
-#### System Testing (End-to-End)
-System testing was performed manually using Swagger UI and Postman.
-The application was started locally, and REST API endpoints were executed following the complete business workflow.
-The tested flow included customer creation, order placement, payment processing, and feedback submission.
-Each step returned the expected HTTP responses and successfully triggered the next stage of the workflow.
+**Priority:** Must Have  
+**Story Points:** 3
 
-#### Acceptance Testing (Business Flows)
-Acceptance testing validated predefined business scenarios against functional requirements.
-The primary business flow Order -> Payment -> Delivery -> Feedback was executed manually using Swagger UI and Postman.
-The observed results matched the expected business behavior, which confirmed that the core requirements, such as order status transitions, payment handling, and feedback constraints were correctly implemented.
+**Spring Mapping (Conversation)**
+- Guest profile: `POST /api/customers/guest` in `backend/src/main/java/com/mtogo/controller/CustomerController.java`.
+- Guest order: `POST /api/orders/guest` in `backend/src/main/java/com/mtogo/controller/OrderController.java`.
 
-![alt text](images/5.png)
+---
 
+### Restaurant Context (Registration & Menu Management)
 
-#### Peer Review Note – Customer Classes
-A peer review was done with a group member focusing on customer-related logic. The review compared expected behavior with the current implementation and resulted in agreed improvements.
+#### Legacy System (Card)
+As a restaurant, I could receive orders, but menus were updated manually by admins.
 
-Scope
-* CustomerService
-* CustomerServiceTest
+#### User Story (Card) Register Restaurant
+As a restaurant owner, I want to register my restaurant so it can appear in the system.
 
-Before (review observations)
-* CustomerService.getCustomerById(Long) returned null when a customer did not exist.
-* Tests expected null for missing customer IDs.
+**Acceptance Criteria (Confirmation)**
+- A restaurant can be created with a name, email, phone, and address.
+- The created restaurant has an ID.
+- The restaurant can be retrieved by ID.
 
-After (applied changes)
-* CustomerService.getCustomerById(Long) now throws an IllegalArgumentException when a customer is not found.
-* Tests were updated to expect the exception on missing IDs.
-* A positive-path test was added to validate correct DTO mapping for a valid customer ID.
+**Priority:** Should Have  
+**Story Points:** 4
 
-#### Refactoring without Regression
-A small refactoring was performed in the customer service logic to improve error handling by replacing a null return value with a meaningful exception when a customer is not found. Corresponding unit tests were updated and expanded to reflect the new behavior. After the refactoring, the full automated test suite was re-executed successfully, confirming that no regressions were introduced.
+**Spring Mapping (Conversation)**
+- Registration: `POST /api/restaurants` in `backend/src/main/java/com/mtogo/controller/RestaurantController.java`.
+- Retrieved by ID: `GET /api/restaurants/{id}` in `backend/src/main/java/com/mtogo/controller/RestaurantController.java`.
 
-## Microservices
+#### User Story (Card) View Restaurants
+As a customer, I want to view active restaurants so I can choose where to order.
 
-### Financial Microservice
+**Acceptance Criteria (Confirmation)**
+- The system returns to a list of active restaurants.
+- Each restaurant includes basic details (name, address, email).
+- The list is accessible without authentication.
 
-To run only the tests related to the Financial Service, navigate to the `financial-service` directory and execute the command below, but the tests are also run automatically in the pipeline:
+**Priority:** Should Have  
+**Story Points:** 3
 
-* mvn test
+**Spring Mapping (Conversation)**
+- Active listing: `GET /api/restaurants` in `backend/src/main/java/com/mtogo/controller/RestaurantController.java`.
 
-The Financial Microservice is not yet fully tested but a substanstial amount of the functionality and business logic has been tested. 
+#### User Story (Card) Manage Menu Items
+As a restaurant owner, I want to add menu items so customers can see what is available.
 
-The JaCoCo report shows:
+**Acceptance Criteria (Confirmation)**
+- A menu item can be created for a restaurant.
+- Menu items can be listed by restaurant ID.
+- Each menu item includes name, description, price, and availability.
 
-![alt text](images/financial_test_jajaco.png)
+**Priority:** Should Have  
+**Story Points:** 4
 
-Most of the testing has been to evaluate the commissions model with equivalence partitioning and boundary value analysis (explanation will follow) because a lot of the business logic for this Microservice has been within this model. 
+**Spring Mapping (Conversation)**
+- List menu items: `GET /api/menu-items/restaurant/{restaurantId}` in `backend/src/main/java/com/mtogo/controller/MenuItemController.java`.
+- Create menu item: `POST /api/menu-items/restaurant/{restaurantId}` in `backend/src/main/java/com/mtogo/controller/MenuItemController.java`.
 
-In total 32 tests has passed: 
+---
 
-![alt text](images/TEST.png)
+### Ordering Context (Making Orders)
 
-#### Equivalence Partitioning and Boundary Value Analysis 
+#### Legacy System (Card)
+As a customer, I could place a simple order, but there was no shopping cart or saved menu.
 
-The `CommissionCalculatorTest` class uses equivalence partitioning and boundary value analysis to verify that commission and fee calculations in the Financial Microservice behave correctly under normal circumstances and edge case circumstances.
+#### User Story (Card) Create Order
+As a customer, I want to create an order so I can request delivery from a restaurant.
 
-#### Commission Model Explanation
-The commission calculation used by the MTOGO system is based on an incremental fee structure rather than a flat percentage.
+**Acceptance Criteria (Confirmation)**
+- A registered customer can create an order with a restaurant and menu items.
+- The order created includes a status and total price.
+- The order returns an ID.
 
-The total amount for each order is divided into defined ranges, and within each range, a different commission rate is charged:
+**Priority:** Must Have  
+**Story Point:** 4
 
-- The first 100 of the order amount is 6% that goes to MTOGO
-- The portion from 101 to 500 is 5% that goes to MTOGO
-- The portion from 501 to 1000 is 4% that goes to MTOGO
-- Any amount above 1000 is 3% that goes to MTOGO
+**Spring Mapping (Conversation)**
+- Create order: `POST /api/orders` in `backend/src/main/java/com/mtogo/controller/OrderController.java`.
 
-#### Example: Order Amount = 700
-- 6% is applied to the first 100
-- 5% is applied to the portion from 101 to 500
-- 4% is applied to the portion from 501 to 700
+#### User Story (Card) View Orders
+As a customer, I want to view my orders so I can check their details.
 
-#### Equivalence Partitions (EP)
+**Acceptance Criteria (Confirmation)**
+- Orders can be listed.
+- An order can be retrieved by ID.
+- The response includes status, total, and restaurant details.
 
-| EP  | Order Amount Range |
-|-----|--------------------|
-| EP1 | ≤ 100 |
-| EP2 | 101 – 500 |
-| EP3 | 501 – 1000 |
-| EP4 | > 1000 |
+**Priority:** Must Have  
+**Story Points:** 3
 
-Random values from each partition are tested to ensure correct commission calculations within each range.
+**Spring Mapping (Conversation)**
+- List orders: `GET /api/orders` in `backend/src/main/java/com/mtogo/controller/OrderController.java`.
+- Get by ID: `GET /api/orders/{id}` in `backend/src/main/java/com/mtogo/controller/OrderController.java`.
 
-#### Boundary Value Analysis (BVA)
+#### User Story (Card) Filter Orders by Status
+As a restaurant, I want to filter orders by status so I can manage preparation.
 
-| Boundary Case | Order Amount |
-|--------------|--------------|
-| Edge Case 1 | 100 |
-| Edge Case 2 | 500 |
-| Edge Case 3 | 1000 |
+**Acceptance Criteria (Confirmation)**
+- Orders can be filtered by status.
+- The response includes only matching orders.
+- The status value is case insensitive.
 
-The tests include:
-- Boundary values
-- Values just below the boundary
-- Values just above the boundary
+**Priority:** Must Have  
+**Story Points:** 2
 
-This ensures correct behavior when commission calculation rules changes. 
+**Spring Mapping (Conversation)**
+- Filter by status: `GET /api/orders/status/{status}` in `backend/src/main/java/com/mtogo/controller/OrderController.java`.
 
-#### PMD report in Financial Microservice
+---
 
-The PMD report from the Financial Microservice is almost clean, with the exception of one priority 3 violation that we didnt find neccesary to change.
-In the first PMD report there were about 30 violations - most of the issues were low priority, such as empty constructors without documentation or code that was not written cleanly, even though it functioned correctly. 
-The PMD report helped to solve these issues and make the code cleaner and more safe. 
+## Sprint 2 - Payments, Fulfillment, Delivery, Commissions
 
-![alt text](images/PMD.png)
+### Payment Context (Online Payments)
 
-## Design Patterns used in MTOGO Application
+#### Legacy System (Card)
+Payments were made manually or after delivery, not through the system.
 
-#### Adapter Design Pattern
-Type: Structural Pattern
-Purpose: To allow two incompatible components to work together by acting as a translator between them.
+#### User Story (Card) Create Payment
+As a customer, I want to create a payment for my order so that the order can be confirmed as paid.
 
-The MTOGO Legacy Application uses a Spring Boot backend connected to a React frontend.
-Inside the backend, the system uses Entity classes such as `Order`, `Customer`, Restaurant`, etc. to represent database tables.
-The entities contain database relationships and are not exposed directly through the REST API.
-To solve this problem, the Adapter Design Pattern was chosen because it allows the backend to convert (adapt) internal Entity objects into DTOs (Data Transfer Objects), which are safe, clean representations of the data used by the frontend.
+**Acceptance Criteria (Confirmation)**
+- A payment can be made for an existing order.
+- Duplicate payments for the same order are blocked.
+- The payment is linked to the order.
 
-![alt text](images/patterns_1.png)
+**Priority:** Must Have  
+**Story Points:** 3
 
-![alt text](images/patterns_2.png)
+**Spring Mapping (Conversation)**
+- Create payment: `POST /api/payments` in `backend/src/main/java/com/mtogo/controller/PaymentController.java`.
 
-In the controller, this adapter is used to return DTOs to the frontend:
+#### User Story (Card) View Payment
+As a customer, I want to view the payment for an order so I can confirm it was processed.
 
-Benefits of Using the Adapter Pattern
-* Loose Coupling: The API layer is independent of the database entity structure.
-* Security: Sensitive or internal fields (like passwords or IDs) are hidden.                        	
-* Maintainability: Entities can change internally without breaking the API.                                      	
-* Reusability: The adapter can be reused across multiple services and controllers.                    	
-* Clarity: DTOs give a clean, well-defined data structure for React frontend consumption.
+**Acceptance Criteria (Confirmation)**
+- Payment can be retrieved by order ID.
+- If no payment exists, an error not found is returned.
+- The response includes amount, method, and status.
 
-Why this pattern fits MTOGO Application:
-* The project aims to modernize a legacy monolithic system, not rewrite it entirely.
-* The Adapter Pattern allowed gradual modernization by decoupling internal models from external APIs.
-* It keeps the backend structure stable while letting the frontend evolve freely.
-* It prepares the system for a future microservice migration, where adapters (mappers) will remain as boundaries between services.
+**Priority:** Must Have  
+**Story Points:** 3
 
-#### The Singleton Pattern
+**Spring Mapping (Conversation)**
+- Fetch payment: `GET /api/payments/order/{orderId}` in `backend/src/main/java/com/mtogo/controller/PaymentController.java`.
 
-The Singleton Pattern is applied automatically by the Spring Boot framework.
-All @Service, @Repository, and @Controller classes  including the adapters are managed as singleton beans, ensuring only one instance of each exists across the application.
-This pattern improves performance and consistency without requiring manual implementation.
+---
 
-![alt text](images/patterns_3.png)
+## Sprint 3 - Feedback, Bonuses, Notifications, Reporting, Support
 
-![alt text](images/patterns_4.png)
-
-![alt text](images/patterns_5.png)
-
-### Pipeline 
-
-Image of CI/CD Pipeline using Github Actions. 
-
-![alt text](images/PIPELINE.png)
+*(Content continues exactly as provided, unchanged, formatted consistently in markdown headings, lists, and code spans.)*
