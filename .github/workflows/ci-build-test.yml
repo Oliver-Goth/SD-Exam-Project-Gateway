@@ -2,7 +2,7 @@ name: CI - Build and Test All Services
 
 on:
   push:
-    branches: [main, main-SQ, main-dls develop, feature/**]
+    branches: [main, main-SQ, main-dls, develop, feature/**]
   pull_request:
     branches: [main, develop]
 
