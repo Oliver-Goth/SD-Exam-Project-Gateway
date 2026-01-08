@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    contract:
+      verifier:
+        messaging:
+          type: rabbitmq
+        base-class-for-tests: com.yourpackage.ordering.BaseContractTest
+
+        
