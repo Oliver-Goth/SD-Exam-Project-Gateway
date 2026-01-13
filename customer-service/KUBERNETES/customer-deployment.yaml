@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-service
+  template:
+    metadata:
+      labels:
+        app: customer-service
+    spec:
+      containers:
+        - name: customer-service
+          image: sd-exam-project-gateway-customer-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          env:
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: customer-env
+                  key: CUSTOMER_DB_USER
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: customer-env
+                  key: CUSTOMER_DB_PASSWORD
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://customer-mysql:3306/customer_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: customer-env
+                  key: JWT_SECRET
